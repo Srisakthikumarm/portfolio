@@ -16,8 +16,20 @@
   letter-spacing: -0.3px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 10px !important;
   transition: all 0.25s ease !important;
+}
+
+.navbar-logo-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.4));
+  transition: transform 0.25s ease;
+}
+
+.navbar-brand:hover .navbar-logo-img {
+  transform: scale(1.1) rotate(-5deg);
 }
 
 .navbar-brand:hover {

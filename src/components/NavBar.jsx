@@ -7,23 +7,15 @@ import "../styles/NavBar.css";
 
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
-  const scrollPos = useRef(0);
-
   useEffect(() => {
     if (expanded) {
-      scrollPos.current = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollPos.current}px`;
-      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
     } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
-      }
+      document.body.style.overflow = "";
     }
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [expanded]);
 
   return (
@@ -36,7 +28,10 @@ const NavBar = () => {
       onToggle={(isExpanded) => setExpanded(isExpanded)}
     >
       <Container>
-        <Navbar.Brand href="/">Sri Sakthi Kumar M</Navbar.Brand>
+        <Navbar.Brand href="/" className="navbar-brand-custom">
+          <img src="/favicon.svg" alt="Logo" className="navbar-logo-img" />
+          <span>Sri Sakthi Kumar M</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" onSelect={() => setExpanded(false)}>

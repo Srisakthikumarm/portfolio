@@ -16,14 +16,13 @@
   flex-shrink: 0;
 }
 
-.hero-visual-frame {
+.intro-card-glass {
   position: relative;
   border-radius: 24px;
   padding: 8px;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(162, 89, 255, 0.15));
+  background: rgba(13, 19, 36, 0.92);
   border: 1px solid rgba(0, 229, 255, 0.3);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 229, 255, 0.15);
-  backdrop-filter: blur(16px);
 }
 
 .intro-block {
@@ -38,7 +37,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 230, 118, 0.1);
+  background: rgba(0, 230, 118, 0.12);
   border: 1px solid rgba(0, 230, 118, 0.3);
   color: #00E676;
   font-family: var(--font-heading, sans-serif);
@@ -47,7 +46,6 @@
   padding: 5px 14px;
   border-radius: 20px;
   margin-bottom: 20px;
-  backdrop-filter: blur(8px);
 }
 
 .status-dot {

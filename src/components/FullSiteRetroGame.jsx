@@ -129,32 +129,18 @@ export default function FullSiteRetroGame({ active }) {
     }
   }, []);
 
-  // Smooth scroll page to active sector section
-  const scrollToStageSection = useCallback((stageIdx) => {
-    const stage = SECTOR_STAGES[stageIdx];
-    if (!stage) return;
-    const targetEl = document.querySelector(stage.selector);
-    if (targetEl) {
-      isAutoScrollingRef.current = true;
-      const topOffset = getAbsoluteElementTop(targetEl) - 90;
-      window.scrollTo({ top: Math.max(0, topOffset), behavior: "smooth" });
-      setTimeout(() => {
-        isAutoScrollingRef.current = false;
-      }, 1000);
-    }
-  }, []);
-
   // Spawn viruses for a specific stage index
   const spawnStageViruses = useCallback((stageIdx) => {
     const w = window.innerWidth;
     const stageInfo = SECTOR_STAGES[stageIdx];
-    const targetEl = document.querySelector(stageInfo.selector);
+    const targetEl = document.querySelector(stageInfo?.selector || "#intro");
     const baseScrollY = targetEl
       ? getAbsoluteElementTop(targetEl)
       : stageIdx * 700 + 200;
 
     const newEnemies = [];
-    for (let i = 0; i < stageInfo.virusCount; i++) {
+    const count = stageInfo?.virusCount || 4;
+    for (let i = 0; i < count; i++) {
       const virusDef = VIRUS_TYPES[i % VIRUS_TYPES.length];
       const rx = 50 + Math.random() * (w - 140);
       const rYOffset = 40 + Math.random() * 220;
@@ -174,13 +160,22 @@ export default function FullSiteRetroGame({ active }) {
     return newEnemies;
   }, []);
 
-  // Initialize or transition to a stage
+  // Smooth scroll page to newly unlocked sector section
+  const smoothScrollToStage = useCallback((stageIdx) => {
+    const stage = SECTOR_STAGES[stageIdx];
+    if (!stage) return;
+    const targetEl = document.querySelector(stage.selector);
+    if (targetEl) {
+      const topOffset = getAbsoluteElementTop(targetEl) - 90;
+      window.scrollTo({ top: Math.max(0, topOffset), behavior: "smooth" });
+    }
+  }, []);
+
+  // Initialize or transition to a stage (keeps remaining timer, strictly sequential)
   const loadStage = useCallback(
     (stageIdx) => {
       const gs = gameStateRef.current;
       gs.stageIndex = stageIdx;
-      gs.stageTimer = 25;
-      gs.stageTimerAcc = 0;
       gs.enemies = spawnStageViruses(stageIdx);
       gs.lasers = [];
       gs.enemyLasers = [];
@@ -188,7 +183,6 @@ export default function FullSiteRetroGame({ active }) {
       gs.stageTransitioning = true; // Pause action while banner popup is showing
 
       setStageIndex(stageIdx);
-      setStageTimer(25);
 
       const stageInfo = SECTOR_STAGES[stageIdx];
       setStageBanner({
@@ -201,14 +195,16 @@ export default function FullSiteRetroGame({ active }) {
       }, 1800);
 
       updateSectionTops();
-      scrollToStageSection(stageIdx);
+      smoothScrollToStage(stageIdx);
     },
-    [spawnStageViruses, scrollToStageSection, updateSectionTops]
+    [spawnStageViruses, smoothScrollToStage, updateSectionTops]
   );
 
   // Full game initialization
   const initGame = useCallback(() => {
     const w = window.innerWidth;
+    updateSectionTops();
+
     gameStateRef.current = {
       x: w / 2 - SHIP_W / 2,
       lasers: [],
@@ -223,7 +219,7 @@ export default function FullSiteRetroGame({ active }) {
       lives: 3,
       integrity: 100,
       stageIndex: 0,
-      stageTimer: 25,
+      stageTimer: 75,
       freezeTimer: 0,
       tripleTimer: 0,
       stageTimerAcc: 0,
@@ -235,23 +231,27 @@ export default function FullSiteRetroGame({ active }) {
     setLives(3);
     setIntegrity(100);
     setStageIndex(0);
-    setStageTimer(25);
+    setStageTimer(75);
     setGameOver(false);
     setGameWon(false);
 
     setStageBanner({
       title: "🛡️ CYBER DEFENSE ONLINE",
-      sub: "PROTECT SRI SAKTHI'S PORTFOLIO FROM VIRUSES!",
+      sub: "STAGE 1 / 5: HERO SECTOR - PROTECT SRI SAKTHI'S PORTFOLIO!",
     });
     setTimeout(() => {
       setStageBanner(null);
       gameStateRef.current.stageTransitioning = false; // Resume action after popup fades
-    }, 2000);
+    }, 1800);
 
     updateContentCorruption(100);
-    updateSectionTops();
-    scrollToStageSection(0);
-  }, [spawnStageViruses, scrollToStageSection, updateContentCorruption, updateSectionTops]);
+  }, [spawnStageViruses, updateContentCorruption, updateSectionTops]);
+
+  // Restart game after winning or defeat (scrolls back to Stage 1 & resets)
+  const restartGame = useCallback(() => {
+    smoothScrollToStage(0);
+    initGame();
+  }, [initGame, smoothScrollToStage]);
 
   // Fire Player Laser
   const fireLaser = useCallback(() => {
@@ -416,17 +416,6 @@ export default function FullSiteRetroGame({ active }) {
             });
           }
 
-          // Manual Scroll detection for stage advance (cached tops & auto-scroll guard)
-          if (!gs.stageTransitioning && !isAutoScrollingRef.current) {
-            for (let i = SECTOR_STAGES.length - 1; i > gs.stageIndex; i--) {
-              const top = sectionTopsRef.current[i] || 0;
-              if (top > 0 && currentScrollY >= top - 250) {
-                loadStage(i);
-                break;
-              }
-            }
-          }
-
           // Stage Timer tick
           if (gs.freezeTimer <= 0) {
             gs.stageTimerAcc += (1 / 60) * dt;
@@ -580,8 +569,10 @@ export default function FullSiteRetroGame({ active }) {
                 }
               });
               gs.enemies = [];
+              gs.stageTimer += 5;
+              setStageTimer(gs.stageTimer);
               setScore(gs.score);
-              triggerToast("💣 EMP NUKE CLEARED ALL VIRUSES!");
+              triggerToast("💣 EMP NUKE CLEARED ALL VIRUSES! +5s TIME BONUS!");
             } else if (bst.type === "FREEZE") {
               gs.freezeTimer = 5.0;
               triggerToast("⏳ TIME FREEZE ACTIVATED (5s)");
@@ -682,6 +673,14 @@ export default function FullSiteRetroGame({ active }) {
                 gs.enemies.splice(eIdx, 1);
                 gs.score += 150;
                 gs.integrity = Math.min(100, gs.integrity + 4);
+
+                // Small time bonus (+5s) ONLY when destroying the LAST enemy of the stage
+                if (gs.enemies.length === 0) {
+                  gs.stageTimer += 5;
+                  setStageTimer(gs.stageTimer);
+                  triggerToast("⚡ LAST VIRUS DESTROYED! +5s TIME BONUS!");
+                }
+
                 setScore(gs.score);
                 setIntegrity(Math.round(gs.integrity));
                 updateContentCorruption(gs.integrity);
@@ -854,7 +853,7 @@ export default function FullSiteRetroGame({ active }) {
         <div className="fullsite-modal game-over">
           <div className="modal-title">⚠️ SYSTEM OVERRUN BY VIRUSES</div>
           <div className="modal-sub">Portfolio integrity dropped to 0%. Website corrupted!</div>
-          <button className="modal-btn" onClick={initGame}>
+          <button className="modal-btn" onClick={restartGame}>
             RETRY CYBER DEFENSE
           </button>
         </div>
@@ -865,7 +864,7 @@ export default function FullSiteRetroGame({ active }) {
         <div className="fullsite-modal won">
           <div className="modal-title">🏆 SRI SAKTHI'S PORTFOLIO SAVED!</div>
           <div className="modal-sub">You cleared all 5 sectors, destroyed the viruses & restored 100% integrity!</div>
-          <button className="modal-btn" onClick={initGame}>
+          <button className="modal-btn" onClick={restartGame}>
             PLAY AGAIN
           </button>
         </div>

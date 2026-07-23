@@ -6,11 +6,10 @@
 }
 
 .experience-card-wrap {
-  background: var(--bg-card, rgba(13, 19, 36, 0.72));
+  background: rgba(13, 19, 36, 0.92);
   border: 1px solid var(--border-subtle);
   border-radius: 20px;
   padding: 32px;
-  backdrop-filter: blur(16px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 

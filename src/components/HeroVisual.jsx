@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/HeroVisual.css";
 import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded";
 import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
@@ -6,7 +6,7 @@ import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 
 const HeroVisual = () => {
   const [activeFrame, setActiveFrame] = useState(0);
-  const [cursorPos, setCursorPos] = useState({ x: 50, y: 50, active: false });
+  const containerRef = useRef(null);
 
   const projectFrames = [
     {
@@ -23,7 +23,7 @@ const HeroVisual = () => {
       name: "AcadIntern Discovery Platform",
       tag: "15+ Figma Screens & Research",
       metric: "Zero Critical UX Bugs",
-      secondaryMetric: "10+ Student Usability Tests",
+      secondaryMetric: "10+ Usability Tests",
       color: "#A259FF",
       layers: ["Search Filters UI", "Internship Cards", "Student Profile Flow", "Onboarding Wizard"],
     },
@@ -41,22 +41,22 @@ const HeroVisual = () => {
   const currentFrame = projectFrames[activeFrame];
 
   const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
     const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
     const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
-    setCursorPos({ x, y, active: true });
+    containerRef.current.style.setProperty("--cursor-x", `${x}%`);
+    containerRef.current.style.setProperty("--cursor-y", `${y}%`);
+    containerRef.current.style.setProperty("--cursor-opacity", "1");
   };
 
   const handleMouseLeave = () => {
-    setCursorPos((prev) => ({ ...prev, active: false }));
+    if (!containerRef.current) return;
+    containerRef.current.style.setProperty("--cursor-opacity", "0");
   };
 
   return (
-    <div
-      className="hero-figma-container"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="hero-figma-container">
       <div className="figma-window-frame">
         {/* Window Topbar */}
         <div className="figma-topbar">
@@ -97,29 +97,34 @@ const HeroVisual = () => {
           {/* Left Layers Panel */}
           <div className="figma-layers-panel">
             <div className="panel-heading">
-              <span>Layers</span>
-              <AutoAwesomeRoundedIcon style={{ fontSize: 13, color: "#00E5FF" }} />
+              <span>LAYERS</span>
+              <AutoAwesomeRoundedIcon style={{ fontSize: 12, color: currentFrame.color }} />
             </div>
-            <ul className="layers-list">
+            <div className="layers-list">
               {currentFrame.layers.map((layer, lIdx) => (
-                <li key={lIdx} className="layer-item">
-                  <span className="layer-icon">❖</span>
-                  <span className="layer-text">{layer}</span>
-                </li>
+                <div key={lIdx} className="layer-item">
+                  <span className="layer-diamond" style={{ color: currentFrame.color }}>❖</span>
+                  <span>{layer}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Center Stage Canvas Preview */}
-          <div className="figma-stage-canvas">
+          {/* Center Interactive Canvas Stage (Matching Image 2) */}
+          <div
+            ref={containerRef}
+            className="figma-stage-canvas"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="grid-overlay" />
 
-            {/* Interactive Frame UI Card */}
+            {/* Figma Preview Card Frame */}
             <div
               className="canvas-frame-card"
               style={{
                 borderColor: currentFrame.color,
-                boxShadow: `0 12px 35px -10px ${currentFrame.color}35`,
+                boxShadow: `0 0 25px ${currentFrame.color}25, 0 12px 35px rgba(0,0,0,0.5)`,
               }}
             >
               <div className="frame-card-badge" style={{ background: currentFrame.color }}>
@@ -128,8 +133,8 @@ const HeroVisual = () => {
               <h4 className="frame-card-title">{currentFrame.name}</h4>
 
               <div className="frame-metrics-row">
-                <div className="metric-badge" style={{ borderColor: currentFrame.color, color: currentFrame.color }}>
-                  <CheckCircleRoundedIcon style={{ fontSize: 14 }} />
+                <div className="metric-badge" style={{ borderColor: currentFrame.color, color: currentFrame.color, background: `${currentFrame.color}15` }}>
+                  <CheckCircleRoundedIcon style={{ fontSize: 13 }} />
                   <span>{currentFrame.metric}</span>
                 </div>
                 <div className="metric-badge secondary">
@@ -137,31 +142,33 @@ const HeroVisual = () => {
                 </div>
               </div>
 
-              {/* Wireframe UI Prototype Skeleton */}
-              <div className="wireframe-skeleton">
-                <div className="skeleton-bar" />
-                <div className="skeleton-row">
-                  <div className="skeleton-chip" />
-                  <div className="skeleton-chip" />
-                  <div className="skeleton-chip active" style={{ background: `${currentFrame.color}25`, borderColor: currentFrame.color }} />
-                </div>
+              <div className="skeleton-bar" style={{ margin: "12px 0" }} />
+
+              <div className="skeleton-row">
+                <div className="skeleton-chip" />
+                <div className="skeleton-chip" />
+                <div className="skeleton-chip active" style={{ borderColor: currentFrame.color, background: `${currentFrame.color}20` }} />
               </div>
             </div>
 
             {/* Dynamic Figma Mouse Cursor Follower */}
-            {cursorPos.active && (
-              <div
-                className="figma-live-cursor"
-                style={{ left: `${cursorPos.x}%`, top: `${cursorPos.y}%` }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill={currentFrame.color} stroke="#0B0F19" strokeWidth="2" />
-                </svg>
-                <span className="live-cursor-tag" style={{ background: currentFrame.color }}>
-                  Sri Sakthi
-                </span>
-              </div>
-            )}
+            <div
+              className="figma-live-cursor"
+              style={{
+                left: "var(--cursor-x, 50%)",
+                top: "var(--cursor-y, 50%)",
+                opacity: "var(--cursor-opacity, 0)",
+                transition: "opacity 0.2s ease",
+                pointerEvents: "none",
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill={currentFrame.color} stroke="#0B0F19" strokeWidth="2" />
+              </svg>
+              <span className="live-cursor-tag" style={{ background: currentFrame.color }}>
+                Sri Sakthi
+              </span>
+            </div>
           </div>
         </div>
       </div>
