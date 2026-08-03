@@ -186,6 +186,9 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    background: #FFFFFF !important;
+    border: 2.5px solid #000000 !important;
+    box-shadow: 3px 3px 0px #000000 !important;
   }
 
   .navbar-collapse .nav-music-player-wrap {
@@ -203,11 +206,29 @@
     box-shadow: 5px 5px 0px #000000 !important;
   }
 
-  .nav-link {
+  .nav-link.omori-nav-btn {
     padding: 10px 16px !important;
-    min-height: 40px !important;
+    min-height: 44px !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: flex-start !important;
+    font-size: 13px !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+    background: #FFFFFF !important;
+    border: 2px solid #000000 !important;
+    box-shadow: 3px 3px 0px #000000 !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+  }
+
+  .nav-link.omori-nav-btn:hover,
+  .nav-link.omori-nav-btn.omori-active-section {
+    color: #FFFFFF !important;
+    background: #000000 !important;
+    border-color: #000000 !important;
+    box-shadow: 0px 0px 0px #000000 !important;
+    transform: translate(2px, 2px) !important;
   }
 
   .navbar-nav.ms-auto {
@@ -215,7 +236,7 @@
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 10px !important;
+    gap: 12px !important;
     margin-top: 12px !important;
     padding-top: 12px !important;
     border-top: 2px dashed #000000 !important;
@@ -225,11 +246,14 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 8px 12px !important;
-    min-height: auto !important;
+    padding: 8px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
     margin: 0 !important;
     border: 2px solid #000000 !important;
     background: #FFFFFF !important;
+    color: #000000 !important;
     box-shadow: 3px 3px 0px #000000 !important;
   }
 }

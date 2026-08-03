@@ -14,8 +14,27 @@
 }
 
 @media (max-width: 850px) {
+  #projects {
+    padding: 50px 4vw !important;
+  }
   .omori-projects-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .omori-proj-img-wrap {
+    height: 210px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects {
+    padding: 40px 16px !important;
+  }
+  .omori-proj-img-wrap {
+    height: 180px !important;
+  }
+  .omori-project-card {
+    box-shadow: 4px 4px 0px #000000 !important;
   }
 }
 
@@ -293,6 +312,18 @@
   justify-content: center;
   padding: 24px;
   animation: fadeInModal 0.25s ease forwards;
+}
+
+@media (max-width: 600px) {
+  .omori-modal-backdrop {
+    padding: 12px !important;
+  }
+  .omori-modal-box {
+    padding: 16px !important;
+    max-height: 92vh !important;
+    box-shadow: 4px 4px 0px #000000 !important;
+    gap: 14px !important;
+  }
 }
 
 @keyframes fadeInModal {
