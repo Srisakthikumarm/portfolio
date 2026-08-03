@@ -62,6 +62,32 @@
   gap: 8px;
 }
 
+@media (max-width: 768px) {
+  .studio-topbar {
+    padding: 10px 12px !important;
+    gap: 8px !important;
+    justify-content: center !important;
+  }
+  .studio-title-badge {
+    font-size: 11px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .studio-mode-switcher {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+  .mode-btn {
+    font-size: 10px !important;
+    padding: 6px 8px !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    box-shadow: 2.5px 2.5px 0px #000000 !important;
+  }
+}
+
 .mode-btn {
   display: inline-flex;
   align-items: center;

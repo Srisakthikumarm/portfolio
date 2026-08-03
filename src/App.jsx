@@ -84,7 +84,8 @@ function App() {
     <div className="App">
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       <NavBar isLoading={isLoading} gameActive={gameActive} onMusicStateChange={setMusicState} />
-      <div className="game-toggle-fixed">
+      {!isLoading && (
+        <div className="game-toggle-fixed">
         <div className="game-toggle-row">
           <button
             className={`game-toggle-btn${gameActive ? " game-toggle-btn--on" : ""}`}
@@ -154,6 +155,7 @@ function App() {
           </div>
         </div>
       </div>
+      )}
       <SidebarNav />
       <FullSiteRetroGame active={gameActive} musicState={musicState} />
       <div id="content">

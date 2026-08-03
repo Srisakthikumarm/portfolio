@@ -238,6 +238,14 @@
     width: 230px !important;
     z-index: 1000000 !important;
   }
+
+  .audio-autoplay-hint-toast {
+    top: 68px !important;
+    right: 10px !important;
+    font-size: 10px !important;
+    padding: 5px 10px !important;
+    max-width: calc(100vw - 20px) !important;
+  }
 }
 
 /* Top-Right Autoplay Hint Notification Toast (Under Music Badge) */
