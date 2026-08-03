@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRI SAKTHI KUMAR M - MASTER MANUAL WEBSITE EDITING TEMPLATE</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0B0F19;
+      color: #F8FAFC;
+      padding: 40px;
+      line-height: 1.7;
+    }
+    h1 { color: #F59E0B; border-bottom: 3px solid #F59E0B; padding-bottom: 12px; font-size: 24px; }
+    h2 { color: #38BDF8; margin-top: 35px; border-bottom: 1px dashed #334155; padding-bottom: 8px; }
+    h3 { color: #4ADE80; margin-top: 20px; }
+    .box {
+      background: #1E293B;
+      border: 2px solid #334155;
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    .badge-dev {
+      background: #F59E0B;
+      color: #000000;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    code {
+      background: #020617;
+      color: #4ADE80;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    pre {
+      background: #020617;
+      color: #38BDF8;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1.5px solid #334155;
+      font-size: 13.5px;
+    }
+    .highlight { color: #FACC15; font-weight: bold; }
+    .comment-text { color: #94A3B8; font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <h1>🚀 MASTER MANUAL WEBSITE EDITING TEMPLATE (TOP TO BOTTOM)</h1>
+  <p>This master guide allows you to <strong>manually edit every single section of your portfolio from LOGO to FOOTER</strong> in one place. No advanced developer knowledge required!</p>
+
+  <!-- ========================================================================= -->
+  <!--  SECTION 1: QUICK INDEX & FILE MAP                                         -->
+  <!-- ========================================================================= -->
+  <div class="box">
+    <h2>🗺️ SECTION 1: CODEBASE FILE MAP (WHERE EACH SECTION LIVES)</h2>
+    <ul>
+      <li><span class="highlight">1. Logo &amp; Top Navbar Header:</span> <code>src/components/Navbar.jsx</code></li>
+      <li><span class="highlight">2. Hero Section (Title, Subtitle, Bio):</span> <code>src/components/Hero.jsx</code></li>
+      <li><span class="highlight">3. Profile Overview &amp; Avatar Photos:</span> <code>src/components/About.jsx</code></li>
+      <li><span class="highlight">4. Work Experience &amp; Companies:</span> <code>src/components/Experience.jsx</code></li>
+      <li><span class="highlight">5. Projects (Featured &amp; All Projects):</span> <code>src/components/Projects.jsx</code> &amp; <code>src/components/AllProjects.jsx</code></li>
+      <li><span class="highlight">6. Education &amp; Skills:</span> <code>src/components/Education.jsx</code></li>
+      <li><span class="highlight">7. Contact Links &amp; Footer:</span> <code>src/components/Contact.jsx</code> &amp; <code>src/components/Footer.jsx</code></li>
+      <li><span class="highlight">8. Images &amp; Project Assets:</span> <code>public/assets/</code></li>
+    </ul>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!--  SECTION 2: FULL HTML WEBSITE STRUCTURE (TOP TO BOTTOM)                    -->
+  <!-- ========================================================================= -->
+  <div class="box">
+    <h2>🌐 SECTION 2: FULL WEBSITE HTML TEMPLATE (HEADER TO FOOTER)</h2>
+    <p>Below is the complete HTML structure of your entire website with commented instructions for every section:</p>
+
+    <pre><code>&lt;!-- 
+=================================================================================
+  [PART 1: LOGO &amp; TOP NAVBAR] -> Edit in: src/components/Navbar.jsx
+=================================================================================
+--&gt;
+&lt;header class="navbar"&gt;
+  &lt;!-- Brand Name &amp; Logo --&gt;
+  &lt;a href="#" class="nav-logo"&gt;SRI SAKTHI KUMAR M&lt;/a&gt;
+  
+  &lt;!-- Navigation Links --&gt;
+  &lt;nav class="nav-menu"&gt;
+    &lt;a href="#about"&gt;ABOUT&lt;/a&gt;
+    &lt;a href="#experience"&gt;EXPERIENCE&lt;/a&gt;
+    &lt;a href="#projects"&gt;PROJECTS&lt;/a&gt;
+    &lt;a href="#skills"&gt;SKILLS &amp; EDU&lt;/a&gt;
+    &lt;a href="#contact"&gt;CONTACT&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+
+&lt;!-- 
+=================================================================================
+  [PART 2: HERO SECTION] -> Edit in: src/components/Hero.jsx
+=================================================================================
+--&gt;
+&lt;section id="hero" class="hero-section"&gt;
+  &lt;!-- Status Tag --&gt;
+  &lt;div class="status-pill"&gt;AVAILABLE FOR PRODUCT DESIGN &amp; UI/UX ROLES&lt;/div&gt;
+  
+  &lt;!-- Main Headline --&gt;
+  &lt;h1 class="hero-title"&gt;SRI SAKTHI KUMAR M&lt;/h1&gt;
+  &lt;h2 class="hero-subtitle"&gt;UI/UX Designer &amp; Product Developer&lt;/h2&gt;
+  
+  &lt;!-- Short Intro Bio --&gt;
+  &lt;p class="hero-desc"&gt;
+    Architecting scalable design systems, enterprise dashboards, and responsive web applications. 
+    Transforming complex B2B workflows into intuitive visual experiences.
+  &lt;/p&gt;
+  
+  &lt;!-- Hero Action Buttons --&gt;
+  &lt;div class="hero-buttons"&gt;
+    &lt;a href="#projects" class="btn btn-primary"&gt;VIEW PROJECTS&lt;/a&gt;
+    &lt;a href="/assets/Sri_Sakthi_Kumar_M_Resume.pdf" target="_blank" class="btn btn-secondary"&gt;DOWNLOAD RESUME&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;!-- 
+=================================================================================
+  [PART 3: PROFILE OVERVIEW / ABOUT ME] -> Edit in: src/components/About.jsx
+=================================================================================
+--&gt;
+&lt;section id="about" class="about-section"&gt;
+  &lt;h2 class="section-title"&gt;PROFILE OVERVIEW&lt;/h2&gt;
+  
+  &lt;!-- Dual Photo Card (Pixel Art to Realistic Hover Transition) --&gt;
+  &lt;div class="avatar-card"&gt;
+    &lt;!-- 1. Pixel Art Avatar Image --&gt;
+    &lt;img src="/assets/sri_pixel_profile.jpg" alt="Pixel Avatar" class="img-pixel" /&gt;
+    
+    &lt;!-- 2. Realistic Photo Image (Appears on Hover) --&gt;
+    &lt;img src="/assets/sri_real_profile.jpg" alt="Real Photo" class="img-real" /&gt;
+    
+    &lt;!-- Bottom Name Badge --&gt;
+    &lt;span class="avatar-badge"&gt;SRI SAKTHI KUMAR M&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- About Me Text Content --&gt;
+  &lt;div class="about-bio"&gt;
+    &lt;h3&gt;ABOUT ME&lt;/h3&gt;
+    &lt;p&gt;
+      Hi, I'm Sri Sakthi Kumar M — a passionate UI/UX Designer, Product Designer, and UI Developer 
+      with a background in B2B logistics platforms, enterprise design systems, and Web applications.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;!-- 
+=================================================================================
+  [PART 4: WORK EXPERIENCE &amp; HISTORY] -> Edit in: src/components/Experience.jsx
+=================================================================================
+--&gt;
+&lt;section id="experience" class="experience-section"&gt;
+  &lt;h2 class="section-title"&gt;WORK EXPERIENCE&lt;/h2&gt;
+
+  &lt;!-- JOB ITEM 1 --&gt;
+  &lt;div class="experience-card"&gt;
+    &lt;h3 class="job-title"&gt;UI/UX DESIGNER INTERN&lt;/h3&gt;
+    &lt;h4 class="job-company"&gt;Flow Logistics Solution LLP &amp;bull; 2026 - Present&lt;/h4&gt;
+    &lt;ul class="job-bullets"&gt;
+      &lt;li&gt;Architected enterprise B2B dispatch matrices and vehicle telemetry tracking interfaces.&lt;/li&gt;
+      &lt;li&gt;Engineered responsive Figma design system with tokens for typography &amp; component states.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;!-- 
+=================================================================================
+  [PART 5: PROJECTS SHOWCASE &amp; TEMPLATES] -> Edit in: src/components/Projects.jsx
+=================================================================================
+--&gt;
+&lt;section id="projects" class="projects-section"&gt;
+  &lt;h2 class="section-title"&gt;FEATURED PROJECTS&lt;/h2&gt;
+
+  &lt;!-- COMPLETED PROJECT CARD EXAMPLE --&gt;
+  &lt;article class="project-card"&gt;
+    &lt;img src="/assets/aether_analytics.jpg" alt="Aether Analytics" /&gt;
+    &lt;h3&gt;AETHER ANALYTICS - LANDING PAGE UI/UX CASE STUDY&lt;/h3&gt;
+    &lt;span class="year-badge"&gt;2026&lt;/span&gt;
+    &lt;p&gt;High-conversion dark theme SaaS landing page for Aether Analytics...&lt;/p&gt;
+    &lt;div class="project-links"&gt;
+      &lt;a href="https://www.behance.net/gallery/253674709/Aether-Analytics-Design-Assignment" target="_blank"&gt;BEHANCE&lt;/a&gt;
+      &lt;a href="https://medium.com/@srisakthikumar03/building-trust-in-the-dark-the-aether-analytics-landing-page-case-study-8cee7acde97d" target="_blank"&gt;MEDIUM&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;!-- UNDER-DEVELOPMENT PROJECT CARD EXAMPLE --&gt;
+  &lt;article class="project-card dev-card"&gt;
+    &lt;img src="/assets/flow.png" alt="Flow Logistics" /&gt;
+    &lt;h3&gt;FLOW B2B LOGISTICS PLATFORM&lt;/h3&gt;
+    &lt;span class="badge-dev"&gt;IN DEVELOPMENT&lt;/span&gt;
+    &lt;p&gt;Architected and designed an enterprise-grade B2B logistics management platform...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+
+
+&lt;!-- 
+=================================================================================
+  [PART 6: EDUCATION &amp; SKILLS] -> Edit in: src/components/Education.jsx
+=================================================================================
+--&gt;
+&lt;section id="skills" class="skills-section"&gt;
+  &lt;h2 class="section-title"&gt;SKILLS &amp; EDUCATION&lt;/h2&gt;
+  
+  &lt;!-- Skills List --&gt;
+  &lt;div class="skills-grid"&gt;
+    &lt;div class="skill-category"&gt;
+      &lt;h3&gt;UI/UX DESIGN&lt;/h3&gt;
+      &lt;p&gt;Figma, Wireframing, User Research, Design Systems, Prototyping, Usability Testing&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="skill-category"&gt;
+      &lt;h3&gt;FRONTEND DEVELOPMENT&lt;/h3&gt;
+      &lt;p&gt;HTML5, CSS3, JavaScript, React.js, Vite, Git/GitHub&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;!-- 
+=================================================================================
+  [PART 7: CONTACT &amp; FOOTER] -> Edit in: src/components/Contact.jsx &amp; Footer.jsx
+=================================================================================
+--&gt;
+&lt;footer id="contact" class="footer-section"&gt;
+  &lt;h2&gt;LET'S CONNECT&lt;/h2&gt;
+  &lt;p&gt;Email: srisakthikumar03@gmail.com&lt;/p&gt;
+  &lt;div class="social-links"&gt;
+    &lt;a href="https://linkedin.com/in/sri-sakthi-kumar-m" target="_blank"&gt;LINKEDIN&lt;/a&gt;
+    &lt;a href="https://behance.net/srisakthikumar" target="_blank"&gt;BEHANCE&lt;/a&gt;
+    &lt;a href="https://github.com/SrisakthikumarM" target="_blank"&gt;GITHUB&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;p class="copyright"&gt;&amp;copy; 2026 SRI SAKTHI KUMAR M. ALL RIGHTS RESERVED.&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!--  SECTION 3: HOW TO ADD & MANAGE PROJECTS IN CODE                           -->
+  <!-- ========================================================================= -->
+  <div class="box">
+    <h2>📁 SECTION 3: PROJECT TEMPLATES FOR MANUALLY ADDING/EDITING PROJECTS</h2>
+    <p>Open <code>src/components/Projects.jsx</code> (or <code>src/components/AllProjects.jsx</code>) and use the three simple templates below:</p>
+
+    <h3>1️⃣ TEMPLATE FOR A COMPLETED PROJECT (WITH ALL LINKS):</h3>
+    <pre><code>{
+  id: "my-completed-project",                           // Unique name (e.g. "fitness-app")
+  title: "YOUR COMPLETED PROJECT TITLE HERE",            // Project Title
+  year: "2026",                                        // Year
+  inDevelopment: false,                                // Completed = false
+  desc: "Short 1-2 line description of your project.",
+  fullDetails: "Detailed writeup for the View Details modal popup window.",
+  tech: ["FIGMA", "REACT", "UI/UX DESIGN", "PROTOTYPE"],
+  image: "/assets/your_image_name.jpg",                 // Image inside public/assets/
+  
+  // Link Buttons (Leave as "" if you don't have a link):
+  link: "https://www.behance.net/gallery/your-link",
+  behanceLink: "https://www.behance.net/gallery/your-link",
+  mediumLink: "https://medium.com/@your-link",
+  dribbbleLink: "https://dribbble.com/shots/your-link",
+  figmaLink: "https://www.figma.com/design/your-link",
+  githubLink: "https://github.com/your-repo-link",
+  demo: "https://your-live-demo-website.com",
+},</code></pre>
+
+    <h3>2️⃣ TEMPLATE FOR A NEW UNDER-DEVELOPMENT PROJECT:</h3>
+    <pre><code>{
+  id: "my-dev-project",                                // Unique name
+  title: "YOUR UNDER DEVELOPMENT PROJECT TITLE",        // Project Title
+  year: "IN DEVELOPMENT",                              // Year tag
+  inDevelopment: true,                                 // <span class="badge-dev">inDevelopment: true</span> (Shows IN DEVELOPMENT badge!)
+  desc: "Brief description of the product currently under active design and development.",
+  fullDetails: "Detailed roadmap and progress summary of this project.",
+  tech: ["FIGMA", "DESIGN SYSTEM", "B2B UX", "IN DEVELOPMENT"],
+  image: "/assets/your_dev_image.jpg",
+},</code></pre>
+
+    <h3>3️⃣ HOW TO CONVERT AN UNDER-DEVELOPMENT PROJECT TO A COMPLETED PROJECT:</h3>
+    <pre><code>// BEFORE (Under Development):
+inDevelopment: true,
+year: "IN DEVELOPMENT",
+
+// AFTER (Completed! Just change inDevelopment to false and update the year):
+inDevelopment: false,
+year: "2026",
+link: "https://www.behance.net/gallery/your-new-completed-link",
+behanceLink: "https://www.behance.net/gallery/your-new-completed-link",</code></pre>
+  </div>
+
+</body>
+</html>

@@ -8,10 +8,8 @@ const Experience = () => {
     <div id="experience">
       <FadeInSection>
         <div className="section-header">
-          <div className="section-title">
-            <span className="section-title-prefix">02.</span>
-            <span>Work Experience</span>
-          </div>
+          <span className="section-number">03</span>
+          <span className="section-title">WORK EXPERIENCE</span>
         </div>
         <div className="experience-card-wrap">
           <JobList />

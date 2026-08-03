@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Projects.css";
 import FadeInSection from "./FadeInSection";
-import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
+import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
+import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded";
+import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
+import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
+import PsychologyRoundedIcon from "@mui/icons-material/PsychologyRounded";
+import PaletteRoundedIcon from "@mui/icons-material/PaletteRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-
-export const RetroPixelToolsIcon = ({ style }) => (
-  <svg
-    viewBox="0 0 16 16"
-    width="1em"
-    height="1em"
-    fill="currentColor"
-    style={{ shapeRendering: "crispEdges", display: "inline-block", verticalAlign: "middle", ...style }}
-  >
-    <path d="M1 1h5v2H3v2h3v2H4v2H1V1zm9 0h5v8h-2V5h-3V1zM6 6h4v4H6V6zm-5 5h3v2h2v3H1v-5zm10 0h2v3h3v2h-5v-5z" />
-  </svg>
-);
+import { RetroPixelToolsIcon } from "./Projects";
+import "../styles/AllProjects.css";
 
 const BehanceIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="#FFFFFF">
@@ -36,40 +32,35 @@ const DribbbleIcon = () => (
   </svg>
 );
 
-// =================================================================================
-//  EASY TEMPLATE GUIDE: HOW TO ADD A NEW PROJECT TO YOUR WEBSITE
-// =================================================================================
-//  To add a new project card:
-//  1. Put your project image inside the `public/assets/` folder.
-//  2. Copy the template block below, paste it inside `featuredProjects`, and edit your text/links!
-//
-//  /* --- START NEW PROJECT TEMPLATE (COPY FROM HERE) ---
-//  {
-//    id: "my-new-project-id",                              // 1. Unique ID name
-//    title: "YOUR NEW PROJECT TITLE GOES HERE",             // 2. Project Title
-//    year: "2026",                                         // 3. Year or "IN DEVELOPMENT"
-//    // inDevelopment: true,                               // 4. Uncomment if currently in development
-//    desc: "Short 1-2 line summary of what you built.",
-//    fullDetails: "Detailed summary for the View Details popup modal.",
-//    tech: ["FIGMA", "REACT", "UI/UX DESIGN"],              // List of tech tags in quotes
-//    image: "/assets/your_image_name.jpg",                  // Image inside public/assets/
-//    
-//    // Links (Leave as "" if you don't have a link):
-//    link: "https://www.behance.net/gallery/your-link",
-//    behanceLink: "https://www.behance.net/gallery/your-link",
-//    mediumLink: "https://medium.com/@your-link",
-//    dribbbleLink: "https://dribbble.com/shots/your-link",
-//    figmaLink: "https://www.figma.com/design/your-link",
-//    githubLink: "https://github.com/your-repo-link",
-//    demo: "https://your-live-demo-website.com",
-//  },
-//  --- END NEW PROJECT TEMPLATE (COPY TO HERE) --- */
-// =================================================================================
+const categories = [
+  { id: "all", label: "ALL", icon: GridViewRoundedIcon, colorClass: "blue" },
+  { id: "development", label: "IN DEVELOPMENT", icon: RetroPixelToolsIcon, colorClass: "amber" },
+  { id: "ux", label: "UX / UI", icon: DesignServicesRoundedIcon, colorClass: "purple" },
+  { id: "enterprise", label: "ENTERPRISE UX", icon: BusinessRoundedIcon, colorClass: "emerald" },
+  { id: "nocode", label: "NO-CODE & SAAS", icon: CodeRoundedIcon, colorClass: "coral" },
+  { id: "branding", label: "BRANDING & ADS", icon: PaletteRoundedIcon, colorClass: "gold" },
+];
 
-const featuredProjects = [
+const allProjectsData = [
+  {
+    id: "aether-ad-poster",
+    title: "AETHER ANALYTICS - AD POSTER DESIGN & SOCIAL CAMPAIGN",
+    categoryLabel: "GRAPHIC DESIGN & AD POSTER CAMPAIGN",
+    type: "branding",
+    year: "2026",
+    desc: "Social Campaign & Ad Poster Design: 'See issues before they slow you down — Database analytics, not dashboards built for developers.' High-impact dark grid promotional campaign, developer hooks, and ad collateral.",
+    fullDetails: "Designed a high-impact promotional ad poster series and social media campaign for Aether Analytics ('Social Campaign — UI/UX Case Study: See issues before they slow you down. Real-time AI analytics for database developers. Ship faster, sleep better'). Engineered dark theme grid layout architecture, privacy-first developer hooks, comparison ad carousels ('Still flying blind with your data? Traditional tools slow you down'), and high-conversion ad collateral. Published on Behance.",
+    tech: ["AD POSTER DESIGN", "SOCIAL CAMPAIGN", "GRAPHIC DESIGN", "FIGMA", "BEHANCE SHOWCASE"],
+    image: "/assets/aether_ad_poster.jpg",
+    link: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
+    behanceLink: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
+    demo: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
+  },
   {
     id: "aether-analytics",
     title: "AETHER ANALYTICS - LANDING PAGE UI/UX CASE STUDY",
+    categoryLabel: "ANALYTICS SAAS & DARK THEME LANDING PAGE",
+    type: "ux",
     year: "2026",
     desc: "Building Trust in the Dark: High-conversion dark theme SaaS landing page for Aether Analytics—Supercharge Your Database Analytics with Aether. Features active user growth charts, scalable database analytics, and dark UI trust architecture.",
     fullDetails: "Designed a high-conversion dark mode SaaS landing page and UI/UX case study titled 'Aether Analytics' ('Supercharge Your Database Analytics with Aether - Unlock hidden insights, predict trends, and optimize performance with our next-generation analytics platform'). Engineered dark theme trust architecture, active user growth graphs (+34% growth rate metrics), interactive feature cards, database telemetry integration badges, and responsive desktop/mobile layouts. Published on Behance and Medium.",
@@ -83,6 +74,8 @@ const featuredProjects = [
   {
     id: "logistics-alert-dashboard",
     title: "LOGISTICS COMMAND - LOGISTICS ALERT DASHBOARD",
+    categoryLabel: "ENTERPRISE LOGISTICS UX & EXCEPTION DASHBOARD",
+    type: "enterprise",
     year: "2026",
     desc: "Designing for the 3 AM Alert: Enterprise logistics exception dashboard designed for high-stress operational resolution, critical temperature/route alert triage, and fleet status.",
     fullDetails: "Designed an enterprise logistics exception management dashboard titled 'Logistics Command' (Cartflow Active Alerts & Operation Resolution: 'Designing for the 3 AM Alert'). Engineered high-stress operational workflows for critical route deviation and temperature failure triage, live GPS map tracking, vehicle telemetry, driver response metrics, and incident resolution drawers.",
@@ -94,30 +87,22 @@ const featuredProjects = [
     demo: "https://www.behance.net/gallery/253673989/Logistic-Alert-Dashboard",
   },
   {
-    id: "aether-ad-poster",
-    title: "AETHER ANALYTICS - AD POSTER DESIGN & SOCIAL CAMPAIGN",
-    year: "2026",
-    desc: "Social Campaign & Ad Poster Design: 'See issues before they slow you down — Database analytics, not dashboards built for developers.' High-impact dark grid promotional campaign, developer hooks, and ad collateral.",
-    fullDetails: "Designed a high-impact promotional ad poster series and social media campaign for Aether Analytics ('Social Campaign — UI/UX Case Study: See issues before they slow you down. Real-time AI analytics for database developers. Ship faster, sleep better'). Engineered dark theme grid layout architecture, privacy-first developer hooks, comparison ad carousels ('Still flying blind with your data? Traditional tools slow you down'), and high-conversion ad collateral. Published on Behance.",
-    tech: ["AD POSTER DESIGN", "SOCIAL CAMPAIGN", "GRAPHIC DESIGN", "FIGMA", "BEHANCE SHOWCASE"],
-    image: "/assets/aether_ad_poster.jpg",
-    link: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
-    behanceLink: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
-    demo: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
-  },
-  {
     id: "flow",
     title: "FLOW B2B LOGISTICS PLATFORM",
-    year: "IN DEVELOPMENT",
-    inDevelopment: true,
+    categoryLabel: "ENTERPRISE UX & FRONTEND",
+    type: "enterprise",
+    year: "2026",
     desc: "Architected and designed an enterprise-grade B2B logistics management platform currently in active development at Flow Logistics Solution LLP. Engineered complex dispatch matrices, real-time vehicle tracking UI, driver assignment workflows, and automated billing forms.",
     fullDetails: "Architected and designed an enterprise-grade B2B logistics management platform at Flow Logistics Solution LLP. Currently under active development in office. Engineered complex dispatch matrices, real-time vehicle tracking UI, driver assignment workflows, and automated billing forms. Built a robust Figma design system with tokens for typography, color palettes, and component states, ensuring 100% WCAG 2.1 AA accessibility compliance across all 20+ desktop & mobile screens.",
     tech: ["FIGMA", "HTML5/CSS3", "JAVASCRIPT", "WCAG 2.1 AA", "DESIGN SYSTEM", "B2B LOGISTICS", "IN DEVELOPMENT"],
     image: "/assets/flow.png",
+    inDevelopment: true,
   },
   {
     id: "monster-404",
     title: "CONFUSING MONSTER ANIMATION - 404 PAGE",
+    categoryLabel: "FIGMA MOTION & 404 UI ANIMATION",
+    type: "ux",
     year: "2026",
     desc: "First Figma motion animation experiment: interactive 404 error page featuring a confused fluffy blue monster mascot, sky gradient, and smooth UI transitions.",
     fullDetails: "Created my first Figma motion animation for a 404 error page titled 'Confusing Monster Animation 404' on Cutestor ('Oops, I think we're lost—Let's get you back to somewhere familiar...'). Engineered custom 3D fluffy monster mascot keyframe animations, sky cloud backdrop gradients, interactive hover states, and smooth navigation micro-interactions.",
@@ -130,6 +115,8 @@ const featuredProjects = [
   {
     id: "sakthi-framer-portfolio-main",
     title: "SRI SAKTHIKUMAR - MAIN CURRENT FRAMER PORTFOLIO",
+    categoryLabel: "PORTFOLIO UI/UX & FRAMER WEB APP",
+    type: "ux",
     year: "2026",
     desc: "My main current personal UI/UX portfolio website live on Framer (srisakthikumar.framer.website): 'Unlimited Design for Solid Startups', light-grey layout, and interactive product showcases.",
     fullDetails: "Designed and published my main current personal portfolio website in Framer titled 'SRI SAKTHIKUMAR' ('Unlimited Design for Solid Startups - I help startups and brands create beautiful, functional products—fast and hassle-free'). Engineered clean light-grey typography layouts, interactive project showcase carousels, and responsive Framer components live at srisakthikumar.framer.website.",
@@ -141,6 +128,8 @@ const featuredProjects = [
   {
     id: "sakthi-framer-portfolio-2",
     title: "SAKTHI PORTFOLIO - SECOND FRAMER PORTFOLIO",
+    categoryLabel: "PORTFOLIO UI/UX & INTERACTIVE FRAMER",
+    type: "ux",
     year: "2026",
     desc: "My second personal UI/UX portfolio website built in Framer: interactive bento grid showcases, custom animations, case study breakdowns, and smooth responsiveness.",
     fullDetails: "Designed and published my second official personal portfolio website in Framer (srisakthikumarm.framer.website). Architected an elevated bento grid design showcasing product design case studies, design systems, micro-interactions, contact forms, and client testimonials.",
@@ -152,6 +141,8 @@ const featuredProjects = [
   {
     id: "acadintern",
     title: "ACADINTERN - FROM CLASSROOM TO CAREER UX CASE STUDY",
+    categoryLabel: "EDTECH UX RESEARCH & INTERNSHIP PLATFORM",
+    type: "ux",
     year: "2026",
     desc: "Full-stack edtech internship & career discovery platform: 116k+ students, 50k+ listings, 95% placement metrics, 8 modules, and end-to-end UX research.",
     fullDetails: "Led end-to-end product design and UX strategy for AcadIntern ('From Classroom to Career'). Engineered a full-stack internship portal bridging student ambition with real-world opportunities at scale—featuring personalized student dashboards, company placement matrices, application wizards, and iterative usability testing with 116k+ simulated users.",
@@ -164,6 +155,8 @@ const featuredProjects = [
   {
     id: "freelance-poster",
     title: "CODER'S SPACE - FREELANCE POSTER DESIGN",
+    categoryLabel: "GRAPHIC DESIGN & FREELANCE POSTER",
+    type: "branding",
     year: "2025",
     desc: "Freelance promotional poster design for Coder's Space Summer Coding Bootcamp: course syllabus grid, tech stack icons, real-time project highlights, and print-ready layout.",
     fullDetails: "Designed a vibrant and engaging promotional poster for Coder's Space Summer Coding Bootcamp ('Let's make your children's future bright'). Highlighted key offerings including Web Development, Google Tools, Microsoft Office, Photoshop, Scratch, Git, and ChatGPT. Crafted in Figma and Canva as a freelance graphic design piece paid in tea, not cash!",
@@ -175,6 +168,8 @@ const featuredProjects = [
   {
     id: "icecube-branding",
     title: "ICECUBE RESTAURANT BRANDING",
+    categoryLabel: "GRAPHIC DESIGN & RESTAURANT BRANDING",
+    type: "branding",
     year: "2025",
     desc: "Complete restaurant brand identity & graphic design portfolio: logo design, mascot illustration, menu layouts, social media collateral, and brand guidelines.",
     fullDetails: "Created a comprehensive brand identity and graphic design showcase titled 'Icecube Restaurant Branding'. Designed custom mascot illustrations, logo assets, typography systems, restaurant menu cards, promotional banners, and visual brand guidelines in Illustrator and Photoshop.",
@@ -186,6 +181,8 @@ const featuredProjects = [
   {
     id: "edash-dashboard",
     title: "E-DASH - E-COMMERCE ANALYTICS DASHBOARD",
+    categoryLabel: "ENTERPRISE DASHBOARD & E-COMMERCE UX",
+    type: "enterprise",
     year: "2025",
     desc: "Real-time e-commerce analytics dashboard: sales, orders, customer acquisition metrics, revenue charts, and admin management UI.",
     fullDetails: "Designed a comprehensive e-commerce analytics dashboard titled 'E-Dash' ('Clear, real-time overview of sales, orders, customers, and performance metrics in one place'). Engineered high-density data visualizations, earnings breakdown graphs, new vs returning customer pie charts, product inventory lists, and responsive admin sidebar navigation created in Figma and Illustrator.",
@@ -197,6 +194,8 @@ const featuredProjects = [
   {
     id: "interplan-ui",
     title: "INTER PLAN - UI CASE STUDY",
+    categoryLabel: "FINTECH & MOBILE INTERFACE DESIGN",
+    type: "ux",
     year: "2025",
     desc: "Comprehensive UI design system and visual component suite for InterPlan daily money management app: high-fidelity UI screens, color systems, micro-interactions, and design tokens.",
     fullDetails: "High-fidelity UI case study and visual design system for InterPlan daily money management mobile app. Features complete UI kit documentation, custom iconography, dark/light component variants, transaction cards, and interactive prototype flows created in Figma, Illustrator, and Miro.",
@@ -208,6 +207,8 @@ const featuredProjects = [
   {
     id: "interplan-ux",
     title: "INTER PLAN - DAILY MONEY MANAGEMENT UX CASE STUDY",
+    categoryLabel: "FINTECH & MOBILE UX CASE STUDY",
+    type: "ux",
     year: "2025",
     desc: "Fintech & daily expense management mobile app UX case study: balance tracking dashboards, income/expense breakdown charts, quick money transfers, and investment analytics.",
     fullDetails: "Led end-to-end UX research, wireframing, and mobile app design for InterPlan ('A Clear Starting Point for Daily Money Management'). Engineered intuitive financial dashboards, income/expense analytics graphs, instant peer-to-peer money transfers, and portfolio tracking UI built in Figma and Illustrator.",
@@ -219,6 +220,8 @@ const featuredProjects = [
   {
     id: "skill-marketing",
     title: "SKILL MARKETING AGENCY WEBSITE",
+    categoryLabel: "MARKETING AGENCY & DIGITAL BRAND UX",
+    type: "ux",
     year: "2025",
     desc: "Data-driven digital marketing agency landing page: performance campaign dashboards, Google/Meta ad integration badges, skill-building session booking, and pink grid aesthetic.",
     fullDetails: "Designed a modern digital marketing agency website titled 'Skill Marketing Agency' ('Elevate Your Brand with Data-Driven Digital Marketing'). Engineered high-impact hero sections featuring Google & Meta ad integrations, interactive campaign performance charts, service package cards, and client lead generation forms.",
@@ -230,6 +233,8 @@ const featuredProjects = [
   {
     id: "trekzy",
     title: "TREKZY - TOUR ORGANIZE WEB APPLICATION",
+    categoryLabel: "TRAVEL SAAS & TOUR ORGANIZER UI/UX",
+    type: "ux",
     year: "2025",
     desc: "World's best travel organizer web application: custom itinerary curation, flight/destination discovery matrices, interactive travel styles, and high-fidelity Figma design system.",
     fullDetails: "Designed a full-featured web application and travel SaaS titled 'Trekzy' ('World's Best Travel Organizer Web Application'). Engineered intuitive getaway planning flows, destination search filters, custom trip itinerary builders, flight deal comparisons, and interactive hero carousel components yielding a 20% usability score improvement.",
@@ -241,9 +246,10 @@ const featuredProjects = [
   {
     id: "skilldragon-community",
     title: "SKILLDRAGON COMMUNITY WEBSITE",
+    categoryLabel: "EDTECH UX & COMMUNITY PLATFORM",
+    type: "ux",
     year: "2024",
-    desc: "EdTech & skill accelerator community platform design: course catalog UI, career growth dashboard, student testimonials, and responsive navigation.",
-    fullDetails: "Designed the official web interface and student community portal for SkillDragon ('Tamil Nadu No. 1 EdTech Platform'). Engineered user-centered course catalog filters, interactive career growth roadmaps, student review cards, and streamlined registration workflows optimized for desktop and mobile learning.",
+    desc: "Designed the official web interface and student community portal for SkillDragon ('Tamil Nadu No. 1 EdTech Platform'). Engineered user-centered course catalog filters, interactive career growth roadmaps, student review cards, and streamlined registration workflows optimized for desktop and mobile learning.",
     tech: ["UI/UX DESIGN", "FIGMA", "EDTECH PLATFORM", "COMMUNITY UI", "BEHANCE SHOWCASE"],
     image: "/assets/skilldragon.png",
     link: "https://www.behance.net/gallery/215573891/Skill-Dragon-Community-Website",
@@ -252,6 +258,8 @@ const featuredProjects = [
   {
     id: "organic-tea",
     title: "ORGANIC TEA LEAF E-COMMERCE",
+    categoryLabel: "E-COMMERCE & BRAND UI/UX",
+    type: "ux",
     year: "2024",
     desc: "Handpicked organic tea e-commerce web platform: glassmorphism navigation, hero product showcase, farm-to-cup story section, and streamlined checkout.",
     fullDetails: "Designed an organic e-commerce web platform titled 'Tea Leaf' ('Savor Nature in Every Sip'). Engineered high-conversion product showcase pages, farm-to-cup brand storytelling sections, glassmorphism floating header bars, and responsive shopping cart UI optimized for organic tea lovers.",
@@ -263,9 +271,10 @@ const featuredProjects = [
   {
     id: "supako-music",
     title: "SUPAKO - MUSIC STREAMING PLATFORM",
+    categoryLabel: "MUSIC UI/UX & WEB DESIGN",
+    type: "ux",
     year: "2024",
-    desc: "Dark-themed music streaming web platform: custom artist hero interface, ad-free streaming presentation, interactive audio controls, and responsive song discovery layout.",
-    fullDetails: "Designed a dark-mode music streaming web platform titled SUPAKO ('Music Without Limits'). Engineered a high-contrast hero interface showcasing featured artists, ad-free streaming tier presentation, intuitive audio playback controls, and responsive navigation for seamless song discovery across desktop and mobile devices.",
+    desc: "Designed a dark-mode music streaming web platform titled SUPAKO ('Music Without Limits'). Engineered a high-contrast hero interface showcasing featured artists, ad-free streaming tier presentation, intuitive audio playback controls, and responsive navigation for seamless song discovery across desktop and mobile devices.",
     tech: ["UI/UX DESIGN", "FIGMA", "MUSIC STREAMING", "DARK MODE UI", "BEHANCE SHOWCASE"],
     image: "/assets/supako_music.png",
     link: "https://www.behance.net/gallery/202637277/music-web-design",
@@ -274,15 +283,16 @@ const featuredProjects = [
   {
     id: "sakthi-framer-portfolio",
     title: "SAKTHI PORTFOLIO - FIRST FRAMER PORTFOLIO",
+    categoryLabel: "PORTFOLIO UI/UX & BENTO GRID",
+    type: "ux",
     year: "2024",
-    desc: "Sri Sakthi Kumar's v1 personal portfolio website designed in Figma & Framer featuring clean bento grid layout, typography system, interactive project cards, and responsive web animations.",
-    fullDetails: "Designed and built my first personal portfolio website in Framer titled 'SAKTHI' (sakthisportfolio.framer.website). Architected a clean bento grid layout showcasing UI/UX design capabilities, artist case studies, known tools, and work experience. Built responsive component variants and smooth hover animations.",
+    desc: "Designed and built my first personal portfolio website in Framer titled 'SAKTHI' (sakthisportfolio.framer.website). Architected a clean bento grid layout showcasing UI/UX design capabilities, artist case studies, known tools, and work experience. Built responsive component variants and smooth hover animations.",
     tech: ["FRAMER", "FIGMA", "BENTO GRID", "PORTFOLIO DESIGN", "BEHANCE SHOWCASE"],
     image: "/assets/framer_portfolio.png",
     link: "https://www.behance.net/gallery/209724449/My-website",
     demo: "https://sakthisportfolio.framer.website",
   },
-];
+].sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
 const ConstructionOverlay = () => (
   <div className="sleek-dev-overlay">
@@ -316,300 +326,218 @@ const ConstructionOverlay = () => (
   </div>
 );
 
-const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+const AllProjects = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setSelectedProject(null);
-      }
-    };
-    if (selectedProject) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedProject]);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const filteredProjects = activeCategory === "all"
+    ? allProjectsData
+    : activeCategory === "development"
+      ? allProjectsData.filter((p) => p.inDevelopment)
+      : activeCategory === "nocode"
+        ? allProjectsData
+        : allProjectsData.filter((p) => p.type === activeCategory);
+
+  const years = Array.from(new Set(filteredProjects.map((p) => p.year))).sort((a, b) => b - a);
 
   return (
-    <div id="projects">
-      {/* Pixelated Section Header (Title Left, Number Right) */}
-      <div className="section-header">
-        <span className="section-title">FEATURED PROJECTS</span>
-        <span className="section-number">03</span>
-      </div>
+    <div className="all-projects-page">
+      <div className="all-projects-container">
+        {/* Top Back Navigation Bar */}
+        <div className="all-projects-nav">
+          <Link to="/" className="omori-back-btn">
+            <span className="retro-icon-frame blue">
+              <ArrowBackRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>BACK TO HOME</span>
+          </Link>
+        </div>
 
-      {/* 2-Column Side-by-Side Projects Grid - Displays ONLY the Latest 4 Projects */}
-      <div className="omori-projects-grid">
-        {featuredProjects.slice(0, 4).map((proj, idx) => (
-          <FadeInSection key={proj.id} delay={`${(idx + 1) * 150}ms`}>
-            <div
-              className="omori-project-card"
-              onClick={() => setSelectedProject(proj)}
-            >
-              {/* Image Preview Container */}
-              <div className="omori-proj-img-wrap">
-                <img src={proj.image} alt={proj.title} />
-                {proj.inDevelopment && (
-                  <>
-                    <ConstructionOverlay />
-                    <span className="omori-proj-year dev-badge">IN DEVELOPMENT</span>
-                  </>
-                )}
-              </div>
+        {/* Hero Archive Header */}
+        <div className="archive-header-block">
+          <div className="archive-badge-row">
+            <span className="archive-tag">★ ARCHIVE</span>
+            <span className="archive-count">{filteredProjects.length} PROJECTS DISPLAYED</span>
+          </div>
+          <h1 className="archive-title">PROJECT ARCHIVE</h1>
+          <p className="archive-subtitle">
+            Every build — UX case studies, enterprise B2B platforms, design systems, AI workflows, and frontend web applications. Pulled from Figma and GitHub and kept in one place for recruiters who want the complete picture.
+          </p>
 
-              {/* Title & Year */}
-              <div className="omori-card-body">
-                <div className="omori-proj-header-row">
-                  <h3 className="omori-proj-title">{proj.title}</h3>
-                  {!proj.inDevelopment && (
-                    <span className="omori-proj-year">{proj.year}</span>
-                  )}
-                </div>
-
-                <p className="omori-proj-desc">{proj.desc}</p>
-
-                {/* Tech Pills Row */}
-                <div className="omori-tech-pills-row">
-                  {proj.tech.slice(0, 4).map((t, tIdx) => (
-                    <span key={tIdx} className="omori-tech-pill">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="omori-card-divider" />
-
-                {/* Action Buttons Row */}
-                <div className="omori-action-btn-row" onClick={(e) => e.stopPropagation()}>
-                  <button
-                    className="omori-btn-black"
-                    onClick={() => setSelectedProject(proj)}
-                  >
-                    <span>VIEW DETAILS</span>
-                  </button>
-
-                  {proj.inDevelopment ? (
-                    <span className="omori-btn-white" style={{ cursor: "default" }}>
-                      <span className="retro-icon-frame amber">
-                        <RetroPixelToolsIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                      </span>
-                      <span>IN DEVELOPMENT</span>
-                    </span>
-                  ) : (
-                    <>
-                      {proj.dribbbleLink || proj.link?.includes("dribbble") ? (
-                        <a
-                          href={proj.dribbbleLink || proj.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame dribbble">
-                            <DribbbleIcon />
-                          </span>
-                          <span>DRIBBBLE</span>
-                        </a>
-                      ) : null}
-
-                      {proj.behanceLink || (proj.link?.includes("behance") && !proj.link?.includes("dribbble")) ? (
-                        <a
-                          href={proj.behanceLink || proj.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame blue">
-                            <BehanceIcon />
-                          </span>
-                          <span>BEHANCE</span>
-                        </a>
-                      ) : null}
-
-                      {proj.mediumLink ? (
-                        <a
-                          href={proj.mediumLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame medium">
-                            <MediumIcon />
-                          </span>
-                          <span>MEDIUM</span>
-                        </a>
-                      ) : null}
-
-                      {proj.demo && !proj.demo.includes("behance") && !proj.demo.includes("medium") && !proj.demo.includes("dribbble") ? (
-                        <a
-                          href={proj.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame green">
-                            <OpenInNewRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                          </span>
-                          <span>{proj.demo.includes("framer.website") ? "LIVE FRAMER" : "LIVE WEBSITE"}</span>
-                        </a>
-                      ) : null}
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
-          </FadeInSection>
-        ))}
-      </div>
-
-      {/* Centered Bottom View All Projects Button */}
-      <div className="omori-bottom-btn-row">
-        <Link to="/projects" className="omori-view-all-btn">
-          VIEW ALL PROJECTS ➔
-        </Link>
-      </div>
-
-      {/* Interactive Case Study Detail Modal Overlay (Matching Screenshot) */}
-      {selectedProject && (
-        <div
-          className="omori-modal-backdrop"
-          onClick={() => setSelectedProject(null)}
-        >
-          <div
-            className="omori-modal-box"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Top Header */}
-            <div className="omori-modal-header">
-              <div className="modal-header-info">
-                <h2 className="modal-proj-title">{selectedProject.title}</h2>
-                <span className="modal-proj-year">{selectedProject.year}</span>
-              </div>
-              <button
-                className="omori-modal-close-btn"
-                onClick={() => setSelectedProject(null)}
-                aria-label="Close Modal"
-              >
-                <CloseRoundedIcon style={{ fontSize: 20 }} />
-              </button>
-            </div>
-
-            <div className="modal-header-divider" />
-
-            {/* Modal Image Preview */}
-            <div className="modal-img-container">
-              <img src={selectedProject.image} alt={selectedProject.title} />
-              {selectedProject.inDevelopment && (
-                <>
-                  <ConstructionOverlay />
-                  <span className="omori-proj-year dev-badge">IN DEVELOPMENT</span>
-                </>
-              )}
-            </div>
-
-            {/* Extended Case Study Details */}
-            <div className="modal-details-body">
-              <h4 className="modal-section-heading">PROJECT OVERVIEW & ARCHITECTURE</h4>
-              <p className="modal-full-details-text">
-                {selectedProject.fullDetails}
-              </p>
-
-              <h4 className="modal-section-heading">TOOLS & METHODOLOGY</h4>
-              <div className="omori-tech-pills-row modal-pills">
-                {selectedProject.tech.map((t, tIdx) => (
-                  <span key={tIdx} className="omori-tech-pill">
-                    {t}
+          {/* Retro Category Switcher Bar (Matching Reference Screenshot 1) */}
+          <div className="archive-filter-switcher-bar">
+            {categories.map((cat) => {
+              const IconComp = cat.icon;
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  className={`archive-filter-btn ${isActive ? "omori-btn-black" : "omori-btn-white"}`}
+                  onClick={() => setActiveCategory(cat.id)}
+                >
+                  <span className={`retro-icon-frame ${cat.colorClass}`}>
+                    <IconComp style={{ fontSize: 13, color: "#FFFFFF" }} />
                   </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="modal-bottom-divider" />
-
-            {/* Modal Action Buttons */}
-            <div className="modal-actions-row">
-              {selectedProject.inDevelopment ? (
-                <span className="omori-btn-white" style={{ cursor: "default" }}>
-                  <span className="retro-icon-frame amber">
-                    <RetroPixelToolsIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <span>IN DEVELOPMENT</span>
-                </span>
-              ) : (
-                <>
-                  {selectedProject.dribbbleLink || selectedProject.link?.includes("dribbble") ? (
-                    <a
-                      href={selectedProject.dribbbleLink || selectedProject.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="omori-btn-black"
-                    >
-                      <span className="retro-icon-frame dribbble">
-                        <DribbbleIcon />
-                      </span>
-                      <span>DRIBBBLE SHOT</span>
-                    </a>
-                  ) : null}
-
-                  {selectedProject.behanceLink || (selectedProject.link?.includes("behance") && !selectedProject.link?.includes("dribbble")) ? (
-                    <a
-                      href={selectedProject.behanceLink || selectedProject.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="omori-btn-black"
-                    >
-                      <span className="retro-icon-frame blue">
-                        <BehanceIcon />
-                      </span>
-                      <span>BEHANCE CASE STUDY</span>
-                    </a>
-                  ) : null}
-
-                  {selectedProject.mediumLink ? (
-                    <a
-                      href={selectedProject.mediumLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="omori-btn-white"
-                    >
-                      <span className="retro-icon-frame medium">
-                        <MediumIcon />
-                      </span>
-                      <span>MEDIUM CASE STUDY</span>
-                    </a>
-                  ) : null}
-
-                  {selectedProject.demo && !selectedProject.demo.includes("behance") && !selectedProject.demo.includes("medium") && !selectedProject.demo.includes("dribbble") ? (
-                    <a
-                      href={selectedProject.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="omori-btn-white"
-                    >
-                      <span className="retro-icon-frame green">
-                        <OpenInNewRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                      </span>
-                      <span>
-                        {selectedProject.demo.includes("framer.website")
-                          ? "LIVE FRAMER SITE"
-                          : "VISIT LIVE WEBSITE"}
-                      </span>
-                    </a>
-                  ) : null}
-                </>
-              )}
-            </div>
+                  <span>{cat.label}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
-      )}
+
+        {filteredProjects.length === 0 ? (
+          <div className="archive-empty-state">
+            <p>No projects found for this category filter.</p>
+          </div>
+        ) : (
+          years.map((year) => {
+            const yearProjects = filteredProjects.filter((p) => p.year === year);
+            return (
+              <div key={year} className="archive-year-group">
+                <div className="archive-year-header">
+                  <h2 className="archive-year-title">PROJECTS FROM {year}</h2>
+                  <div className="archive-year-line" />
+                </div>
+
+                <div className="all-projects-grid">
+                  {yearProjects.map((project, index) => (
+                    <FadeInSection key={project.id} delay={`${(index + 1) * 80}ms`}>
+                      <div className="archive-card">
+                        <div className="archive-card-image-wrap">
+                          <img src={project.image} alt={project.title} className="archive-card-img" />
+                          {project.inDevelopment && <ConstructionOverlay />}
+                          {project.inDevelopment ? (
+                            <span className="archive-card-year dev-badge">
+                              IN DEVELOPMENT
+                            </span>
+                          ) : (
+                            <span className="archive-card-year">{project.year}</span>
+                          )}
+                        </div>
+                        <div className="archive-card-body">
+                          <span className="archive-card-category">{project.categoryLabel}</span>
+                          <h2 className="archive-card-title">{project.title}</h2>
+                          <p className="archive-card-desc">{project.desc}</p>
+                          
+                          <div className="omori-tech-pills-row archive-pills">
+                            {project.tech.map((t, tIdx) => (
+                              <span key={tIdx} className="omori-tech-pill">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+
+                          <div className="archive-card-actions">
+                            {project.inDevelopment ? (
+                              <span className="omori-btn-white" style={{ cursor: "default" }}>
+                                <span className="retro-icon-frame amber">
+                                  <RetroPixelToolsIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                                </span>
+                                <span>IN DEVELOPMENT</span>
+                              </span>
+                            ) : (
+                              <>
+                                {(project.dribbbleLink || project.link?.includes("dribbble")) && (
+                                  <a
+                                    href={project.dribbbleLink || project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="omori-btn-black"
+                                  >
+                                    <span className="retro-icon-frame dribbble">
+                                      <DribbbleIcon />
+                                    </span>
+                                    <span>DRIBBBLE SHOT</span>
+                                  </a>
+                                )}
+
+                                {(project.behanceLink || (project.link?.includes("behance") && !project.link?.includes("dribbble"))) && (
+                                  <a
+                                    href={project.behanceLink || project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="omori-btn-black"
+                                  >
+                                    <span className="retro-icon-frame blue">
+                                      <BehanceIcon />
+                                    </span>
+                                    <span>BEHANCE CASE STUDY</span>
+                                  </a>
+                                )}
+
+                                {project.mediumLink && (
+                                  <a
+                                    href={project.mediumLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="omori-btn-white"
+                                  >
+                                    <span className="retro-icon-frame medium">
+                                      <MediumIcon />
+                                    </span>
+                                    <span>MEDIUM CASE STUDY</span>
+                                  </a>
+                                )}
+
+                                {project.demo && !project.demo.includes("behance") && !project.demo.includes("medium") && !project.demo.includes("dribbble") && (
+                                  <a
+                                    href={project.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="omori-btn-white"
+                                  >
+                                    <span className="retro-icon-frame green">
+                                      <OpenInNewRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                                    </span>
+                                    <span>
+                                      {project.demo.includes("framer.website")
+                                        ? "LIVE FRAMER SITE"
+                                        : "VISIT LIVE WEBSITE"}
+                                    </span>
+                                  </a>
+                                )}
+
+                                {project.link?.includes("linkedin") && !project.behanceLink && !project.dribbbleLink && (
+                                  <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="omori-btn-black"
+                                  >
+                                    <span className="retro-icon-frame linkedin">
+                                      <LinkedInIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                                    </span>
+                                    <span>LINKEDIN CASE STUDY</span>
+                                  </a>
+                                )}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </FadeInSection>
+                  ))}
+                </div>
+              </div>
+            );
+          })
+        )}
+
+        {/* Bottom Back Button Bar */}
+        <div className="all-projects-bottom-nav">
+          <Link to="/" className="omori-back-btn">
+            <span className="retro-icon-frame blue">
+              <ArrowBackRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>BACK TO HOME</span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Projects;
+export default AllProjects;

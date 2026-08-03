@@ -1,44 +1,76 @@
 import React, { useState, useRef } from "react";
 import "../styles/HeroVisual.css";
 import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded";
-import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import PaletteRoundedIcon from "@mui/icons-material/PaletteRounded";
+import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
+
+const heroProjects = [
+  {
+    id: "aether",
+    name: "Aether Analytics SaaS Platform & Ad Campaign",
+    tag: "Dark Theme SaaS & AI Telemetry UX",
+    metric: "+34% Active User Growth",
+    secondaryMetric: "Behance & Medium Featured",
+    badge: "AETHER ANALYTICS",
+    image: "/assets/aether_analytics.jpg",
+    layers: ["Dark UI Trust Architecture", "Active Telemetry Graphs", "Database AI Hooks", "Behance & Medium Study"],
+    colors: [
+      { hex: "#0B0F19", label: "OBSIDIAN DARK", textLight: true },
+      { hex: "#00F5A0", label: "NEON MINT", textLight: false },
+      { hex: "#6366F1", label: "CYBER INDIGO", textLight: true },
+      { hex: "#F9FAFB", label: "PURE WHITE", textLight: false },
+    ],
+    contrast: "18.5:1 AAA Contrast Ratio (Dark Mode Pass)",
+    fontHeader: "Inter & JetBrains Mono",
+    fontBody: "Plus Jakarta Sans",
+  },
+  {
+    id: "logistics-command",
+    name: "Logistics Command - 3 AM Alert Triage",
+    tag: "Enterprise Exception Management",
+    metric: "-40% Exception Triage Time",
+    secondaryMetric: "Medium Featured Study",
+    badge: "LOGISTICS COMMAND",
+    image: "/assets/logistics_command.jpg",
+    layers: ["Route Deviation Triage", "3 AM Alert Matrix", "Vehicle Telemetry Drawer", "Behance & Medium Study"],
+    colors: [
+      { hex: "#111827", label: "CHARCOAL DARK", textLight: true },
+      { hex: "#EF4444", label: "ALERT CRITICAL RED", textLight: true },
+      { hex: "#F59E0B", label: "WARNING AMBER", textLight: false },
+      { hex: "#38BDF8", label: "TELEMETRY CYAN", textLight: false },
+    ],
+    contrast: "16.8:1 AAA Contrast Ratio (High Stress Pass)",
+    fontHeader: "Space Mono & Inter",
+    fontBody: "System Sans",
+  },
+  {
+    id: "acadintern",
+    name: "AcadIntern Discovery Portal",
+    tag: "15+ Figma Screens & Research",
+    metric: "Zero Critical UX Bugs",
+    secondaryMetric: "10+ Usability Tests",
+    badge: "ACADINTERN",
+    image: "/assets/acadintern.png",
+    layers: ["Search Filters UI", "Internship Cards", "Student Profile Flow", "Onboarding Wizard"],
+    colors: [
+      { hex: "#2563EB", label: "ACADEMY BLUE", textLight: true },
+      { hex: "#8B5CF6", label: "DISCOVERY PURPLE", textLight: true },
+      { hex: "#FFFFFF", label: "CLEAN CANVAS", textLight: false },
+      { hex: "#0F172A", label: "DEEP TITANIUM", textLight: true },
+    ],
+    contrast: "17.2:1 AAA Contrast Ratio (Usability Tested)",
+    fontHeader: "Plus Jakarta Sans",
+    fontBody: "Outfit & Inter",
+  },
+];
 
 const HeroVisual = () => {
-  const [activeFrame, setActiveFrame] = useState(0);
+  const [studioMode, setStudioMode] = useState("canvas"); // "canvas" or "lab"
+  const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const containerRef = useRef(null);
 
-  const projectFrames = [
-    {
-      id: "flow",
-      name: "Flow B2B Logistics Platform",
-      tag: "Figma Design System",
-      metric: "+35% Engagement Lift",
-      secondaryMetric: "-25% Task Time",
-      color: "#00E5FF",
-      layers: ["Header Navigation", "Shipment Map UI", "Form Validation Matrix", "WCAG 2.1 AA Tokens"],
-    },
-    {
-      id: "acadintern",
-      name: "AcadIntern Discovery Platform",
-      tag: "15+ Figma Screens & Research",
-      metric: "Zero Critical UX Bugs",
-      secondaryMetric: "10+ Usability Tests",
-      color: "#A259FF",
-      layers: ["Search Filters UI", "Internship Cards", "Student Profile Flow", "Onboarding Wizard"],
-    },
-    {
-      id: "trekzy",
-      name: "Trekzy Travel SaaS",
-      tag: "Mobile-First SaaS Design",
-      metric: "+20% Usability Score",
-      secondaryMetric: "Full Journey Mapping",
-      color: "#00E676",
-      layers: ["Mobile Itinerary Builder", "Flight Booking UI", "Interactive Map", "Design Tokens"],
-    },
-  ];
-
-  const currentFrame = projectFrames[activeFrame];
+  const currentProject = heroProjects[activeProjectIdx];
 
   const handleMouseMove = (e) => {
     if (!containerRef.current) return;
@@ -56,102 +88,115 @@ const HeroVisual = () => {
   };
 
   return (
-    <div className="hero-figma-container">
-      <div className="figma-window-frame">
-        {/* Window Topbar */}
-        <div className="figma-topbar">
-          <div className="window-controls">
-            <span className="dot red" />
-            <span className="dot yellow" />
-            <span className="dot green" />
-          </div>
-          <div className="figma-file-info">
-            <DesignServicesRoundedIcon className="figma-icon" />
-            <span className="file-name">Sri_Sakthi_UI_UX_Portfolio.fig</span>
-          </div>
-          <div className="figma-live-pill">
-            <span className="pulse-dot" />
-            <span>Live Canvas</span>
-          </div>
+    <div className="hero-studio-window">
+      {/* Studio Window Top Header */}
+      <div className="studio-topbar">
+        <div className="window-dots">
+          <span className="dot red" />
+          <span className="dot yellow" />
+          <span className="dot green" />
         </div>
-
-        {/* Project Selector Tabs */}
-        <div className="figma-project-tabs">
-          {projectFrames.map((frame, idx) => (
-            <button
-              key={frame.id}
-              className={`project-tab-btn ${activeFrame === idx ? "active" : ""}`}
-              onClick={() => setActiveFrame(idx)}
-              style={{
-                borderColor: activeFrame === idx ? frame.color : "transparent",
-              }}
-            >
-              <span className="tab-indicator" style={{ background: frame.color }} />
-              {frame.name.split(" ")[0]} Project
-            </button>
-          ))}
+        <div className="studio-title-badge">
+          <span className="retro-icon-frame coral" style={{ width: 18, height: 18, fontSize: 8, marginRight: 4 }}>
+            <DesignServicesRoundedIcon style={{ fontSize: 11, color: "#FFFFFF" }} />
+          </span>
+          <span>SRI_SAKTHI_DESIGN_STUDIO.EXE</span>
         </div>
+        <div className="studio-mode-switcher">
+          <button
+            className={studioMode === "canvas" ? "omori-btn-black" : "omori-btn-white"}
+            onClick={() => setStudioMode("canvas")}
+          >
+            <span className="retro-icon-frame purple">
+              <AutoAwesomeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>CASE STUDY CANVAS</span>
+          </button>
+          <button
+            className={studioMode === "lab" ? "omori-btn-black" : "omori-btn-white"}
+            onClick={() => setStudioMode("lab")}
+          >
+            <span className="retro-icon-frame emerald">
+              <PaletteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>DESIGN SYSTEM LAB</span>
+          </button>
+        </div>
+      </div>
 
-        {/* Main Canvas Grid Layout */}
-        <div className="figma-canvas-grid">
-          {/* Left Layers Panel */}
-          <div className="figma-layers-panel">
-            <div className="panel-heading">
-              <span>LAYERS</span>
-              <AutoAwesomeRoundedIcon style={{ fontSize: 12, color: currentFrame.color }} />
-            </div>
-            <div className="layers-list">
-              {currentFrame.layers.map((layer, lIdx) => (
-                <div key={lIdx} className="layer-item">
-                  <span className="layer-diamond" style={{ color: currentFrame.color }}>❖</span>
-                  <span>{layer}</span>
-                </div>
-              ))}
-            </div>
+      {/* Mode A: Case Study Canvas */}
+      {studioMode === "canvas" && (
+        <div className="studio-canvas-layout">
+          {/* Project Selector Bar */}
+          <div className="studio-project-bar">
+            {heroProjects.map((p, idx) => (
+              <button
+                key={p.id}
+                className={`project-tab-btn ${activeProjectIdx === idx ? "active" : ""}`}
+                onClick={() => setActiveProjectIdx(idx)}
+              >
+                {p.badge}
+              </button>
+            ))}
           </div>
 
-          {/* Center Interactive Canvas Stage (Matching Image 2) */}
+          {/* Canvas Main Area */}
           <div
             ref={containerRef}
-            className="figma-stage-canvas"
+            className="studio-stage-area"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="grid-overlay" />
-
-            {/* Figma Preview Card Frame */}
-            <div
-              className="canvas-frame-card"
-              style={{
-                borderColor: currentFrame.color,
-                boxShadow: `0 0 25px ${currentFrame.color}25, 0 12px 35px rgba(0,0,0,0.5)`,
-              }}
-            >
-              <div className="frame-card-badge" style={{ background: currentFrame.color }}>
-                {currentFrame.tag}
+            <div className="stage-card-frame">
+              <div className="stage-header-row">
+                <span className="stage-tag">{currentProject.tag}</span>
+                <span className="stage-metric">
+                  <span className="retro-icon-frame emerald" style={{ width: 18, height: 18, fontSize: 8, marginRight: 6 }}>
+                    <CheckCircleRoundedIcon style={{ fontSize: 11, color: "#FFFFFF" }} />
+                  </span>
+                  {currentProject.metric}
+                </span>
               </div>
-              <h4 className="frame-card-title">{currentFrame.name}</h4>
+              <h3 className="stage-title">{currentProject.name}</h3>
 
-              <div className="frame-metrics-row">
-                <div className="metric-badge" style={{ borderColor: currentFrame.color, color: currentFrame.color, background: `${currentFrame.color}15` }}>
-                  <CheckCircleRoundedIcon style={{ fontSize: 13 }} />
-                  <span>{currentFrame.metric}</span>
-                </div>
-                <div className="metric-badge secondary">
-                  <span>{currentFrame.secondaryMetric}</span>
-                </div>
+              {/* High-res Image Screen */}
+              <div className="stage-screen-box">
+                <img src={currentProject.image} alt={currentProject.name} />
               </div>
 
-              <div className="skeleton-bar" style={{ margin: "12px 0" }} />
+              {/* Layers Stack Row */}
+              <div className="stage-layers-row">
+                <span className="layers-label">LAYERS:</span>
+                {currentProject.layers.map((l, lIdx) => (
+                  <span key={lIdx} className="layer-chip">
+                    ◆ {l}
+                  </span>
+                ))}
+              </div>
 
-              <div className="skeleton-row">
-                <div className="skeleton-chip" />
-                <div className="skeleton-chip" />
-                <div className="skeleton-chip active" style={{ borderColor: currentFrame.color, background: `${currentFrame.color}20` }} />
+              {/* Color Swatches Design System Bar */}
+              <div className="stage-colors-row">
+                <span className="layers-label">COLOR TOKENS:</span>
+                <div className="project-color-swatches-inline">
+                  {currentProject.colors.map((c, cIdx) => (
+                    <div
+                      key={cIdx}
+                      className="inline-color-chip"
+                      style={{
+                        background: c.hex,
+                        color: c.textLight ? "#FFFFFF" : "#000000",
+                        border: c.hex.toLowerCase() === "#ffffff" ? "1.5px solid #000000" : "1.5px solid #000000",
+                      }}
+                    >
+                      <span className="color-chip-hex">{c.hex}</span>
+                      <span className="color-chip-label">{c.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Dynamic Figma Mouse Cursor Follower */}
+            {/* Dynamic Figma Live Cursor Follower */}
             <div
               className="figma-live-cursor"
               style={{
@@ -162,16 +207,130 @@ const HeroVisual = () => {
                 pointerEvents: "none",
               }}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill={currentFrame.color} stroke="#0B0F19" strokeWidth="2" />
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#000000" stroke="#FFFFFF" strokeWidth="2" />
               </svg>
-              <span className="live-cursor-tag" style={{ background: currentFrame.color }}>
-                Sri Sakthi
+              <span className="live-cursor-tag">
+                Sri Sakthi (UI/UX Designer)
               </span>
             </div>
           </div>
         </div>
-      </div>
+      )}
+
+      {/* Mode B: Design System Lab */}
+      {studioMode === "lab" && (
+        <div className="studio-lab-layout">
+          {/* Project Selector for Design System Lab */}
+          <div className="studio-project-bar" style={{ marginBottom: 18, borderBottom: "2px solid #000000" }}>
+            {heroProjects.map((p, idx) => (
+              <button
+                key={p.id}
+                className={`project-tab-btn ${activeProjectIdx === idx ? "active" : ""}`}
+                onClick={() => setActiveProjectIdx(idx)}
+              >
+                {p.badge}
+              </button>
+            ))}
+          </div>
+
+          <div className="lab-grid">
+            {/* Swatches Column */}
+            <div className="lab-card">
+              <div className="lab-card-title">
+                COLOR TOKENS & CONTRAST — {currentProject.badge}
+              </div>
+              <div className="swatch-grid">
+                {currentProject.colors.map((c, cIdx) => (
+                  <div
+                    key={cIdx}
+                    className="swatch-box"
+                    style={{
+                      background: c.hex,
+                      color: c.textLight ? "#FFFFFF" : "#000000",
+                      border: "1.5px solid #000000",
+                    }}
+                  >
+                    <span>{c.hex}</span>
+                    <small>{c.label}</small>
+                  </div>
+                ))}
+              </div>
+              <div className="contrast-badge">
+                <span>WCAG 2.1 AA: {currentProject.contrast}</span>
+              </div>
+            </div>
+
+            {/* Component State Matrix Column */}
+            <div className="lab-card">
+              <div className="lab-card-title">COMPONENT STATE MATRIX</div>
+              <div className="states-column">
+                <div className="state-item">
+                  <span className="state-label">PRIMARY ACTION:</span>
+                  <div
+                    className="mock-btn default"
+                    style={{
+                      background: currentProject.colors[0].hex,
+                      color: currentProject.colors[0].textLight ? "#FFFFFF" : "#000000",
+                    }}
+                  >
+                    EXPLORE CASE STUDY
+                  </div>
+                </div>
+                <div className="state-item">
+                  <span className="state-label">ACCENT BADGE:</span>
+                  <div
+                    className="mock-btn hover"
+                    style={{
+                      background: currentProject.colors[1].hex,
+                      color: currentProject.colors[1].textLight ? "#FFFFFF" : "#000000",
+                    }}
+                  >
+                    {currentProject.metric} ➔
+                  </div>
+                </div>
+                <div className="state-item">
+                  <span className="state-label">SURFACE CARD:</span>
+                  <div
+                    className="mock-btn active"
+                    style={{
+                      background: currentProject.colors[2].hex,
+                      color: currentProject.colors[2].textLight ? "#FFFFFF" : "#000000",
+                    }}
+                  >
+                    {currentProject.badge} COMPONENT
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Typography Matrix Column */}
+            <div className="lab-card">
+              <div className="lab-card-title">TYPOGRAPHY HIERARCHY</div>
+              <div className="typo-list">
+                <div className="typo-item">
+                  <span className="typo-name">HEADER SYSTEM</span>
+                  <span className="typo-sample pixel" style={{ fontSize: 13 }}>
+                    {currentProject.fontHeader}
+                  </span>
+                </div>
+                <div className="typo-item">
+                  <span className="typo-name">BODY SYSTEM</span>
+                  <span className="typo-sample mono" style={{ fontSize: 12 }}>
+                    {currentProject.fontBody}
+                  </span>
+                </div>
+                <div className="typo-item">
+                  <span className="typo-name">DESIGN TAG</span>
+                  <span className="typo-sample body" style={{ fontSize: 12 }}>
+                    {currentProject.tag}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
