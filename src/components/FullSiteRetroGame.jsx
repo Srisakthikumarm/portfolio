@@ -431,8 +431,10 @@ export default function FullSiteRetroGame({ active, musicState }) {
       if (e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyW") gs.keys.fire = false;
     };
 
-    // Mouse / Touch click handler to fire laser anywhere on screen
+    // Mouse / Touch click handler to fire laser anywhere on screen (Desktop Only)
     const handleMouseDown = (e) => {
+      const isMobile = window.innerWidth <= 900;
+      if (isMobile) return;
       if (e.target && (e.target.closest("button") || e.target.closest("a") || e.target.closest("input"))) return;
       fireLaser();
     };
@@ -541,7 +543,7 @@ export default function FullSiteRetroGame({ active, musicState }) {
           gs.lasers.splice(idx, 1);
           return;
         }
-        ctx.fillStyle = gs.tripleTimer > 0 ? "#0055FF" : "#000000";
+        ctx.fillStyle = gs.tripleTimer > 0 ? "#10B981" : "#0055FF";
         ctx.fillRect(lz.x - 2, lz.y, 4, 14);
       });
 
