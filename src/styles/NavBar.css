@@ -180,7 +180,7 @@
   .nav-mobile-right-actions {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 24px;
     margin-left: auto;
   }
 
@@ -192,6 +192,7 @@
     background: #FFFFFF !important;
     border: 2.5px solid #000000 !important;
     box-shadow: 3px 3px 0px #000000 !important;
+    flex-shrink: 0 !important;
   }
 
   .navbar-collapse .nav-music-player-wrap {
