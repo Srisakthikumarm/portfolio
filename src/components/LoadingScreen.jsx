@@ -80,10 +80,10 @@ export default function LoadingScreen({ onComplete }) {
             className="cylinder-rotating-line"
             style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", color: "#000000", fontWeight: "900", textTransform: "uppercase" }}
           >
-            <span className={`retro-icon-frame ${currentInstruction.colorClass}`} style={{ width: 18, height: 18 }}>
+            <span className={`retro-icon-frame ${currentInstruction.colorClass}`} style={{ width: 18, height: 18, flexShrink: 0 }}>
               {currentInstruction.icon}
             </span>
-            <span>{currentInstruction.text}</span>
+            <span style={{ whiteSpace: "nowrap" }}>{currentInstruction.text}</span>
           </div>
         </div>
 

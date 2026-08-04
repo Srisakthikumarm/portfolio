@@ -293,9 +293,9 @@
 
 @media only screen and (max-width: 768px) {
   .fullsite-stage-banner {
-    top: 0 !important;
-    bottom: 0 !important;
-    margin: auto !important;
+    top: 175px !important;
+    bottom: auto !important;
+    margin: 0 !important;
   }
 }
 
