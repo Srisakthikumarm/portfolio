@@ -1177,32 +1177,36 @@ export default function FullSiteRetroGame({ active, musicState }) {
 
       {/* Mobile Touch Controllers */}
       <div className="fullsite-retro-controls">
-        <button
-          className="retro-touch-btn left"
-          onTouchStart={() => (gameStateRef.current.touchDir = -1)}
-          onTouchEnd={() => (gameStateRef.current.touchDir = 0)}
-          onMouseDown={() => (gameStateRef.current.touchDir = -1)}
-          onMouseUp={() => (gameStateRef.current.touchDir = 0)}
-        >
-          ◄
-        </button>
+        <div className="retro-controls-left">
+          <button
+            className="retro-touch-btn left"
+            onTouchStart={() => (gameStateRef.current.touchDir = -1)}
+            onTouchEnd={() => (gameStateRef.current.touchDir = 0)}
+            onMouseDown={() => (gameStateRef.current.touchDir = -1)}
+            onMouseUp={() => (gameStateRef.current.touchDir = 0)}
+          >
+            ◄
+          </button>
 
-        <button className="retro-touch-btn fire" onClick={fireLaser}>
-          <span className="retro-icon-frame coral" style={{ width: 18, height: 18, marginRight: 6 }}>
-            <WhatshotRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
-          </span>
-          <span>FIRE</span>
-        </button>
+          <button
+            className="retro-touch-btn right"
+            onTouchStart={() => (gameStateRef.current.touchDir = 1)}
+            onTouchEnd={() => (gameStateRef.current.touchDir = 0)}
+            onMouseDown={() => (gameStateRef.current.touchDir = 1)}
+            onMouseUp={() => (gameStateRef.current.touchDir = 0)}
+          >
+            ►
+          </button>
+        </div>
 
-        <button
-          className="retro-touch-btn right"
-          onTouchStart={() => (gameStateRef.current.touchDir = 1)}
-          onTouchEnd={() => (gameStateRef.current.touchDir = 0)}
-          onMouseDown={() => (gameStateRef.current.touchDir = 1)}
-          onMouseUp={() => (gameStateRef.current.touchDir = 0)}
-        >
-          ►
-        </button>
+        <div className="retro-controls-right">
+          <button className="retro-touch-btn fire" onClick={fireLaser}>
+            <span className="retro-icon-frame coral" style={{ width: 18, height: 18, marginRight: 6 }}>
+              <WhatshotRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
+            </span>
+            <span>FIRE</span>
+          </button>
+        </div>
       </div>
     </>
   );
