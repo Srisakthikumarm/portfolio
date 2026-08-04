@@ -17,6 +17,13 @@
   pointer-events: all;
 }
 
+@media only screen and (max-width: 991px) {
+  .game-toggle-fixed {
+    top: 72px;
+    left: 6vw;
+  }
+}
+
 .game-toggle-row {
   display: flex;
   align-items: center;
@@ -42,6 +49,14 @@
   cursor: pointer;
   box-shadow: 3px 3px 0px #000000;
   transition: all 0.2s ease;
+}
+
+@media only screen and (max-width: 991px) {
+  .game-toggle-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    gap: 6px;
+  }
 }
 
 @media (hover: hover) {
@@ -104,6 +119,14 @@
   outline: none !important;
   appearance: none !important;
   -webkit-appearance: none !important;
+}
+
+@media only screen and (max-width: 991px) {
+  .game-info-btn {
+    width: 25px !important;
+    height: 25px !important;
+    font-size: 12px !important;
+  }
 }
 
 @media (hover: hover) {

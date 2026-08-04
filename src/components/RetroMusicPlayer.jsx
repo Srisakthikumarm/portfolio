@@ -451,7 +451,7 @@ const RetroMusicPlayer = ({
         >
           <span className="pulse-dot" />
           <span className="desktop-only-text">CLICK ANYWHERE TO ACTIVATE RETRO AUDIO</span>
-          <span className="mobile-only-text">TAP TO PLAY MUSIC 🔊</span>
+          <span className="mobile-only-text">PLAY MUSIC 🔊</span>
         </div>
       )}
     </div>

@@ -37,9 +37,6 @@
 }
 
 .App {
-  font-family: "NTR";
-  background-color: var(--navy);
-  color: var(--lightest-slate);
   display: flex;
   flex-direction: column;
   min-height: 100vh;

@@ -127,9 +127,12 @@
   border: 2px solid #000000 !important;
   box-shadow: 3px 3px 0px #000000 !important;
   border-radius: 0px !important;
-  padding: 6px 10px !important;
-  min-height: 40px !important;
+  padding: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
   min-width: 40px !important;
+  min-height: 40px !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
@@ -177,7 +180,7 @@
   .nav-mobile-right-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
     margin-left: auto;
   }
 
@@ -255,5 +258,22 @@
     background: #FFFFFF !important;
     color: #000000 !important;
     box-shadow: 3px 3px 0px #000000 !important;
+  }
+}
+
+/* Super narrow screens (e.g. iPhone SE, Galaxy Fold front screen) */
+@media only screen and (max-width: 390px) {
+  .navbar-brand {
+    font-size: 13px !important;
+    gap: 8px !important;
+  }
+  
+  .nav-brand-logo {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-mobile-right-actions {
+    gap: 12px;
   }
 }

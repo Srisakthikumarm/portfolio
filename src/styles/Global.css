@@ -34,18 +34,20 @@ html, body, button, input, select, textarea, p, span, div, h1, h2, h3, h4, h5, h
 html {
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   background-color: #FFFFFF;
   color: #000000;
   font-family: 'DotGothic16', 'VT323', sans-serif !important;
-  overflow-x: hidden;
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 img, video, canvas {
