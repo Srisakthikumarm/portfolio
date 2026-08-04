@@ -245,6 +245,7 @@
   }
 
   .audio-autoplay-hint-toast {
+    position: fixed !important;
     top: 72px !important;
     right: 6vw !important;
     font-size: 10px !important;
@@ -255,6 +256,7 @@
     align-items: center !important;
     max-width: none !important;
     box-shadow: 2.5px 2.5px 0px #F59E0B !important;
+    z-index: 9999999 !important;
   }
 }
 

@@ -161,16 +161,16 @@
 @media only screen and (max-width: 768px) {
   .robot-game-info {
     position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    animation: robot-info-in-mobile 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    top: calc(100% + 40px) !important;
+    left: calc(50vw - 14px) !important;
+    transform: translateX(-50%) !important;
+    animation: robot-info-in-absolute 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 }
 
-@keyframes robot-info-in-mobile {
-  from { opacity: 0; transform: translate(-50%, calc(-50% - 8px)) scale(0.96); }
-  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+@keyframes robot-info-in-absolute {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px) scale(0.96); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 }
 
 @keyframes robot-info-in {
@@ -291,13 +291,7 @@
   height: fit-content !important;
 }
 
-@media only screen and (max-width: 768px) {
-  .fullsite-stage-banner {
-    top: 260px !important;
-    bottom: auto !important;
-    margin: 0 !important;
-  }
-}
+
 
 .stage-banner-box {
   background: #FFFFFF !important;
@@ -339,7 +333,7 @@
   }
 
   .fullsite-stage-banner {
-    top: 175px !important;
+    top: 220px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: calc(100vw - 32px) !important;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import VolumeUpRoundedIcon from "@mui/icons-material/VolumeUpRounded";
 import VolumeOffRoundedIcon from "@mui/icons-material/VolumeOffRounded";
 import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
@@ -436,7 +437,7 @@ const RetroMusicPlayer = ({
       )}
 
       {/* Floating Autoplay Hint Notification Toast (Appears when browser blocks autoplay until first click) */}
-      {needUserInteraction && !isMuted && isPlaying && !gameActive && (
+      {needUserInteraction && !isMuted && isPlaying && !gameActive && createPortal(
         <div
           className="audio-autoplay-hint-toast"
           onClick={(e) => {
@@ -452,7 +453,8 @@ const RetroMusicPlayer = ({
           <span className="pulse-dot" />
           <span className="desktop-only-text">CLICK ANYWHERE TO ACTIVATE RETRO AUDIO</span>
           <span className="mobile-only-text">PLAY MUSIC 🔊</span>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
