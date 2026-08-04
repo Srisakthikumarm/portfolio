@@ -291,6 +291,14 @@
   height: fit-content !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .fullsite-stage-banner {
+    top: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+  }
+}
+
 .stage-banner-box {
   background: #FFFFFF !important;
   border: 2.5px solid #000000 !important;
@@ -399,6 +407,8 @@
     justify-content: flex-start !important;
     width: auto !important;
     z-index: 999999 !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
   }
 
   .game-toggle-btn {

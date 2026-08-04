@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
+import ComputerRoundedIcon from "@mui/icons-material/ComputerRounded";
+import MusicNoteRoundedIcon from "@mui/icons-material/MusicNoteRounded";
+import VideogameAssetRoundedIcon from "@mui/icons-material/VideogameAssetRounded";
+import ColorLensRoundedIcon from "@mui/icons-material/ColorLensRounded";
+import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import "../styles/LoadingScreen.css";
 
 export default function LoadingScreen({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
-  // Boot & Game instructions that rotate 1-by-1 like a 3D cylinder
   const bootInstructions = [
-    { pct: 0, text: "> SYSTEM BOOT SEQUENCE: SRI_SAKTHI_OS.EXE v2.0.26", color: "#60A5FA" },
-    { pct: 20, text: "♪ RETRO BGM AUDIO: Playing (Press [M] or Top Bar to MUTE)", color: "#10B981" },
-    { pct: 45, text: "🎮 CYBER ARCADE: Active (WASD / Arrow Keys Move • SPACE Fire)", color: "#F59E0B" },
-    { pct: 70, text: "⚡ DESIGN TOKENS: Calibrating WCAG 2.1 AA & UI Systems...", color: "#A855F7" },
-    { pct: 95, text: "> SYSTEM READY 100% — LAUNCHING PORTFOLIO...", color: "#22C55E" },
+    { pct: 0, text: "SYSTEM BOOT SEQUENCE: SRI_SAKTHI_OS.EXE", colorClass: "blue", icon: <ComputerRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 20, text: "RETRO BGM AUDIO: Press [M] or Top Bar to MUTE", colorClass: "green", icon: <MusicNoteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 45, text: "CYBER ARCADE: Arrow Keys Move • SPACE Fire", colorClass: "coral", icon: <VideogameAssetRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 70, text: "DESIGN TOKENS: Calibrating WCAG 2.1 AA...", colorClass: "purple", icon: <ColorLensRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 95, text: "SYSTEM READY 100% — LAUNCHING PORTFOLIO...", colorClass: "green", icon: <CheckCircleRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
   ];
 
   // Calculate current active single instruction index based on progress
@@ -74,9 +78,12 @@ export default function LoadingScreen({ onComplete }) {
           <div
             key={activeInstructionIndex}
             className="cylinder-rotating-line"
-            style={{ color: currentInstruction.color === "#10B981" ? "#059669" : currentInstruction.color === "#3B82F6" ? "#2563EB" : currentInstruction.color === "#F59E0B" ? "#D97706" : "#000000" }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", color: "#000000", fontWeight: "900", textTransform: "uppercase" }}
           >
-            {currentInstruction.text}
+            <span className={`retro-icon-frame ${currentInstruction.colorClass}`} style={{ width: 18, height: 18 }}>
+              {currentInstruction.icon}
+            </span>
+            <span>{currentInstruction.text}</span>
           </div>
         </div>
 
