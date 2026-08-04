@@ -295,6 +295,12 @@
   gap: 12px;
 }
 
+.omori-sub-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .omori-btn-black {
   display: inline-flex;
   align-items: center;

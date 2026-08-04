@@ -54,6 +54,7 @@ const allProjectsData = [
     image: "/assets/aether_ad_poster.jpg",
     link: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
     behanceLink: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
+    mediumLink: "https://medium.com/@srisakthikumar03/from-interface-to-feed-the-aether-analytics-social-campaign-case-study-4c3900febf9c",
     demo: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
   },
   {
