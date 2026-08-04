@@ -30,7 +30,7 @@ const SHIP_H = 28;
 
 const getShipY = (canvasHeight) => {
   const isMobile = window.innerWidth <= 900;
-  return isMobile ? canvasHeight - SHIP_H - 95 : canvasHeight - SHIP_H - 18;
+  return isMobile ? canvasHeight - SHIP_H - 160 : canvasHeight - SHIP_H - 18;
 };
 
 const SECTOR_STAGES = [
