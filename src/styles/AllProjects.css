@@ -323,6 +323,56 @@
   .archive-title {
     font-size: 36px !important;
   }
+
+  .archive-filter-switcher-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 18px !important;
+    padding-top: 14px !important;
+  }
+
+  .archive-filter-btn,
+  .archive-filter-switcher-bar .archive-filter-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .archive-card-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .archive-card-actions .omori-btn-black,
+  .archive-card-actions .omori-btn-white {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {

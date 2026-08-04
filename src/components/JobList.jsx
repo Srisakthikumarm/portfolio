@@ -6,7 +6,12 @@ import LaptopMacRoundedIcon from "@mui/icons-material/LaptopMacRounded";
 const experienceItems = [
   {
     id: "flow",
-    label: "FLOW LOGISTICS SOLUTION LLP",
+    label: (
+      <>
+        <span className="desktop-only-text">FLOW LOGISTICS SOLUTION LLP</span>
+        <span className="mobile-only-text">FLOW LOGISTICS</span>
+      </>
+    ),
     company: "Flow Logistics Solution LLP",
     jobTitle: "UI/UX Designer & UI Developer (AI Workflows) @",
     location: "Bengaluru, India",

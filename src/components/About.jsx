@@ -58,16 +58,18 @@ const PixelDissolveAvatar = ({ pixelSrc, realSrc, alt }) => {
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(!isHovered)}
     >
-      {/* 2nd Photo: Realistic Background Image */}
+      {/* Real Photo (Bottom Layer - Always Visible Underneath) */}
       <img src={realSrc} alt={alt} className="pixel-dissolve-real-bg" />
 
-      {/* 1st Photo: Pixel Art Foreground Image sliced into diagonal wave tiles */}
+      {/* 2-Way Staggered Pixel Tile Dissolve & Reassembly Grid */}
       <div className="pixel-grid-wrapper">
         {tiles.map((t, idx) => {
           const leftPct = (t.c / GRID_COLS) * 100;
           const topPct = (t.r / GRID_ROWS) * 100;
           const widthPct = (1 / GRID_COLS) * 100;
           const heightPct = (1 / GRID_ROWS) * 100;
+          const bgPosX = t.c > 0 ? (t.c / (GRID_COLS - 1)) * 100 : 0;
+          const bgPosY = t.r > 0 ? (t.r / (GRID_ROWS - 1)) * 100 : 0;
 
           return (
             <div
@@ -76,11 +78,11 @@ const PixelDissolveAvatar = ({ pixelSrc, realSrc, alt }) => {
               style={{
                 left: `${leftPct}%`,
                 top: `${topPct}%`,
-                width: `calc(${widthPct}% + 0.6px)`,
-                height: `calc(${heightPct}% + 0.6px)`,
+                width: `calc(${widthPct}% + 0.8px)`,
+                height: `calc(${heightPct}% + 0.8px)`,
                 backgroundImage: `url(${pixelSrc})`,
                 backgroundSize: `${GRID_COLS * 100}% ${GRID_ROWS * 100}%`,
-                backgroundPosition: `${(t.c / (GRID_COLS - 1)) * 100}% ${(t.r / (GRID_ROWS - 1)) * 100}%`,
+                backgroundPosition: `${bgPosX}% ${bgPosY}%`,
                 transitionDelay: isHovered ? `${t.delay}ms` : `${t.reverseDelay}ms`,
               }}
             />
@@ -121,31 +123,64 @@ const About = () => {
           <span className="section-number">01</span>
         </div>
 
-        <div className="omori-profile-overview-grid">
-          {/* Column 1: Left Tall Avatar Card (Pixel -> Real Photo Corner Dissolve Wave) */}
-          <div className="omori-avatar-card">
-            <div className="avatar-img-frame">
-              <PixelDissolveAvatar
-                pixelSrc="/assets/sri_pixel_profile.jpg"
-                realSrc="/assets/sri_real_profile.jpg"
-                alt="Sri Sakthi Kumar M"
-              />
-            </div>
-          </div>
-
-          {/* Column 2: Middle Column (About Me + Profile Details) */}
-          <div className="omori-overview-col">
-            {/* About Me Bio Card */}
-            <div className="omori-overview-card">
-              <div className="card-top-title">
-                <span className="retro-icon-frame purple">
-                  <DescriptionRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                </span>
-                <span>ABOUT ME</span>
+        <div className="bento-profile-container">
+          {/* Top Bento Row: Avatar Card (Left) + Spacious Bio Card (Right) */}
+          <div className="bento-top-row">
+            {/* Bento Box 1: Left Avatar Portrait Card */}
+            <div className="bento-card bento-avatar-card">
+              <div className="avatar-img-frame">
+                <PixelDissolveAvatar
+                  pixelSrc="/assets/sri_pixel_profile.jpg"
+                  realSrc="/assets/sri_real_profile.jpg"
+                  alt="Sri Sakthi Kumar M"
+                />
               </div>
+            </div>
+
+            {/* Bento Box 2: Right Spacious Bio Card */}
+            <div className="bento-card bento-bio-card">
+              <div className="bento-card-header">
+                <div className="card-top-title">
+                  <span className="retro-icon-frame purple">
+                    <DescriptionRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                  </span>
+                  <span>ABOUT ME</span>
+                </div>
+                <span className="bento-role-badge">UI/UX DESIGNER • PRODUCT DEVELOPER</span>
+              </div>
+
               <p className="bio-text-paragraph">
                 Hi, I&apos;m <strong>Sri Sakthi Kumar M</strong> — a <strong>UI/UX Designer, Product Designer, and UI Developer</strong> passionate about crafting smooth, interactive, and visually engaging web & mobile experiences. I enjoy blending user research and high-fidelity Figma prototyping to create scalable design systems and accessible interfaces.
               </p>
+
+              {/* Highlight Chips Row */}
+              <div className="bento-chips-row">
+                <span className="bento-chip">
+                  <span className="retro-icon-frame rose mini">
+                    <FavoriteRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                  </span>
+                  20+ FIGMA SCREENS
+                </span>
+                <span className="bento-chip">
+                  <span className="retro-icon-frame emerald mini">
+                    <AutoAwesomeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                  </span>
+                  +35% ENGAGEMENT LIFT
+                </span>
+                <span className="bento-chip">
+                  <span className="retro-icon-frame blue mini">
+                    <CodeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                  </span>
+                  100% WCAG 2.1 AA
+                </span>
+                <span className="bento-chip">
+                  <span className="retro-icon-frame amber mini">
+                    <BoltRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                  </span>
+                  B2B LOGISTICS SAAS
+                </span>
+              </div>
+
               <div className="card-bottom-icon-bar">
                 <div className="retro-icon-tooltip-wrap">
                   <span className="retro-icon-frame rose">
@@ -190,9 +225,12 @@ const About = () => {
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Profile Details Card */}
-            <div className="omori-overview-card">
+          {/* Bottom Bento Row: 3 Equal-Width Columns */}
+          <div className="bento-bottom-row">
+            {/* Bento Box 3: Profile Details Card */}
+            <div className="bento-card bento-details-card">
               <div className="card-top-title">
                 <span className="retro-icon-frame purple">
                   <BoltRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
@@ -228,12 +266,36 @@ const About = () => {
                 <span className="detail-subtext">Available for Remote & Onsite Roles</span>
               </div>
             </div>
-          </div>
 
-          {/* Column 3: Right Column (Tech Setup + Strengths) */}
-          <div className="omori-overview-col">
-            {/* Tech Setup Card */}
-            <div className="omori-overview-card">
+            {/* Bento Box 4: Core Strengths Card */}
+            <div className="bento-card bento-strengths-card">
+              <div className="card-top-title">
+                <span className="retro-icon-frame emerald">
+                  <FitnessCenterRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                </span>
+                <span>CORE STRENGTHS</span>
+              </div>
+
+              <div className="strengths-list">
+                {strengthsData.map((item, idx) => (
+                  <div key={idx} className="strength-item">
+                    <div className="strength-header">
+                      <span className="strength-name">{item.name}</span>
+                      <span className="strength-percent">{item.percent}%</span>
+                    </div>
+                    <div className="strength-track">
+                      <div
+                        className="strength-fill"
+                        style={{ width: `${item.percent}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bento Box 5: Tech Setup Card */}
+            <div className="bento-card bento-setup-card">
               <div className="card-top-title">
                 <span className="retro-icon-frame coral">
                   <HomeRepairServiceRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
@@ -247,7 +309,7 @@ const About = () => {
                     <LaptopMacRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
                   </span>
                   <div>
-                    <div className="setup-title">ASUS High-Perf Workstation</div>
+                    <div className="setup-title">ASUS Workstation</div>
                     <div className="setup-sub">Intel i7, 16GB RAM, Dedicated GPU</div>
                   </div>
                 </div>
@@ -281,33 +343,6 @@ const About = () => {
                     <div className="setup-sub">Color-calibrated UI previewing</div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Strengths Progress Bar Card */}
-            <div className="omori-overview-card">
-              <div className="card-top-title">
-                <span className="retro-icon-frame emerald">
-                  <FitnessCenterRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                </span>
-                <span>STRENGTHS</span>
-              </div>
-
-              <div className="strengths-list">
-                {strengthsData.map((item, idx) => (
-                  <div key={idx} className="strength-item">
-                    <div className="strength-header">
-                      <span className="strength-name">{item.name}</span>
-                      <span className="strength-percent">{item.percent}%</span>
-                    </div>
-                    <div className="strength-track">
-                      <div
-                        className="strength-fill"
-                        style={{ width: `${item.percent}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

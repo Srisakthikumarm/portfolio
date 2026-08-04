@@ -26,9 +26,91 @@
   }
 }
 
+@media (max-width: 768px) {
+  .omori-project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .omori-card-body {
+    padding: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .omori-proj-header-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .omori-proj-title {
+    flex: 1 !important;
+    min-width: 0 !important;
+    font-size: 15.5px !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+
+  .omori-proj-year {
+    flex-shrink: 0 !important;
+    font-size: 11px !important;
+    padding: 2px 6px !important;
+    margin-left: 4px !important;
+    max-height: 22px !important;
+  }
+
+  .omori-action-btn-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .omori-action-btn-row .primary-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .omori-sub-action-btns {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .omori-sub-action-btns .omori-btn-white {
+    flex: 1 !important;
+    min-width: 110px !important;
+    justify-content: center !important;
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+}
+
 @media (max-width: 480px) {
   #projects {
     padding: 40px 16px !important;
+  }
+  .omori-proj-desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+  .omori-proj-tags {
+    gap: 6px !important;
+  }
+  .omori-tag {
+    font-size: 9.5px !important;
+    padding: 3px 6px !important;
   }
   .omori-proj-img-wrap {
     height: 180px !important;
@@ -232,13 +314,6 @@
   transition: all 0.2s ease;
 }
 
-.omori-btn-black:hover {
-  background: #FFFFFF;
-  color: #000000;
-  box-shadow: 0px 0px 0px #000000;
-  transform: translate(2px, 2px);
-}
-
 .omori-btn-white {
   display: inline-flex;
   align-items: center;
@@ -263,11 +338,20 @@
   margin-right: 0 !important;
 }
 
-.omori-btn-white:hover {
-  background: #000000;
-  color: #FFFFFF;
-  box-shadow: 0px 0px 0px #000000;
-  transform: translate(2px, 2px);
+@media (hover: hover) {
+  .omori-btn-black:hover {
+    background: #FFFFFF;
+    color: #000000;
+    box-shadow: 0px 0px 0px #000000;
+    transform: translate(2px, 2px);
+  }
+
+  .omori-btn-white:hover {
+    background: #000000;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 0px #000000;
+    transform: translate(2px, 2px);
+  }
 }
 
 /* Bottom Centered View All Projects Button */
@@ -646,4 +730,35 @@
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 991px) {
+  .omori-modal-box .modal-actions-row,
+  .modal-actions-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    align-self: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .omori-modal-box .modal-actions-row .omori-btn-black,
+  .omori-modal-box .modal-actions-row .omori-btn-white,
+  .modal-actions-row .omori-btn-black,
+  .modal-actions-row .omori-btn-white {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
 }

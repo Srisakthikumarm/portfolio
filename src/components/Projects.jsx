@@ -389,78 +389,80 @@ const Projects = () => {
                 {/* Action Buttons Row */}
                 <div className="omori-action-btn-row" onClick={(e) => e.stopPropagation()}>
                   <button
-                    className="omori-btn-black"
+                    className="omori-btn-black primary-action-btn"
                     onClick={() => setSelectedProject(proj)}
                   >
                     <span>VIEW DETAILS</span>
                   </button>
 
-                  {proj.inDevelopment ? (
-                    <span className="omori-btn-white" style={{ cursor: "default" }}>
-                      <span className="retro-icon-frame amber">
-                        <RetroPixelToolsIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                  <div className="omori-sub-action-btns">
+                    {proj.inDevelopment ? (
+                      <span className="omori-btn-white" style={{ cursor: "default" }}>
+                        <span className="retro-icon-frame amber">
+                          <RetroPixelToolsIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                        </span>
+                        <span>IN DEVELOPMENT</span>
                       </span>
-                      <span>IN DEVELOPMENT</span>
-                    </span>
-                  ) : (
-                    <>
-                      {proj.dribbbleLink || proj.link?.includes("dribbble") ? (
-                        <a
-                          href={proj.dribbbleLink || proj.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame dribbble">
-                            <DribbbleIcon />
-                          </span>
-                          <span>DRIBBBLE</span>
-                        </a>
-                      ) : null}
+                    ) : (
+                      <>
+                        {proj.dribbbleLink || proj.link?.includes("dribbble") ? (
+                          <a
+                            href={proj.dribbbleLink || proj.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="omori-btn-white"
+                          >
+                            <span className="retro-icon-frame dribbble">
+                              <DribbbleIcon />
+                            </span>
+                            <span>DRIBBBLE</span>
+                          </a>
+                        ) : null}
 
-                      {proj.behanceLink || (proj.link?.includes("behance") && !proj.link?.includes("dribbble")) ? (
-                        <a
-                          href={proj.behanceLink || proj.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame blue">
-                            <BehanceIcon />
-                          </span>
-                          <span>BEHANCE</span>
-                        </a>
-                      ) : null}
+                        {proj.behanceLink || (proj.link?.includes("behance") && !proj.link?.includes("dribbble")) ? (
+                          <a
+                            href={proj.behanceLink || proj.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="omori-btn-white"
+                          >
+                            <span className="retro-icon-frame blue">
+                              <BehanceIcon />
+                            </span>
+                            <span>BEHANCE</span>
+                          </a>
+                        ) : null}
 
-                      {proj.mediumLink ? (
-                        <a
-                          href={proj.mediumLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame medium">
-                            <MediumIcon />
-                          </span>
-                          <span>MEDIUM</span>
-                        </a>
-                      ) : null}
+                        {proj.mediumLink ? (
+                          <a
+                            href={proj.mediumLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="omori-btn-white"
+                          >
+                            <span className="retro-icon-frame medium">
+                              <MediumIcon />
+                            </span>
+                            <span>MEDIUM</span>
+                          </a>
+                        ) : null}
 
-                      {proj.demo && !proj.demo.includes("behance") && !proj.demo.includes("medium") && !proj.demo.includes("dribbble") ? (
-                        <a
-                          href={proj.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="omori-btn-white"
-                        >
-                          <span className="retro-icon-frame green">
-                            <OpenInNewRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                          </span>
-                          <span>{proj.demo.includes("framer.website") ? "LIVE FRAMER" : "LIVE WEBSITE"}</span>
-                        </a>
-                      ) : null}
-                    </>
-                  )}
+                        {proj.demo && !proj.demo.includes("behance") && !proj.demo.includes("medium") && !proj.demo.includes("dribbble") ? (
+                          <a
+                            href={proj.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="omori-btn-white"
+                          >
+                            <span className="retro-icon-frame emerald">
+                              <LaunchRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
+                            </span>
+                            <span>LIVE DEMO</span>
+                          </a>
+                        ) : null}
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

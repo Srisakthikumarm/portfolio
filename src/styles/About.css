@@ -5,22 +5,50 @@
   padding: 80px 6vw;
 }
 
-/* 3-Column Profile Overview Grid with Pixel-Perfect Equal Column & Row Heights */
-.omori-profile-overview-grid {
-  display: grid;
-  grid-template-columns: 340px 1fr 1fr;
+/* Neo-Brutalist Bento Grid Profile Container */
+.bento-profile-container {
+  display: flex;
+  flex-direction: column;
   gap: 24px;
-  margin-top: 24px;
+  margin-top: 28px;
+  width: 100%;
+}
+
+/* Bento Top Row: 42% Avatar Card + 58% Spacious Bio Card */
+.bento-top-row {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
   align-items: stretch;
 }
 
-@media (max-width: 1000px) {
-  .omori-profile-overview-grid {
-    grid-template-columns: 1fr;
-  }
+/* Bento Bottom Row: 3 Equal Columns */
+.bento-bottom-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
 
-/* Continuous Floating Animation for Avatar Portrait Photo */
+/* General Bento Box Base Styling */
+.bento-card {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 6px 6px 0px #000000;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.bento-card:hover {
+  box-shadow: 8px 8px 0px #000000;
+  transform: translate(-2px, -2px);
+}
+
+/* Continuous Floating Animation for Avatar Portrait Photo Card */
 @keyframes continuousFloat {
   0% {
     transform: translateY(0px);
@@ -36,36 +64,85 @@
   }
 }
 
-/* Column 1: Left Avatar Portrait Card (Fills 100% Height & Floats Always) */
-.omori-avatar-card {
-  background: #FFFFFF;
-  border: 3px solid #000000;
-  box-shadow: 6px 6px 0px #000000;
+/* Bento Box 1: Left Avatar Portrait Card (Floats Continuously Up & Down) */
+.bento-avatar-card {
   padding: 12px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  animation: continuousFloat 4s ease-in-out infinite;
+  height: 520px;
+  animation: continuousFloat 4s ease-in-out infinite !important;
   will-change: transform, box-shadow;
-  transition: box-shadow 0.2s ease;
 }
 
-.omori-avatar-card:hover {
+.bento-avatar-card:hover {
   animation-play-state: paused;
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 6px 18px 0px #000000;
+  transform: translateY(-10px) scale(1.01) !important;
+  box-shadow: 6px 16px 0px #000000 !important;
+}
+
+/* Bento Box 2: Right Bio Card Header & Badges */
+.bento-bio-card {
+  height: 520px;
+  justify-content: space-between;
+}
+
+.bento-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.bento-role-badge {
+  font-family: 'DotGothic16', monospace;
+  font-size: 11px;
+  font-weight: 900;
+  color: #000000;
+  background: #F3F4F6;
+  border: 1.5px solid #000000;
+  padding: 3px 10px;
+  letter-spacing: 0.5px;
+}
+
+.bento-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.bento-chip {
+  font-family: 'DotGothic16', monospace;
+  font-size: 10.5px;
+  font-weight: 900;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1.5px solid #000000;
+  box-shadow: 2px 2px 0px #000000;
+  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.bento-chip:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #000000;
 }
 
 .avatar-img-frame {
   width: 100%;
   height: 100%;
-  min-height: 480px;
-  border: 2px solid #000000;
+  min-height: 100%;
+  flex: 1;
+  border: 2.5px solid #000000;
   overflow: hidden;
   position: relative;
   background: #F3F4F6;
-  flex-grow: 1;
   display: flex;
+  flex-direction: column;
 }
 
 /* Staggered Corner Pixel Dissolve Grid Styles */
@@ -73,22 +150,28 @@
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  min-height: 100%;
+  flex: 1;
   overflow: hidden;
   cursor: pointer;
   background: #0F172A;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Bottom Real Photo Layer (Always Visible Underneath) */
 .pixel-dissolve-real-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   z-index: 1;
+  filter: none !important;
 }
 
+/* 2-Way Pixel Tile Dissolve & Reassembly Grid Wrapper */
 .pixel-grid-wrapper {
   position: absolute;
   inset: 0;
@@ -96,8 +179,10 @@
   height: 100%;
   z-index: 2;
   pointer-events: none;
+  overflow: hidden;
 }
 
+/* Default un-hovered state: pixel tiles form the complete crystal clear pixel photo */
 .pixel-tile {
   position: absolute;
   background-repeat: no-repeat;
@@ -109,6 +194,7 @@
   backface-visibility: hidden;
 }
 
+/* On hover: top pixel photo tiles shatter & shrink away in a diagonal wave to reveal real photo */
 .pixel-dissolve-container.hovered .pixel-tile {
   transform: scale(0) rotate(45deg);
   opacity: 0;
@@ -128,7 +214,7 @@
   height: 22px;
   padding: 0 8px;
   border-radius: 4px;
-  z-index: 4;
+  z-index: 5;
   letter-spacing: 0.5px;
   display: inline-flex;
   align-items: center;
@@ -160,38 +246,47 @@
   font-size: 7px !important;
 }
 
-.omori-avatar-card:hover .hover-instruction-hint {
+.pixel-dissolve-container:hover .hover-instruction-hint,
+.bento-avatar-card:hover .hover-instruction-hint {
   background: rgba(217, 119, 6, 0.9);
   border-color: #FBBF24;
   color: #FFFFFF;
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
 
+/* Bottom Left Name Badge Button */
 .avatar-cat-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
   font-family: 'DotGothic16', monospace;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
-  color: #000000;
-  background: #FFFFFF;
-  border: 2px solid #000000;
-  box-shadow: 2px 2px 0px #000000;
-  padding: 4px 10px;
+  color: #000000 !important;
+  background: #FFFFFF !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+  padding: 5px 10px;
   text-transform: uppercase;
-  z-index: 4;
+  z-index: 10;
   transition: all 0.25s ease;
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .badge-text-pixel {
-  display: inline;
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #000000 !important;
 }
 
 .badge-text-real {
-  display: none;
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #D97706 !important;
+  gap: 4px;
 }
 
 .omori-avatar-card:hover .badge-text-pixel {
@@ -502,4 +597,67 @@
   height: 100%;
   background: #000000;
   transition: width 1s ease;
+}
+
+/* Mobile Responsiveness for Bento Profile Container */
+@media only screen and (max-width: 1024px) {
+  #about {
+    padding: 40px 16px !important;
+  }
+
+  .bento-top-row {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .bento-bottom-row {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .bento-avatar-card {
+    height: 440px !important;
+  }
+
+  .bento-bio-card {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 20px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .bento-bio-card .bento-chips-row,
+  .bento-chips-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    margin: 16px 0 !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .bento-bio-card .bento-chips-row .bento-chip,
+  .bento-chips-row .bento-chip,
+  .bento-chip {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: 3.5px 3.5px 0px #000000 !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    box-sizing: border-box !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin: 0 !important;
+  }
 }

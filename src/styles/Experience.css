@@ -29,44 +29,10 @@
   padding-bottom: 18px;
 }
 
-.exp-tab-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'DotGothic16', monospace;
-  font-size: 14px;
-  font-weight: 900;
-  color: #000000;
-  background: #FFFFFF;
-  border: 2.5px solid #000000;
-  box-shadow: 2.5px 2.5px 0px #000000;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-  white-space: nowrap;
+.exp-tab-switcher-bar .omori-btn-black,
+.exp-tab-switcher-bar .omori-btn-white {
+  font-size: 13px !important;
   letter-spacing: 0.5px;
-  transition: all 0.15s ease;
-}
-
-.exp-tab-btn .retro-icon-frame {
-  margin-right: 0 !important;
-}
-
-.exp-tab-btn.active {
-  background: #000000;
-  color: #FFFFFF;
-  box-shadow: 3px 3px 0px #000000;
-}
-
-.exp-tab-btn:hover:not(.active) {
-  background: #F3F4F6;
-  transform: translate(-1.5px, -1.5px);
-  box-shadow: 3.5px 3.5px 0px #000000;
-}
-
-.exp-tab-btn:active {
-  transform: translate(1.5px, 1.5px);
-  box-shadow: 1px 1px 0px #000000;
 }
 
 .exp-content-panel {
@@ -148,14 +114,56 @@
   }
 }
 
+.desktop-only-text {
+  display: inline;
+}
+
+.mobile-only-text {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .desktop-only-text {
+    display: none !important;
+  }
+
+  .mobile-only-text {
+    display: inline !important;
+  }
+  .exp-tab-switcher-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .exp-tab-switcher-bar .omori-btn-black,
+  .exp-tab-switcher-bar .omori-btn-white {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    height: auto !important;
+    min-height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #experience {
-    padding: 60px 16px 30px;
+    padding: 40px 16px 30px !important;
   }
 
   .experience-card-wrap {
     padding: 16px;
-    border-radius: 16px;
+    border-radius: 0px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .joblist-header-block {

@@ -278,3 +278,65 @@
   color: #000000;
   font-weight: bold;
 }
+
+/* Mobile Responsiveness for Education Section & Cards */
+@media (max-width: 768px) {
+  #education {
+    padding: 40px 16px !important;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .education-card {
+    padding: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .card-header-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .edu-badge {
+    font-size: 10px !important;
+    padding: 2px 6px !important;
+    flex-shrink: 0 !important;
+    margin-left: 4px !important;
+  }
+
+  .edu-title {
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+
+  .edu-institution {
+    font-size: 13.5px !important;
+    word-break: break-word !important;
+  }
+
+  .edu-meta {
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .edu-duration,
+  .edu-grade {
+    font-size: 11px !important;
+    padding: 2px 6px !important;
+  }
+
+  .edu-highlights li {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+}

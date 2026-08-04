@@ -8,7 +8,7 @@ const Experience = () => {
     <div id="experience">
       <FadeInSection>
         <div className="section-header">
-          <span className="section-number">03</span>
+          <span className="section-number">02</span>
           <span className="section-title">WORK EXPERIENCE</span>
         </div>
         <div className="experience-card-wrap">

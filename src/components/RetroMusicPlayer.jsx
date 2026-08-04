@@ -218,11 +218,12 @@ const RetroMusicPlayer = ({
               .catch(() => {
                 setNeedUserInteraction(true);
                 const handleGesture = () => {
+                  setNeedUserInteraction(false);
                   if (audioRef.current && isPlaying && !isMuted && !gameActive && !window.isGameActive && !document.hidden && !isLoading) {
-                    audioRef.current.play().then(() => setNeedUserInteraction(false)).catch(() => {});
+                    audioRef.current.play().catch(() => {});
                   }
                 };
-                ["pointerdown", "keydown", "click", "scroll", "touchstart", "resume-bgm-audio"].forEach((evt) => {
+                ["pointerdown", "keydown", "click", "resume-bgm-audio"].forEach((evt) => {
                   window.addEventListener(evt, handleGesture, { once: true });
                   document.addEventListener(evt, handleGesture, { once: true });
                 });
@@ -435,7 +436,7 @@ const RetroMusicPlayer = ({
       )}
 
       {/* Floating Autoplay Hint Notification Toast (Appears when browser blocks autoplay until first click) */}
-      {needUserInteraction && !isMuted && isPlaying && (
+      {needUserInteraction && !isMuted && isPlaying && !gameActive && (
         <div
           className="audio-autoplay-hint-toast"
           onClick={(e) => {
@@ -449,7 +450,8 @@ const RetroMusicPlayer = ({
           }}
         >
           <span className="pulse-dot" />
-          <span>🎵 CLICK ANYWHERE TO START MUSIC 🔊</span>
+          <span className="desktop-only-text">CLICK ANYWHERE TO ACTIVATE RETRO AUDIO</span>
+          <span className="mobile-only-text">TAP TO PLAY MUSIC 🔊</span>
         </div>
       )}
     </div>
