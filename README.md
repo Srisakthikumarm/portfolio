@@ -8,7 +8,7 @@ Built with **React 19**, **Vite**, **Bootstrap 5**, **Material UI**, and a custo
 
 ## ✨ Features
 
-- **🎮 OMORI-Inspired Retro Aesthetic:** High-contrast black and white design system, hard bold borders, pixelated elements, and classic `DotGothic16` / `Pixelify Sans` typography.
+- **🎮 Retro Aesthetic:** High-contrast black and white design system, hard bold borders, pixelated elements, and classic `DotGothic16` / `Pixelify Sans` typography.
 - **🛡️ Full-Site Cyber Defense Retro Game:** Playable interactive arcade game overlay (`FullSiteRetroGame`) that spans across the entire website with mobile touch controls and desktop key bindings.
 - **💽 System Boot Sequence:** A nostalgic, terminal-style animated loading screen that simulates an OS boot sequence before revealing the portfolio.
 - **🎵 Retro Audio & Music Player:** Built-in 8-bit HTML5 synthesized background music with an interactive "Now Playing" floating widget, alongside responsive retro UI sound effects on click.
