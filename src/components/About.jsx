@@ -80,12 +80,23 @@ const PixelDissolveAvatar = ({ pixelSrc, realSrc, alt }) => {
                 top: `${topPct}%`,
                 width: `calc(${widthPct}% + 0.8px)`,
                 height: `calc(${heightPct}% + 0.8px)`,
-                backgroundImage: `url(${pixelSrc})`,
-                backgroundSize: `${GRID_COLS * 100}% ${GRID_ROWS * 100}%`,
-                backgroundPosition: `${bgPosX}% ${bgPosY}%`,
                 transitionDelay: isHovered ? `${t.delay}ms` : `${t.reverseDelay}ms`,
+                overflow: "hidden",
               }}
-            />
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  width: `${GRID_COLS * 100}%`,
+                  height: `${GRID_ROWS * 100}%`,
+                  left: `-${t.c * 100}%`,
+                  top: `-${t.r * 100}%`,
+                  backgroundImage: `url(${pixelSrc})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
+                }}
+              />
+            </div>
           );
         })}
       </div>
