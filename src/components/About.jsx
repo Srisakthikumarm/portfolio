@@ -78,22 +78,26 @@ const PixelDissolveAvatar = ({ pixelSrc, realSrc, alt }) => {
               style={{
                 left: `${leftPct}%`,
                 top: `${topPct}%`,
-                width: `calc(${widthPct}% + 0.8px)`,
-                height: `calc(${heightPct}% + 0.8px)`,
+                width: `${widthPct}%`,
+                height: `${heightPct}%`,
                 transitionDelay: isHovered ? `${t.delay}ms` : `${t.reverseDelay}ms`,
                 overflow: "hidden",
               }}
             >
-              <div
+              <img 
+                src={pixelSrc}
+                alt=""
                 style={{
                   position: "absolute",
                   width: `${GRID_COLS * 100}%`,
                   height: `${GRID_ROWS * 100}%`,
+                  maxWidth: "none",
+                  maxHeight: "none",
                   left: `-${t.c * 100}%`,
                   top: `-${t.r * 100}%`,
-                  backgroundImage: `url(${pixelSrc})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center center",
+                  objectFit: "cover",
+                  objectPosition: "center center",
+                  pointerEvents: "none",
                 }}
               />
             </div>
