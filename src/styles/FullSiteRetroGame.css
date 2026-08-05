@@ -814,7 +814,8 @@
   pointer-events: auto !important;
   user-select: none !important;
   -webkit-user-select: none !important;
-  touch-action: manipulation !important;
+  touch-action: none !important;
+  -webkit-touch-callout: none !important;
   box-sizing: border-box !important;
 }
 
@@ -846,6 +847,8 @@
   cursor: pointer;
   outline: none;
   box-sizing: border-box !important;
+  touch-action: none !important;
+  -webkit-touch-callout: none !important;
 }
 
 .retro-touch-btn.fire,
