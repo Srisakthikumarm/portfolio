@@ -45,6 +45,7 @@ const Credits = () => {
                 <div className="grid-sub-col">
                   <a href="/#projects">PROJECTS</a>
                   <a href="/#education">SKILLS & EDUCATION</a>
+                  <a href="/#contact">CONTACT</a>
                 </div>
               </div>
             </div>

@@ -162,7 +162,7 @@ const Education = () => {
         </div>
 
         {/* Section 05 Header: Title Left, Number Right */}
-        <div className="section-header" style={{ marginTop: "60px" }}>
+        <div className="section-header" style={{ marginTop: "80px" }}>
           <span className="section-title">EDUCATION & CREDENTIALS</span>
           <span className="section-number">05</span>
         </div>

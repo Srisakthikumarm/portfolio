@@ -57,7 +57,7 @@ const NavBar = ({ isLoading, gameActive, onMusicStateChange }) => {
       return;
     }
 
-    const sections = ["intro", "about", "experience", "projects", "education"];
+    const sections = ["intro", "about", "experience", "projects", "education", "contact"];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 250;
@@ -185,6 +185,13 @@ const NavBar = ({ isLoading, gameActive, onMusicStateChange }) => {
               onClick={(e) => handleNavClick("education", e)}
             >
               SKILLS & EDU
+            </Nav.Link>
+            <Nav.Link
+              href="/#contact"
+              className={`omori-nav-btn ${activeSection === "contact" ? "omori-active-section" : ""}`}
+              onClick={(e) => handleNavClick("contact", e)}
+            >
+              CONTACT
             </Nav.Link>
           </Nav>
           <Nav className="ms-auto d-none d-lg-flex align-items-center">

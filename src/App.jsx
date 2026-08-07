@@ -9,6 +9,7 @@ import Credits from "./components/Credits";
 import NavBar from "./components/NavBar";
 import SidebarNav from "./components/SidebarNav";
 import FullSiteRetroGame from "./components/FullSiteRetroGame";
+import Contact from "./components/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 import BoltRoundedIcon from "@mui/icons-material/BoltRounded";
@@ -207,6 +208,7 @@ function App() {
                     <Experience />
                     <Projects />
                     <Education />
+                    <Contact />
                     <Credits />
                   </>
                 }
@@ -238,6 +240,7 @@ function App() {
                     <Experience />
                     <Projects />
                     <Education />
+                    <Contact />
                     <Credits />
                   </>
                 }

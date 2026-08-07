@@ -1,0 +1,286 @@
+#contact {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 6vw;
+}
+
+.contact-wrapper {
+  background: #FFFFFF;
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0px #000000;
+  padding: 40px;
+  position: relative;
+  z-index: 10;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.madlibs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.madlibs-text {
+  font-family: 'DotGothic16', monospace !important;
+  font-size: 32px;
+  line-height: 1.8;
+  color: #000000;
+}
+
+.madlibs-text input[type="text"],
+.madlibs-text input[type="email"],
+.madlibs-text input[type="tel"] {
+  font-family: 'DotGothic16', monospace !important;
+  font-size: 32px;
+  color: #000000;
+  background: transparent;
+  border: none;
+  border-bottom: 2.5px solid #000000;
+  outline: none;
+  padding: 0 4px;
+  margin: 0 4px;
+  text-align: center;
+  transition: all 0.2s ease;
+  border-radius: 0;
+  max-width: calc(100% - 8px);
+  box-sizing: border-box;
+}
+
+.madlibs-text input:focus {
+  border-bottom: 2.5px solid #0055FF;
+  background: rgba(0, 85, 255, 0.05);
+}
+
+.madlibs-text input::placeholder {
+  color: #9ca3af;
+  font-weight: 300;
+}
+
+.file-upload-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.file-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 16px;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px #000000;
+  background: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.file-upload-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.file-upload-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.clear-file-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #FF4444;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px #000000;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.clear-file-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 2px dashed #000000;
+  padding-top: 24px;
+}
+
+/* Custom Checkbox */
+.privacy-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.privacy-checkbox input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  background: #FFFFFF;
+  position: relative;
+  box-shadow: 2px 2px 0px #000000;
+  transition: all 0.1s;
+}
+
+.privacy-checkbox input:checked + .checkmark {
+  background: #000000;
+}
+
+.privacy-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #FFFFFF;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0px #000000;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'DotGothic16', monospace !important;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.submit-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #000000;
+}
+
+.submit-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-wrapper {
+    padding: 24px;
+    margin-bottom: 40px;
+    border-width: 3px;
+    box-shadow: 5px 5px 0px #000000;
+  }
+
+  .madlibs-text {
+    font-size: 20px;
+    line-height: 2;
+  }
+
+  .madlibs-text input[type="text"],
+  .madlibs-text input[type="email"],
+  .madlibs-text input[type="tel"] {
+    font-size: 20px;
+    border-bottom-width: 2px;
+  }
+
+  .file-upload-btn {
+    font-size: 13px;
+    padding: 3px 12px;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .madlibs-text {
+    font-size: 18px;
+    line-height: 2;
+  }
+  
+  .madlibs-text input[type="text"],
+  .madlibs-text input[type="email"],
+  .madlibs-text input[type="tel"] {
+    font-size: 18px;
+  }
+
+  .privacy-checkbox {
+    font-size: 12px;
+  }
+}
+
+/* Custom Popup Notification */
+.retro-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.retro-popup-box {
+  background: #FFFFFF;
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0px #000000;
+  padding: 32px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.retro-popup-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.retro-popup-message {
+  font-family: 'DotGothic16', monospace;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
