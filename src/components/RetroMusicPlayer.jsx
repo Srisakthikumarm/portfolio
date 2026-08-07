@@ -190,6 +190,12 @@ const RetroMusicPlayer = ({
     }
   }, [gameActive]);
 
+  // Keep a ref of latest state to avoid stale closures in gesture callbacks
+  const stateRef = useRef({ isPlaying, isMuted, volume, gameActive, isLoading });
+  useEffect(() => {
+    stateRef.current = { isPlaying, isMuted, volume, gameActive, isLoading };
+  }, [isPlaying, isMuted, volume, gameActive, isLoading]);
+
   // Sync HTML5 Audio element play/pause state & auto-resume on reload/gestures
   useEffect(() => {
     window.isGameActive = gameActive;
@@ -220,7 +226,8 @@ const RetroMusicPlayer = ({
                 setNeedUserInteraction(true);
                 const handleGesture = () => {
                   setNeedUserInteraction(false);
-                  if (audioRef.current && isPlaying && !isMuted && !gameActive && !window.isGameActive && !document.hidden && !isLoading) {
+                  const st = stateRef.current;
+                  if (audioRef.current && st.isPlaying && !st.isMuted && !st.gameActive && !window.isGameActive && !document.hidden && !st.isLoading) {
                     audioRef.current.play().catch(() => {});
                   }
                 };

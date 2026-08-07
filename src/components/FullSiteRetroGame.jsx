@@ -447,7 +447,7 @@ export default function FullSiteRetroGame({ active, musicState }) {
         if (battleAudioRef.current) battleAudioRef.current.pause();
       } else {
         gs.isPaused = false;
-        if (battleAudioRef.current && active) {
+        if (battleAudioRef.current && active && !battleAudioRef.current.muted && battleAudioRef.current.volume > 0) {
           battleAudioRef.current.play().catch(() => {});
         }
       }
