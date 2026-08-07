@@ -171,7 +171,7 @@ const Contact = () => {
         <div className="contact-wrapper">
           <form className="madlibs-form" onSubmit={handleSubmit} onBlur={handleBlur}>
             <div className="madlibs-text">
-              Hello Sri Sakthi, my name is{" "}
+              Hello Sri Sakthi Kumar M, my name is{" "}
               <input
                 type="text"
                 name="name"
