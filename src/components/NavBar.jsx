@@ -78,7 +78,10 @@ const NavBar = ({ isLoading, gameActive, onMusicStateChange }) => {
   const handleNavClick = (sectionId, e) => {
     playFunnyClickSound();
     setExpanded(false);
-    if (pathname !== "/") {
+    
+    if (pathname === "/") {
+      setActiveSection(sectionId);
+    } else {
       e?.preventDefault();
       navigate("/" + (sectionId ? `#${sectionId}` : ""));
     }
