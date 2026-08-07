@@ -52,6 +52,11 @@ const NavBar = ({ isLoading, gameActive, onMusicStateChange }) => {
   }, [expanded]);
 
   useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
     const sections = ["intro", "about", "experience", "projects", "education"];
 
     const handleScroll = () => {
@@ -70,21 +75,27 @@ const NavBar = ({ isLoading, gameActive, onMusicStateChange }) => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    // Trigger immediately and after a short delay for DOM changes
     handleScroll();
+    const timeout = setTimeout(handleScroll, 100);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeout);
+    };
+  }, [pathname]);
 
   const handleNavClick = (sectionId, e) => {
     playFunnyClickSound();
     setExpanded(false);
+    e?.preventDefault();
     
     if (pathname === "/") {
       setActiveSection(sectionId);
-    } else {
-      e?.preventDefault();
-      navigate("/" + (sectionId ? `#${sectionId}` : ""));
     }
+    
+    navigate("/" + (sectionId ? `#${sectionId}` : ""));
   };
 
   const sharedMusicProps = {

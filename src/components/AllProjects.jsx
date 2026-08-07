@@ -348,7 +348,7 @@ const AllProjects = () => {
     <div className="all-projects-page">
       <div className="all-projects-container">
         {/* Top Back Navigation Bar */}
-        <div className="all-projects-nav">
+        <div className="all-projects-nav" style={{ display: 'flex', justifyContent: 'center' }}>
           <Link to="/" className="omori-back-btn">
             <span className="retro-icon-frame blue">
               <ArrowBackRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />

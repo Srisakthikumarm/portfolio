@@ -471,7 +471,12 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Centered Bottom View All Projects Button - Removed per user request */}
+      {/* Centered Bottom View All Projects Button */}
+      <div className="omori-bottom-btn-row">
+        <Link to="/projects" className="omori-view-all-btn">
+          VIEW ALL PROJECTS ➔
+        </Link>
+      </div>
 
       {/* Interactive Case Study Detail Modal Overlay (Matching Screenshot) */}
       {selectedProject && (
