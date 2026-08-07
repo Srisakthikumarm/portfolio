@@ -112,9 +112,6 @@
     font-size: 9.5px !important;
     padding: 3px 6px !important;
   }
-  .omori-proj-img-wrap {
-    height: 180px !important;
-  }
   .omori-project-card {
     box-shadow: 4px 4px 0px #000000 !important;
   }
@@ -766,5 +763,22 @@
     box-sizing: border-box !important;
     margin: 0 !important;
     white-space: nowrap !important;
+  }
+
+  /* Force mobile project thumbnails to perfectly shrink-wrap the image */
+  .omori-proj-img-wrap {
+    height: auto !important;
+  }
+  .omori-proj-img-wrap img {
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Force mobile modal images to perfectly shrink-wrap the image */
+  .modal-img-container img {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    object-fit: contain !important;
   }
 }

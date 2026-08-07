@@ -65,6 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -79,6 +80,9 @@
   padding: 4px 10px;
   box-shadow: 2px 2px 0px #000000;
   letter-spacing: 1px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 
 .archive-count {

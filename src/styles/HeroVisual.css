@@ -507,6 +507,15 @@
     box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
+  
+  .stage-screen-box {
+    height: auto !important;
+  }
+  
+  .stage-screen-box img {
+    height: auto !important;
+    object-fit: contain !important;
+  }
 
   .studio-mode-switcher {
     display: flex !important;
