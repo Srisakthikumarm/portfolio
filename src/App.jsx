@@ -12,6 +12,7 @@ import FullSiteRetroGame from "./components/FullSiteRetroGame";
 import LoadingScreen from "./components/LoadingScreen";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 import BoltRoundedIcon from "@mui/icons-material/BoltRounded";
+import WhatshotRoundedIcon from "@mui/icons-material/WhatshotRounded";
 export const HourglassIcon = ({ style }) => (
   <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" style={{ ...style }}>
     <path d="M 4 3 H 20" />
@@ -121,8 +122,8 @@ function App() {
               <div
                 className="game-info-btn-wrap"
                 style={{ position: "relative", display: "inline-block" }}
-                onMouseEnter={() => setShowGameInfo(true)}
-                onMouseLeave={() => setShowGameInfo(false)}
+                onMouseEnter={() => window.matchMedia('(hover: hover)').matches && setShowGameInfo(true)}
+                onMouseLeave={() => window.matchMedia('(hover: hover)').matches && setShowGameInfo(false)}
               >
                 <button
                   className="game-info-btn"
@@ -140,13 +141,28 @@ function App() {
                       CYBER DEFENSE
                     </div>
 
-                    <div className="robot-game-info-row">
+                    <div className="robot-game-info-row desktop-only">
                       <span className="robot-game-key">A / D</span>
                       <span>Move Ship</span>
                     </div>
 
-                    <div className="robot-game-info-row">
+                    <div className="robot-game-info-row desktop-only">
                       <span className="robot-game-key">Space / Click</span>
+                      <span>Fire Laser</span>
+                    </div>
+
+                    <div className="robot-game-info-row mobile-only">
+                      <span className="robot-game-key">◄ / ►</span>
+                      <span>Move Ship</span>
+                    </div>
+
+                    <div className="robot-game-info-row mobile-only">
+                      <span className="robot-game-key boosters-combined-pill">
+                        <span className="retro-icon-frame coral" style={{ width: 18, height: 18, marginRight: 0 }}>
+                          <WhatshotRoundedIcon style={{ fontSize: 11, color: "#FFFFFF" }} />
+                        </span>
+                        <span>FIRE</span>
+                      </span>
                       <span>Fire Laser</span>
                     </div>
 
@@ -165,7 +181,7 @@ function App() {
                           <HourglassIcon style={{ fontSize: 11, color: "#FFFFFF" }} />
                         </span>
                       </span>
-                      <span>Collect Boosters</span>
+                      <span style={{ textAlign: "right" }}>Collect Boosters</span>
                     </div>
 
                     <div className="robot-game-info-divider" />
