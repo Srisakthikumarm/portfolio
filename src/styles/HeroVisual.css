@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
@@ -92,7 +92,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
@@ -141,7 +141,7 @@
 }
 
 .project-tab-btn {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 900;
   color: #000000;
@@ -193,7 +193,7 @@
 }
 
 .stage-tag {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 900;
   color: #000000;
@@ -215,7 +215,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 900;
   color: #FFFFFF;
@@ -225,7 +225,7 @@
 }
 
 .stage-title {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 20px;
   font-weight: 900;
   color: #000000;
@@ -269,14 +269,14 @@
 }
 
 .layers-label {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 11px;
   font-weight: 900;
   color: #6B7280;
 }
 
 .layer-chip {
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Pixelify Sans', sans-serif !important;
   font-size: 12px;
   font-weight: 700;
   color: #000000;
@@ -315,7 +315,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 11px;
   font-weight: 900;
   padding: 3px 8px;
@@ -349,7 +349,7 @@
 }
 
 .live-cursor-tag {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 900;
   color: #FFFFFF;
@@ -383,7 +383,7 @@
 }
 
 .lab-card-title {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
@@ -404,7 +404,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 900;
 }
@@ -419,7 +419,7 @@
 }
 
 .contrast-badge {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 11px;
   font-weight: 900;
   color: #000000;
@@ -442,14 +442,14 @@
 }
 
 .state-label {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 11px;
   font-weight: 900;
   color: #6B7280;
 }
 
 .mock-btn {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 900;
   padding: 4px 10px;
@@ -473,27 +473,27 @@
 }
 
 .typo-name {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 10px;
   font-weight: 900;
   color: #6B7280;
 }
 
 .typo-sample.pixel {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 13px;
   color: #000000;
 }
 
 .typo-sample.mono {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
 }
 
 .typo-sample.body {
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Pixelify Sans', sans-serif !important;
   font-size: 13px;
   color: #374151;
 }

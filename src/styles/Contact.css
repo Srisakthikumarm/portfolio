@@ -23,7 +23,7 @@
 }
 
 .madlibs-text {
-  font-family: 'DotGothic16', monospace !important;
+  font-family: 'Pixelify Sans', monospace !important;
   font-size: 32px;
   line-height: 1.8;
   color: #000000;
@@ -32,7 +32,7 @@
 .madlibs-text input[type="text"],
 .madlibs-text input[type="email"],
 .madlibs-text input[type="tel"] {
-  font-family: 'DotGothic16', monospace !important;
+  font-family: 'Pixelify Sans', monospace !important;
   font-size: 32px;
   color: #000000;
   background: transparent;
@@ -174,7 +174,7 @@
   box-shadow: 5px 5px 0px #000000;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: 'DotGothic16', monospace !important;
+  font-family: 'Pixelify Sans', monospace !important;
   font-size: 18px;
   font-weight: 900;
 }
@@ -263,7 +263,7 @@
 }
 
 .preview-filename-modal {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 16px;
   color: #666;
   margin-top: -10px;
@@ -298,7 +298,7 @@
 }
 
 .unsupported-preview-large {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 20px;
   color: #555;
   text-align: center;
@@ -351,7 +351,7 @@
 }
 
 .retro-popup-message {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 20px;
   color: #000000;
   margin-bottom: 0;

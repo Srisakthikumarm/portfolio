@@ -27,7 +27,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 13px;
   font-weight: 800;
   color: #000000;
@@ -71,7 +71,7 @@
 }
 
 .archive-tag {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 900;
   color: #000000;
@@ -86,7 +86,7 @@
 }
 
 .archive-count {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 800;
   color: #555555;
@@ -105,7 +105,7 @@
 }
 
 .archive-subtitle {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 15px;
   color: #333333;
   line-height: 1.6;
@@ -127,7 +127,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 13px;
   font-weight: 800;
   cursor: pointer;
@@ -184,7 +184,7 @@
   padding: 60px 20px;
   border: 3.5px solid #000000;
   box-shadow: 6px 6px 0px #000000;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 16px;
   color: #666666;
 }
@@ -239,7 +239,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 11px;
   font-weight: 900;
   color: #000000;
@@ -275,7 +275,7 @@
 }
 
 .archive-card-category {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 12px;
   font-weight: 800;
   color: #555555;
@@ -294,7 +294,7 @@
 }
 
 .archive-card-desc {
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Pixelify Sans', monospace;
   font-size: 14px;
   color: #333333;
   line-height: 1.65;

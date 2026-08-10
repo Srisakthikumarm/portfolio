@@ -959,7 +959,7 @@ export default function FullSiteRetroGame({ active, musicState }) {
 
         // Draw Floating Step-by-Step Status Label
         ctx.save();
-        ctx.font = "900 11px 'DotGothic16', monospace";
+        ctx.font = "900 11px 'Pixelify Sans', monospace";
         ctx.fillStyle = tNorm > 0.7 ? "#F7DF1E" : tNorm > 0.3 ? "#00FFCC" : "#FF00FF";
         ctx.shadowColor = "#000000";
         ctx.shadowBlur = 5;
