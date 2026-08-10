@@ -15,21 +15,21 @@
   --text-muted: #374151;
   --text-dim: #6B7280;
 
-  --font-heading: 'DotGothic16', 'VT323', monospace;
-  --font-body: 'DotGothic16', 'VT323', sans-serif;
-  --font-mono: 'DotGothic16', 'VT323', monospace;
+  --font-heading: 'DotGothic16', 'DotGothic16', monospace;
+  --font-body: 'DotGothic16', 'DotGothic16', sans-serif;
+  --font-mono: 'DotGothic16', 'DotGothic16', monospace;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'DotGothic16', 'VT323', sans-serif !important;
+  font-family: 'DotGothic16', 'DotGothic16', sans-serif !important;
   cursor: url('/assets/cursor.svg') 12 1, auto;
 }
 
 html, body, button, input, select, textarea, p, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label {
-  font-family: 'DotGothic16', 'VT323', sans-serif !important;
+  font-family: 'DotGothic16', 'DotGothic16', sans-serif !important;
 }
 
 html {
@@ -41,7 +41,7 @@ html {
 body {
   background-color: #FFFFFF;
   color: #000000;
-  font-family: 'DotGothic16', 'VT323', sans-serif !important;
+  font-family: 'DotGothic16', 'DotGothic16', sans-serif !important;
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;

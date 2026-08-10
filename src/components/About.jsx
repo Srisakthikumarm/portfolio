@@ -277,7 +277,7 @@ const About = () => {
                   </span>
                   LOCATION
                 </span>
-                <span className="detail-value bold">Erode, Tamil Nadu, India</span>
+                <span className="detail-value bold">Bengaluru, Karnataka (Relocating)</span>
                 <span className="detail-subtext">Available for Remote & Onsite Roles</span>
               </div>
             </div>

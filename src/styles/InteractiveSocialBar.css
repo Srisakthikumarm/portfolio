@@ -73,7 +73,6 @@
   background-color: #FF3366 !important;
 }
 
-/* Extra Boxes Container & Left-to-Right Expansion */
 .extra-social-boxes-wrap {
   display: inline-flex;
   align-items: center;
@@ -82,14 +81,17 @@
   max-width: 0;
   opacity: 0;
   pointer-events: none;
-  transition: max-width 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-  will-change: max-width, opacity;
+  padding: 0px;
+  transition: max-width 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, padding 0.35s ease;
+  will-change: max-width, opacity, padding;
 }
 
 .is-expanded .extra-social-boxes-wrap {
-  max-width: 220px;
+  max-width: 250px;
   opacity: 1;
   pointer-events: auto;
+  padding: 4px 6px 4px 2px;
+  margin: -4px -6px -4px -2px;
 }
 
 /* Individual Extra Outer Box Animation (Left-to-Right Slide-in) */
@@ -123,3 +125,10 @@
 .extra-box.item-2 { transition-delay: 0.12s; }
 .extra-box.item-3 { transition-delay: 0.06s; }
 .extra-box.item-4 { transition-delay: 0.00s; }
+
+/* Correct the double shadow by removing the inner shadow */
+.social-box-item .retro-icon-frame {
+  box-shadow: none !important;
+  margin-right: 0 !important;
+  transform: none !important;
+}
