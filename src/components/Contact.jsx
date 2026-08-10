@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/Contact.css";
 import FadeInSection from "./FadeInSection";
 import AttachFileRoundedIcon from "@mui/icons-material/AttachFileRounded";
@@ -17,7 +17,21 @@ const Contact = () => {
 
   const [isAutoTyping, setIsAutoTyping] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [fileType, setFileType] = useState("");
+  const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [popupState, setPopupState] = useState({ show: false, message: "", type: "success" });
+
+  const iframeRef = useRef(null);
+
+  // Cleanup object URLs to avoid memory leaks
+  useEffect(() => {
+    return () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [previewUrl]);
 
   useEffect(() => {
     if (!isAutoTyping) return;
@@ -98,59 +112,53 @@ const Contact = () => {
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+      const file = e.target.files[0];
+      setFormData((prev) => ({ ...prev, file }));
+      setFileType(file.type);
+      
+      // Cleanup previous preview
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+      setPreviewUrl(URL.createObjectURL(file));
     }
   };
 
   const clearFile = (e) => {
     e.preventDefault();
     setFormData((prev) => ({ ...prev, file: null }));
+    setFileType("");
+    if (previewUrl) {
+      URL.revokeObjectURL(previewUrl);
+      setPreviewUrl(null);
+    }
     // Also clear the file input value so the same file can be selected again
     const fileInput = document.getElementById("brief-upload");
     if (fileInput) fileInput.value = "";
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = (e) => {
+    // We let the browser perform native form submission to the hidden iframe
     setIsSubmitting(true);
-    
-    const data = new FormData();
-    data.append("access_key", "d1ba120c-a4aa-4456-82e7-cffdfab0f308");
-    data.append("name", formData.name || "N/A");
-    data.append("email", formData.email || "N/A");
-    data.append("company", formData.company || "N/A");
-    data.append("subject", "New Inquiry from Portfolio");
-    data.append("message", `Name: ${formData.name || "N/A"}\nCompany: ${formData.company || "N/A"}\nProject Details: ${formData.subject || "N/A"}\nEmail: ${formData.email || "N/A"}\nPhone: ${formData.phone || "N/A"}`);
-    
-    if (formData.file) {
-      data.append("attachment", formData.file);
-    }
+  };
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: data
+  const handleIframeLoad = () => {
+    if (isSubmitting) {
+      setPopupState({ show: true, message: "Message sent successfully! I will get back to you soon.", type: "success" });
+      setFormData({
+        name: "",
+        company: "",
+        subject: "",
+        email: "",
+        phone: "",
+        file: null,
       });
-      
-      const result = await response.json();
-      if (result.success) {
-        setPopupState({ show: true, message: "Message sent successfully! I will get back to you soon.", type: "success" });
-        setFormData({
-          name: "",
-          company: "",
-          subject: "",
-          email: "",
-          phone: "",
-          file: null,
-        });
-        setIsAutoTyping(true);
-      } else {
-        setPopupState({ show: true, message: "Failed to send message: " + result.message, type: "error" });
+      setFileType("");
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+        setPreviewUrl(null);
       }
-    } catch (error) {
-      console.error(error);
-      setPopupState({ show: true, message: "Something went wrong! Please try again.", type: "error" });
-    } finally {
+      setIsAutoTyping(true);
       setIsSubmitting(false);
     }
   };
@@ -169,7 +177,18 @@ const Contact = () => {
         </div>
         
         <div className="contact-wrapper">
-          <form className="madlibs-form" onSubmit={handleSubmit} onBlur={handleBlur}>
+          <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: "none" }} onLoad={handleIframeLoad}></iframe>
+          <form 
+            className="madlibs-form" 
+            onSubmit={handleSubmit} 
+            onBlur={handleBlur}
+            action="https://formsubmit.co/srisakthikumar03@gmail.com"
+            method="POST"
+            encType="multipart/form-data"
+            target="hidden_iframe"
+          >
+            <input type="hidden" name="_subject" value="New Inquiry from Portfolio" />
+            <input type="hidden" name="_captcha" value="false" />
             <div className="madlibs-text">
               Hello Sri Sakthi Kumar M, my name is{" "}
               <input
@@ -209,15 +228,29 @@ const Contact = () => {
                 <input
                   type="file"
                   id="brief-upload"
+                  name="attachment"
                   onChange={handleFileChange}
                   className="file-input-hidden"
                 />
-                <label htmlFor="brief-upload" className="file-upload-btn">
-                  <span className="retro-icon-frame blue">
-                    <AttachFileRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <span>{formData.file ? formData.file.name : "ATTACH BRIEF"}</span>
-                </label>
+                {!formData.file ? (
+                  <label htmlFor="brief-upload" className="file-upload-btn">
+                    <span className="retro-icon-frame blue">
+                      <AttachFileRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <span>ATTACH BRIEF</span>
+                  </label>
+                ) : (
+                  <div 
+                    className="file-upload-btn attached-mode" 
+                    onClick={() => setShowPreviewModal(true)}
+                    title="Click to preview attachment"
+                  >
+                    <span className="retro-icon-frame blue">
+                      <AttachFileRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <span>{formData.file.name}</span>
+                  </div>
+                )}
                 {formData.file && (
                   <button type="button" className="clear-file-btn" onClick={clearFile} aria-label="Remove attachment" title="Remove attachment">
                     <CloseRoundedIcon style={{ fontSize: 20 }} />
@@ -249,6 +282,8 @@ const Contact = () => {
               .
             </div>
 
+
+
             <div className="contact-footer" style={{ justifyContent: "flex-end" }}>
 
               <button type="submit" className="submit-btn" disabled={isSubmitting}>
@@ -278,6 +313,53 @@ const Contact = () => {
             >
               <span className="submit-btn-text">OK</span>
             </button>
+          </div>
+        </div>
+      )}
+
+      {showPreviewModal && previewUrl && (
+        <div className="retro-popup-overlay" onClick={() => setShowPreviewModal(false)}>
+          <div className="retro-preview-modal" onClick={(e) => e.stopPropagation()}>
+            <h3 className="retro-popup-title">ATTACHMENT PREVIEW</h3>
+            <p className="preview-filename-modal">{formData.file?.name}</p>
+            
+            <div className="preview-modal-content">
+              {(fileType || "").startsWith("image/") ? (
+                <img src={previewUrl} alt="Attachment Preview" className="preview-image-large" />
+              ) : (fileType || "") === "application/pdf" ? (
+                <iframe src={previewUrl} title="PDF Preview" className="preview-iframe-large" />
+              ) : (
+                <div className="unsupported-preview-large">
+                  <span>No visual preview available for {fileType || "this file type"}.</span>
+                </div>
+              )}
+            </div>
+
+            <div className="preview-modal-controls">
+              <button 
+                className="submit-btn" 
+                onClick={() => setShowPreviewModal(false)}
+                style={{ padding: "8px 16px", fontSize: "14px" }}
+              >
+                CANCEL
+              </button>
+              
+              <button 
+                className="submit-btn" 
+                onClick={() => { document.getElementById("brief-upload").click(); setShowPreviewModal(false); }}
+                style={{ padding: "8px 16px", fontSize: "14px", border: "2.5px solid #0055FF", color: "#0055FF" }}
+              >
+                CHANGE
+              </button>
+
+              <button 
+                className="submit-btn remove-btn" 
+                onClick={(e) => { clearFile(e); setShowPreviewModal(false); }}
+                style={{ padding: "8px 16px", fontSize: "14px", background: "#FF4444", color: "#FFFFFF", borderColor: "#000000" }}
+              >
+                REMOVE
+              </button>
+            </div>
           </div>
         </div>
       )}

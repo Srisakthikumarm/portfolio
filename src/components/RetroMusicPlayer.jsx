@@ -158,7 +158,6 @@ const RetroMusicPlayer = ({
 
   const [showControls, setShowControls] = useState(false);
   const [audioSrc, setAudioSrc] = useState("");
-  const [needUserInteraction, setNeedUserInteraction] = useState(false);
 
   const playerRef = useRef(null);
   const audioRef = useRef(null);
@@ -168,9 +167,9 @@ const RetroMusicPlayer = ({
   useEffect(() => {
     window.isGlobalMuted = isMuted;
     if (onMusicStateChange) {
-      onMusicStateChange({ isPlaying, isMuted, volume });
+      onMusicStateChange({ isPlaying, isMuted, volume, currentTrackIdx });
     }
-  }, [isPlaying, isMuted, volume, onMusicStateChange]);
+  }, [isPlaying, isMuted, volume, currentTrackIdx]);
 
   // Generate WAV blob for current track
   useEffect(() => {
@@ -180,6 +179,8 @@ const RetroMusicPlayer = ({
       if (url) URL.revokeObjectURL(url);
     };
   }, [currentTrackIdx]);
+
+
 
   // Immediately & forcefully pause & mute website background audio whenever Game Mode is active
   useEffect(() => {
@@ -221,11 +222,8 @@ const RetroMusicPlayer = ({
           const promise = audioRef.current.play();
           if (promise !== undefined) {
             promise
-              .then(() => setNeedUserInteraction(false))
               .catch(() => {
-                setNeedUserInteraction(true);
                 const handleGesture = () => {
-                  setNeedUserInteraction(false);
                   const st = stateRef.current;
                   if (audioRef.current && st.isPlaying && !st.isMuted && !st.gameActive && !window.isGameActive && !document.hidden && !st.isLoading) {
                     audioRef.current.play().catch(() => {});
@@ -443,26 +441,6 @@ const RetroMusicPlayer = ({
         </div>
       )}
 
-      {/* Floating Autoplay Hint Notification Toast (Appears when browser blocks autoplay until first click) */}
-      {needUserInteraction && !isMuted && isPlaying && !gameActive && createPortal(
-        <div
-          className="audio-autoplay-hint-toast"
-          onClick={(e) => {
-            e.stopPropagation();
-            if (audioRef.current) {
-              audioRef.current
-                .play()
-                .then(() => setNeedUserInteraction(false))
-                .catch(() => {});
-            }
-          }}
-        >
-          <span className="pulse-dot" />
-          <span className="desktop-only-text">CLICK ANYWHERE TO ACTIVATE RETRO AUDIO</span>
-          <span className="mobile-only-text">PLAY MUSIC 🔊</span>
-        </div>,
-        document.body
-      )}
     </div>
   );
 };
