@@ -126,7 +126,7 @@ const Intro = () => {
             <a
               href="/Sri_Sakthi_Kumar_Resume.pdf"
               download="Sri_Sakthi_Kumar_M_Resume.pdf"
-              onClick={() => window.open("/Sri_Sakthi_Kumar_Resume.pdf", "_blank")}
+              onClick={() => window.open("/Sri_Sakthi_Kumar_Resume.pdf?view=1", "_blank")}
               className="omori-btn-white"
             >
               <span className="retro-icon-frame red">
