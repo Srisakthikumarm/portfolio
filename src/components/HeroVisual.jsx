@@ -14,6 +14,7 @@ const heroProjects = [
     secondaryMetric: "Behance & Medium Featured",
     badge: "AETHER ANALYTICS",
     image: "/assets/aether_analytics.jpg",
+    link: "https://www.behance.net/gallery/253674709/Aether-Analytics-Design-Assignment",
     layers: ["Dark UI Trust Architecture", "Active Telemetry Graphs", "Database AI Hooks", "Behance & Medium Study"],
     colors: [
       { hex: "#0B0F19", label: "OBSIDIAN DARK", textLight: true },
@@ -33,6 +34,7 @@ const heroProjects = [
     secondaryMetric: "Medium Featured Study",
     badge: "LOGISTICS COMMAND",
     image: "/assets/logistics_command.jpg",
+    link: "https://www.behance.net/gallery/253673989/Logistic-Alert-Dashboard",
     layers: ["Route Deviation Triage", "3 AM Alert Matrix", "Vehicle Telemetry Drawer", "Behance & Medium Study"],
     colors: [
       { hex: "#111827", label: "CHARCOAL DARK", textLight: true },
@@ -52,6 +54,7 @@ const heroProjects = [
     secondaryMetric: "10+ Usability Tests",
     badge: "ACADINTERN",
     image: "/assets/acadintern.png",
+    link: "https://www.behance.net/gallery/245848273/AcadIntern",
     layers: ["Search Filters UI", "Internship Cards", "Student Profile Flow", "Onboarding Wizard"],
     colors: [
       { hex: "#2563EB", label: "ACADEMY BLUE", textLight: true },
@@ -152,7 +155,9 @@ const HeroVisual = () => {
 
               {/* High-res Image Screen */}
               <div className="stage-screen-box">
-                <img src={currentProject.image} alt={currentProject.name} />
+                <a href={currentProject.link} target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
+                  <img src={currentProject.image} alt={currentProject.name} style={{ cursor: 'pointer' }} />
+                </a>
               </div>
 
               {/* Project Info Footer */}
