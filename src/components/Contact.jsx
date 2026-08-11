@@ -4,6 +4,9 @@ import FadeInSection from "./FadeInSection";
 import AttachFileRoundedIcon from "@mui/icons-material/AttachFileRounded";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import EditRoundedIcon from "@mui/icons-material/EditRounded";
+import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
+import { playFunnyClickSound } from "../utils/soundEffects";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -138,6 +141,12 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    if (isAutoTyping) {
+      e.preventDefault();
+      handleFocus();
+      setPopupState({ show: true, message: "Please fill in your actual details before sending.", type: "error" });
+      return;
+    }
     // We let the browser perform native form submission to the hidden iframe
     setIsSubmitting(true);
   };
@@ -337,27 +346,33 @@ const Contact = () => {
 
             <div className="preview-modal-controls">
               <button 
-                className="submit-btn" 
-                onClick={() => setShowPreviewModal(false)}
-                style={{ padding: "8px 16px", fontSize: "14px" }}
+                className="submit-btn cancel-btn" 
+                onClick={() => { playFunnyClickSound(); setShowPreviewModal(false); }}
               >
-                CANCEL
+                <span className="retro-icon-frame">
+                  <CloseRoundedIcon style={{ fontSize: 13, color: "#000000" }} className="modal-icon" />
+                </span>
+                <span>CANCEL</span>
               </button>
               
               <button 
-                className="submit-btn" 
-                onClick={() => { document.getElementById("brief-upload").click(); setShowPreviewModal(false); }}
-                style={{ padding: "8px 16px", fontSize: "14px", border: "2.5px solid #0055FF", color: "#0055FF" }}
+                className="submit-btn change-btn" 
+                onClick={() => { playFunnyClickSound(); document.getElementById("brief-upload").click(); setShowPreviewModal(false); }}
               >
-                CHANGE
+                <span className="retro-icon-frame blue">
+                  <EditRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} className="modal-icon-change" />
+                </span>
+                <span>CHANGE</span>
               </button>
 
               <button 
-                className="submit-btn remove-btn" 
-                onClick={(e) => { clearFile(e); setShowPreviewModal(false); }}
-                style={{ padding: "8px 16px", fontSize: "14px", background: "#FF4444", color: "#FFFFFF", borderColor: "#000000" }}
+                className="submit-btn modal-remove-btn" 
+                onClick={(e) => { playFunnyClickSound(); clearFile(e); setShowPreviewModal(false); }}
               >
-                REMOVE
+                <span className="retro-icon-frame coral">
+                  <DeleteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} className="modal-icon-remove" />
+                </span>
+                <span>REMOVE</span>
               </button>
             </div>
           </div>

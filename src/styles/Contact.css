@@ -327,8 +327,70 @@
   margin-top: 24px;
 }
 
-.remove-btn:hover {
-  box-shadow: 5px 5px 0px #000000 !important;
+/* Preview Modal Buttons */
+.submit-btn.cancel-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.submit-btn.cancel-btn .retro-icon-frame {
+  background: #000000 !important;
+  border-color: #FFFFFF !important;
+}
+.submit-btn.cancel-btn:hover .retro-icon-frame {
+  background: #333333 !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+.submit-btn.cancel-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
+}
+
+.submit-btn.change-btn {
+  border-color: #0055FF;
+  color: #0055FF;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.submit-btn.change-btn .retro-icon-frame {
+  background: #0055FF !important;
+}
+.submit-btn.change-btn:hover {
+  background: #0055FF;
+  color: #FFFFFF;
+  border-color: #000000;
+  box-shadow: 0px 0px 0px #000000;
+}
+.submit-btn.change-btn:hover .retro-icon-frame {
+  background: #4DA3FF !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+.submit-btn.change-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
+}
+
+.submit-btn.modal-remove-btn {
+  background: #FF4444;
+  color: #FFFFFF;
+  border-color: #000000;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.submit-btn.modal-remove-btn .retro-icon-frame {
+  background: #000000 !important;
+}
+.submit-btn.modal-remove-btn:hover {
+  background: #000000;
+  color: #FF4444;
+  box-shadow: 0px 0px 0px #000000;
+}
+.submit-btn.modal-remove-btn:hover .retro-icon-frame {
+  background: #FF4444 !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+.submit-btn.modal-remove-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
 }
 
 /* Custom Popup Notification */
