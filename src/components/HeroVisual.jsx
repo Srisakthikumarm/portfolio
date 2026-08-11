@@ -148,15 +148,6 @@ const HeroVisual = () => {
             onMouseLeave={handleMouseLeave}
           >
             <div className="stage-card-frame">
-              <div className="stage-header-row">
-                <span className="stage-tag">{currentProject.tag}</span>
-                <span className="stage-metric">
-                  <span className="retro-icon-frame emerald" style={{ width: 18, height: 18, fontSize: 8, marginRight: 6 }}>
-                    <CheckCircleRoundedIcon style={{ fontSize: 11, color: "#FFFFFF" }} />
-                  </span>
-                  {currentProject.metric}
-                </span>
-              </div>
               <h3 className="stage-title">{currentProject.name}</h3>
 
               {/* High-res Image Screen */}
@@ -164,35 +155,15 @@ const HeroVisual = () => {
                 <img src={currentProject.image} alt={currentProject.name} />
               </div>
 
-              {/* Layers Stack Row */}
-              <div className="stage-layers-row">
-                <span className="layers-label">LAYERS:</span>
-                {currentProject.layers.map((l, lIdx) => (
-                  <span key={lIdx} className="layer-chip">
-                    ◆ {l}
+              {/* Project Info Footer */}
+              <div className="stage-header-row" style={{ marginTop: '4px' }}>
+                <span className="stage-tag">{currentProject.tag}</span>
+                <span className="stage-metric">
+                  <span className="retro-icon-frame emerald" style={{ width: 18, height: 18, fontSize: 8, marginRight: 6 }}>
+                    <CheckCircleRoundedIcon style={{ fontSize: 11, color: "#FFFFFF" }} />
                   </span>
-                ))}
-              </div>
-
-              {/* Color Swatches Design System Bar */}
-              <div className="stage-colors-row">
-                <span className="layers-label">COLOR TOKENS:</span>
-                <div className="project-color-swatches-inline">
-                  {currentProject.colors.map((c, cIdx) => (
-                    <div
-                      key={cIdx}
-                      className="inline-color-chip"
-                      style={{
-                        background: c.hex,
-                        color: c.textLight ? "#FFFFFF" : "#000000",
-                        border: c.hex.toLowerCase() === "#ffffff" ? "1.5px solid #000000" : "1.5px solid #000000",
-                      }}
-                    >
-                      <span className="color-chip-hex">{c.hex}</span>
-                      <span className="color-chip-label">{c.label}</span>
-                    </div>
-                  ))}
-                </div>
+                  {currentProject.metric}
+                </span>
               </div>
             </div>
 
@@ -326,6 +297,18 @@ const HeroVisual = () => {
                     {currentProject.tag}
                   </span>
                 </div>
+              </div>
+            </div>
+
+            {/* Layers Stack Column */}
+            <div className="lab-card">
+              <div className="lab-card-title">PROJECT LAYERS</div>
+              <div className="stage-layers-row" style={{ marginTop: 8 }}>
+                {currentProject.layers.map((l, lIdx) => (
+                  <span key={lIdx} className="layer-chip">
+                    ◆ {l}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
