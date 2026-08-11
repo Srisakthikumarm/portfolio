@@ -9,6 +9,7 @@ import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import PaletteRoundedIcon from "@mui/icons-material/PaletteRounded";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import AccessibleRoundedIcon from "@mui/icons-material/AccessibleRounded";
+import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
 import FadeInSection from "./FadeInSection";
 import HeroVisual from "./HeroVisual";
 const BehanceIcon = () => (
@@ -86,43 +87,6 @@ const Intro = () => {
             Crafting scalable design systems, high-fidelity Figma prototypes, and responsive web applications. Specialized in complex SaaS workflows, B2B logistics, and accessible user experiences.
           </p>
 
-          {/* 5 Interactive Metric & Skill Badges */}
-          <div className="hero-badges-row">
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame coral">
-                <PaletteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>20+ FIGMA SCREENS</span>
-            </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame emerald">
-                <TrendingUpRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>+35% ENGAGEMENT LIFT</span>
-            </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame cyan">
-                <AccessibleRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>100% WCAG 2.1 AA</span>
-            </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame purple">
-                <BoltRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>B2B LOGISTICS SAAS</span>
-            </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame blue">
-                <CodeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>REACT / FRONTEND</span>
-            </div>
-          </div>
-
-          {/* Hero Centerpiece: Design Studio OS Window */}
-          <HeroVisual />
-
           {/* Action Buttons Row - Top 3 Primary Contacts */}
           <div className="hero-actions-row">
             <a
@@ -158,6 +122,55 @@ const Intro = () => {
               </span>
               <span>LINKEDIN PROFILE</span>
             </a>
+
+            <a
+              href="/Sri_Sakthi_Kumar_Resume.pdf"
+              download="Sri_Sakthi_Kumar_M_Resume.pdf"
+              onClick={() => window.open("/Sri_Sakthi_Kumar_Resume.pdf", "_blank")}
+              className="omori-btn-white"
+            >
+              <span className="retro-icon-frame red">
+                <DownloadRoundedIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
+              </span>
+              <span>MY RESUME</span>
+            </a>
+          </div>
+
+          {/* Hero Centerpiece: Design Studio OS Window */}
+          <HeroVisual />
+
+          {/* 5 Interactive Metric & Skill Badges */}
+          <div className="hero-badges-row">
+            <div className="hero-badge-pill">
+              <span className="retro-icon-frame coral">
+                <PaletteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              </span>
+              <span>20+ FIGMA SCREENS</span>
+            </div>
+            <div className="hero-badge-pill">
+              <span className="retro-icon-frame emerald">
+                <TrendingUpRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              </span>
+              <span>+35% ENGAGEMENT LIFT</span>
+            </div>
+            <div className="hero-badge-pill">
+              <span className="retro-icon-frame cyan">
+                <AccessibleRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              </span>
+              <span>100% WCAG 2.1 AA</span>
+            </div>
+            <div className="hero-badge-pill">
+              <span className="retro-icon-frame purple">
+                <BoltRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              </span>
+              <span>B2B LOGISTICS SAAS</span>
+            </div>
+            <div className="hero-badge-pill">
+              <span className="retro-icon-frame blue">
+                <CodeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              </span>
+              <span>REACT / FRONTEND</span>
+            </div>
           </div>
         </div>
       </FadeInSection>
