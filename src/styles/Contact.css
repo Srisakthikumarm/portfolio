@@ -450,8 +450,12 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .file-upload-wrapper {
+    gap: 4px;
+    margin: 0 4px;
+  }
   .file-upload-btn span:last-child {
-    max-width: 130px;
+    max-width: 80px;
   }
   .preview-modal-controls {
     flex-wrap: wrap;
