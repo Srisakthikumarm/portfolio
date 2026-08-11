@@ -96,7 +96,11 @@ function App() {
 
   const handleToggleGame = () => {
     playFunnyClickSound();
-    setGameActive((a) => !a);
+    const nextState = !gameActive;
+    if (nextState && pathname !== "/") {
+      navigate("/");
+    }
+    setGameActive(nextState);
   };
 
   const handleToggleInfo = () => {

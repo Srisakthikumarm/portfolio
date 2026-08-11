@@ -91,8 +91,9 @@
   color: #000000;
   position: absolute;
   left: 0;
-  font-size: 18px;
-  line-height: 1;
+  top: 0;
+  font-size: 1em;
+  line-height: inherit;
 }
 
 .job-skills-row {

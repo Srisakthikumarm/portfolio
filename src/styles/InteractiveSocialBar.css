@@ -126,9 +126,30 @@
 .extra-box.item-3 { transition-delay: 0.06s; }
 .extra-box.item-4 { transition-delay: 0.00s; }
 
-/* Correct the double shadow by removing the inner shadow */
+/* Restore the inner shadow (black on white bg, white on black hover bg) */
 .social-box-item .retro-icon-frame {
-  box-shadow: none !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
   margin-right: 0 !important;
+  transition: all 0.1s ease !important;
   transform: none !important;
+}
+
+/* When the outer box turns black (hover/active), make the inner shadow and border white so it pops! */
+.social-box-item:hover .retro-icon-frame,
+.is-expanded .more-toggle-btn .more-icon-frame,
+.is-expanded .extra-box:hover .retro-icon-frame {
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+  border-color: #FFFFFF !important;
+}
+
+/* EXACT icon hover effect: press down with NO shadow (as requested) */
+.social-box-item .retro-icon-frame:hover {
+  transform: translate(1.5px, 1.5px) !important;
+  box-shadow: 0px 0px 0px transparent !important;
+}
+
+.social-box-item:hover .retro-icon-frame:hover,
+.is-expanded .more-toggle-btn .more-icon-frame:hover,
+.is-expanded .extra-box:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
 }

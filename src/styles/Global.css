@@ -119,8 +119,19 @@ a, button, [role="button"] {
 }
 
 .retro-icon-frame:hover {
+  transform: translate(1.5px, 1.5px) !important;
+  box-shadow: 0px 0px 0px transparent !important;
+}
+
+/* Explicit rule for the 3 specific standalone icon groups requested by user */
+.retro-icon-tooltip-wrap .retro-icon-frame:hover,
+.card-top-title .retro-icon-frame:hover,
+.setup-item .retro-icon-frame:hover,
+.profile-detail-item .retro-icon-frame:hover,
+.file-upload-btn .retro-icon-frame:hover,
+.studio-title-badge .retro-icon-frame:hover {
   transform: translate(1px, 1px) !important;
-  box-shadow: 0.5px 0.5px 0px #000000 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
 }
 
 /* Color Themes for Pixel Icon Frames */
@@ -130,9 +141,11 @@ a, button, [role="button"] {
 .retro-icon-frame.green { background: #10B981 !important; color: #FFFFFF !important; }
 .retro-icon-frame.purple { background: #8B5CF6 !important; color: #FFFFFF !important; }
 .retro-icon-frame.amber,
-.retro-icon-frame.gold { background: #F59E0B !important; color: #FFFFFF !important; }
+.retro-icon-frame.gold,
+.retro-icon-frame.yellow { background: #F59E0B !important; color: #FFFFFF !important; }
 .retro-icon-frame.cyan { background: #06B6D4 !important; color: #FFFFFF !important; }
-.retro-icon-frame.rose { background: #EC4899 !important; color: #FFFFFF !important; }
+.retro-icon-frame.rose,
+.retro-icon-frame.pink { background: #EC4899 !important; color: #FFFFFF !important; }
 .retro-icon-frame.gmail { background: #EA4335 !important; color: #FFFFFF !important; }
 .retro-icon-frame.linkedin { background: #0A66C2 !important; color: #FFFFFF !important; }
 .retro-icon-frame.dribbble { background: #EA4C89 !important; color: #FFFFFF !important; }
@@ -293,7 +306,21 @@ a, button, [role="button"] {
 .edu-grade:hover,
 .edu-badge:hover,
 .hero-badge-pill:hover {
-  transform: translate(-2.5px, -2.5px) !important;
+  transform: translate(1.5px, 1.5px) !important;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.15) !important;
+  background-color: #f3f4f6 !important;
+}
+
+.stage-tag .retro-icon-frame:hover,
+.layer-chip .retro-icon-frame:hover,
+.omori-tech-pill .retro-icon-frame:hover,
+.omori-proj-year .retro-icon-frame:hover,
+.modal-proj-year .retro-icon-frame:hover,
+.edu-duration .retro-icon-frame:hover,
+.edu-grade .retro-icon-frame:hover,
+.edu-badge .retro-icon-frame:hover,
+.hero-badge-pill .retro-icon-frame:hover {
+  transform: translate(-2px, -2px) !important;
   box-shadow: 3px 3px 0px #000000 !important;
 }
 

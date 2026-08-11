@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/Projects.css";
 import FadeInSection from "./FadeInSection";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
@@ -474,7 +475,10 @@ const Projects = () => {
       {/* Centered Bottom View All Projects Button */}
       <div className="omori-bottom-btn-row">
         <Link to="/projects" className="omori-view-all-btn">
-          VIEW ALL PROJECTS ➔
+          <span>VIEW ALL PROJECTS</span>
+          <span className="retro-icon-frame blue">
+            <ArrowForwardRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+          </span>
         </Link>
       </div>
 

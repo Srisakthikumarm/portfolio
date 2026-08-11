@@ -1,6 +1,12 @@
+let lastPlayTime = 0;
+
 // Funny 8-bit retro arcade click/blip sound effect for interactive buttons
 export const playFunnyClickSound = () => {
   if (window.isGlobalMuted) return;
+  const nowMs = Date.now();
+  if (nowMs - lastPlayTime < 50) return; // Prevent double-triggering
+  lastPlayTime = nowMs;
+
   try {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     if (!AudioCtx) return;

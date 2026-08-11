@@ -100,8 +100,16 @@
   color: #000000;
   background: #F3F4F6;
   border: 1.5px solid #000000;
+  box-shadow: 2px 2px 0px #000000;
   padding: 3px 10px;
   letter-spacing: 0.5px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.bento-role-badge:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #000000;
 }
 
 .bento-chips-row {
@@ -130,6 +138,11 @@
 .bento-chip:hover {
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px #000000;
+}
+
+.bento-chip .retro-icon-frame:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
 }
 
 .avatar-img-frame {

@@ -85,13 +85,20 @@
 }
 
 .file-upload-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px #000000;
+  background: #000000;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 0px #000000;
+  transform: translate(2px, 2px);
 }
 
-.file-upload-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px #000000;
+.file-upload-btn:hover .retro-icon-frame {
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+
+.file-upload-btn .retro-icon-frame:hover,
+.file-upload-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
 }
 
 .clear-file-btn {
@@ -177,16 +184,24 @@
   font-family: 'Pixelify Sans', monospace !important;
   font-size: 18px;
   font-weight: 900;
+  white-space: nowrap;
 }
 
 .submit-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0px #000000;
+  background: #000000;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 0px #000000;
+  transform: translate(2px, 2px);
 }
 
-.submit-btn:active {
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0px #000000;
+.submit-btn:hover .retro-icon-frame {
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+
+.submit-btn .retro-icon-frame:hover,
+.submit-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
 }
 
 @media only screen and (max-width: 900px) {

@@ -41,10 +41,20 @@
 }
 
 .omori-back-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px #000000;
-  color: #000000;
-  background: #F9F9F9;
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000000;
+  color: #FFFFFF;
+  background: #000000;
+}
+
+.omori-back-btn:hover .retro-icon-frame {
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+
+.omori-back-btn .retro-icon-frame:hover,
+.omori-back-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
 }
 
 .omori-back-btn:active {
@@ -272,6 +282,7 @@
   padding: 28px 32px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .archive-card-category {
@@ -291,6 +302,8 @@
   color: #000000 !important;
   margin: 0 0 12px 0 !important;
   line-height: 1.2 !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .archive-card-desc {
@@ -300,6 +313,8 @@
   line-height: 1.65;
   margin: 0 0 20px 0;
   flex-grow: 1;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .archive-pills {
@@ -380,6 +395,11 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .archive-year-title {
+    font-size: 16px !important;
+    letter-spacing: 0px !important;
+  }
+
   .archive-header-block {
     padding: 24px 20px;
   }

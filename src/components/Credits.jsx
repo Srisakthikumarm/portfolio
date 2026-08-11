@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Credits.css";
 import FadeInSection from "./FadeInSection";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
@@ -38,14 +39,14 @@ const Credits = () => {
               <div className="omori-col-title">Navigate</div>
               <div className="omori-sub-grid grid-3-2">
                 <div className="grid-sub-col">
-                  <a href="/#intro">HOME</a>
-                  <a href="/#about">ABOUT</a>
-                  <a href="/#experience">EXPERIENCE</a>
+                  <Link to="/#intro">HOME</Link>
+                  <Link to="/#about">ABOUT</Link>
+                  <Link to="/#experience">EXPERIENCE</Link>
                 </div>
                 <div className="grid-sub-col">
-                  <a href="/#projects">PROJECTS</a>
-                  <a href="/#education">SKILLS & EDUCATION</a>
-                  <a href="/#contact">CONTACT</a>
+                  <Link to="/#projects">PROJECTS</Link>
+                  <Link to="/#education">SKILLS & EDUCATION</Link>
+                  <Link to="/#contact">CONTACT</Link>
                 </div>
               </div>
             </div>

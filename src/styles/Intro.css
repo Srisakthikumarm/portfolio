@@ -28,6 +28,7 @@
   padding: 6px 18px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .banner-dot {
@@ -159,6 +160,12 @@
 }
 
 @media (max-width: 768px) {
+  .hero-system-banner {
+    font-size: 8px !important;
+    padding: 6px 10px !important;
+    letter-spacing: 0px !important;
+  }
+
   .hero-badges-row {
     display: flex !important;
     flex-direction: column !important;
@@ -276,6 +283,11 @@
 .hero-badge-pill:hover {
   transform: translate(-2px, -2px) !important;
   box-shadow: 4px 4px 0px #000000 !important;
+}
+
+.hero-badge-pill .retro-icon-frame:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 3px 3px 0px #000000 !important;
 }
 
 /* Action Buttons Row */

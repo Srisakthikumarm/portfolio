@@ -25,14 +25,28 @@
 }
 
 .omori-music-badge-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px #000000;
-  background: #F9F9F9;
+  background: #000000;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 0px #000000;
+  transform: translate(2px, 2px);
 }
 
-.omori-music-badge-btn:active {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0px #000000;
+.omori-music-badge-btn:hover .music-note-icon {
+  color: #FFFFFF;
+}
+
+.omori-music-badge-btn:hover .retro-icon-frame {
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+
+.omori-music-badge-btn .retro-icon-frame:hover,
+.omori-music-badge-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
+}
+
+.omori-music-badge-btn .retro-icon-frame {
+  margin-right: 0 !important;
 }
 
 .music-note-icon {
@@ -67,6 +81,7 @@
   background: #22C55E;
   border-radius: 50%;
   animation: pulseGreen 1.2s infinite;
+  flex-shrink: 0 !important;
 }
 
 .music-paused-indicator,
@@ -75,6 +90,7 @@
   height: 6px;
   background: #EF4444;
   border-radius: 50%;
+  flex-shrink: 0 !important;
 }
 
 .omori-music-badge-btn.muted {
@@ -165,11 +181,26 @@
   transition: all 0.15s ease;
 }
 
+.music-ctrl-btn .retro-icon-frame {
+  margin-right: 0 !important;
+}
+
 .music-ctrl-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px #000000;
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000000;
   background: #000000;
   color: #FFFFFF;
+}
+
+.music-ctrl-btn:hover .retro-icon-frame {
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+
+.music-ctrl-btn .retro-icon-frame:hover,
+.music-ctrl-btn:hover .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
+  transform: translate(0px, 0px) !important;
 }
 
 .music-ctrl-btn:active {
@@ -201,9 +232,9 @@
 /* Mobile Screen Specific Styling - Placed next to Hamburger Button */
 @media only screen and (max-width: 991px) {
   .omori-music-badge-btn {
-    width: 54px !important;
+    width: 60px !important;
     height: 40px !important;
-    min-width: 54px !important;
+    min-width: 60px !important;
     min-height: 40px !important;
     padding: 0 10px !important;
     gap: 8px !important;
@@ -221,13 +252,14 @@
   }
 
   .omori-music-badge-btn .music-live-indicator,
+  .omori-music-badge-btn .music-paused-indicator,
   .omori-music-badge-btn .music-muted-indicator {
     display: inline-block !important;
   }
 
   .omori-music-badge-btn.mobile-expanded {
-    width: 54px !important;
-    min-width: 54px !important;
+    width: 60px !important;
+    min-width: 60px !important;
     padding: 0 10px !important;
   }
 

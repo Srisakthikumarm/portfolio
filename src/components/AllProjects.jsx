@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FadeInSection from "./FadeInSection";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
@@ -347,20 +348,15 @@ const AllProjects = () => {
   return (
     <div className="all-projects-page">
       <div className="all-projects-container">
-        {/* Top Back Navigation Bar */}
-        <div className="all-projects-nav" style={{ display: 'flex', justifyContent: 'center' }}>
-          <Link to="/" className="omori-back-btn">
-            <span className="retro-icon-frame blue">
-              <ArrowBackRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-            </span>
-            <span>BACK TO HOME</span>
-          </Link>
-        </div>
-
         {/* Hero Archive Header */}
         <div className="archive-header-block">
           <div className="archive-badge-row">
-            <span className="archive-tag">★ ARCHIVE</span>
+            <span className="archive-tag">
+              <span className="retro-icon-frame yellow">
+                <StarRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              </span>
+              ARCHIVE
+            </span>
             <span className="archive-count">{filteredProjects.length} PROJECTS DISPLAYED</span>
           </div>
           <h1 className="archive-title">PROJECT ARCHIVE</h1>

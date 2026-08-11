@@ -122,6 +122,21 @@
   transform: translate(2px, 2px) !important;
 }
 
+.nav-link.omori-nav-btn:hover .retro-icon-frame,
+#basic-navbar-nav .omori-nav-btn.omori-active-section .retro-icon-frame,
+#basic-navbar-nav .omori-nav-btn.omori-active-section:focus .retro-icon-frame,
+#basic-navbar-nav .omori-nav-btn.omori-active-section:active .retro-icon-frame {
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+
+.nav-link.omori-nav-btn:hover .retro-icon-frame:hover,
+#basic-navbar-nav .omori-nav-btn.omori-active-section .retro-icon-frame:hover,
+#basic-navbar-nav .omori-nav-btn.omori-active-section:focus .retro-icon-frame:hover,
+#basic-navbar-nav .omori-nav-btn.omori-active-section:active .retro-icon-frame:hover {
+  box-shadow: 0px 0px 0px transparent !important;
+}
+
 .navbar-toggler,
 .omori-mobile-toggle {
   background: #FFFFFF !important;
@@ -227,13 +242,17 @@
     width: 100% !important;
   }
 
-  .nav-link.omori-nav-btn:hover,
   .nav-link.omori-nav-btn.omori-active-section {
     color: #FFFFFF !important;
     background: #000000 !important;
     border-color: #000000 !important;
     box-shadow: 0px 0px 0px #000000 !important;
     transform: translate(2px, 2px) !important;
+  }
+    
+  .nav-link.omori-nav-btn.omori-active-section .retro-icon-frame {
+    border-color: #FFFFFF !important;
+    box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
   }
 
   .navbar-nav.ms-auto {

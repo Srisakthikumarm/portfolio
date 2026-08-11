@@ -62,8 +62,8 @@
 }
 
 .omori-cat-icon .retro-icon-frame:hover {
-  transform: translate(1.5px, 1.5px) !important;
-  box-shadow: 0.5px 0.5px 0px #000000 !important;
+  transform: translate(1px, 1px) !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
 }
 
 .omori-badges-flex {
@@ -174,8 +174,8 @@
 }
 
 .edu-icon:hover {
-  transform: translate(1.5px, 1.5px) !important;
-  box-shadow: 0.5px 0.5px 0px #000000 !important;
+  transform: translate(1px, 1px) !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
 }
 
 .edu-icon:active {

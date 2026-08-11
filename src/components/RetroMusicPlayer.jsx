@@ -5,6 +5,8 @@ import VolumeOffRoundedIcon from "@mui/icons-material/VolumeOffRounded";
 import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import PauseRoundedIcon from "@mui/icons-material/PauseRounded";
 import SkipNextRoundedIcon from "@mui/icons-material/SkipNextRounded";
+import MusicNoteRoundedIcon from "@mui/icons-material/MusicNoteRounded";
+import MusicOffRoundedIcon from "@mui/icons-material/MusicOffRounded";
 import { playFunnyClickSound } from "../utils/soundEffects";
 import "../styles/RetroMusicPlayer.css";
 
@@ -382,8 +384,13 @@ const RetroMusicPlayer = ({
         title={isMuted ? "Single Click: Play/Pause | Double Click: Unmute" : "Single Click: Play/Pause | Double Click: Mute"}
       >
         <span className="music-note-icon">
-          ♪
-          {isMuted && <span className="red-slash" />}
+          <span className="retro-icon-frame pink">
+            {isMuted ? (
+              <MusicOffRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            ) : (
+              <MusicNoteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            )}
+          </span>
         </span>
         <span className="music-track-title">{gameActive ? "RETRO BATTLE" : currentTrack.name}</span>
         {isPlaying && !isMuted ? (
@@ -406,21 +413,31 @@ const RetroMusicPlayer = ({
           <div className="music-popover-actions">
             <button className="music-ctrl-btn" onClick={togglePlay} title={isPlaying ? "Pause" : "Play"}>
               {isPlaying ? (
-                <PauseRoundedIcon style={{ fontSize: 14 }} />
+                <span className="retro-icon-frame gold">
+                  <PauseRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                </span>
               ) : (
-                <PlayArrowRoundedIcon style={{ fontSize: 14 }} />
+                <span className="retro-icon-frame green">
+                  <PlayArrowRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                </span>
               )}
             </button>
 
             <button className="music-ctrl-btn" onClick={handleNextTrack} title="Next Song">
-              <SkipNextRoundedIcon style={{ fontSize: 14 }} />
+              <span className="retro-icon-frame blue">
+                <SkipNextRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              </span>
             </button>
 
             <button className="music-ctrl-btn" onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
               {isMuted ? (
-                <VolumeOffRoundedIcon style={{ fontSize: 14 }} />
+                <span className="retro-icon-frame coral">
+                  <VolumeOffRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                </span>
               ) : (
-                <VolumeUpRoundedIcon style={{ fontSize: 14 }} />
+                <span className="retro-icon-frame cyan">
+                  <VolumeUpRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                </span>
               )}
             </button>
           </div>
