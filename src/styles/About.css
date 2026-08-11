@@ -385,8 +385,8 @@
 }
 
 .bio-text-paragraph {
-  font-family: 'Pixelify Sans', sans-serif !important;
-  font-size: 15px;
+  font-family: 'VT323', monospace !important;
+  font-size: 19px;
   color: #374151;
   line-height: 1.6;
   margin-bottom: 12px;
@@ -501,8 +501,8 @@
 }
 
 .detail-value {
-  font-family: 'Pixelify Sans', sans-serif !important;
-  font-size: 14px;
+  font-family: 'VT323', monospace !important;
+  font-size: 18px;
   color: #000000;
 }
 
@@ -555,8 +555,8 @@
 }
 
 .setup-sub {
-  font-family: 'Pixelify Sans', sans-serif !important;
-  font-size: 12px;
+  font-family: 'VT323', monospace !important;
+  font-size: 16px;
   color: #4B5563;
 }
 

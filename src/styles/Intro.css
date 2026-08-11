@@ -67,7 +67,7 @@
 .hero-main-heading,
 .hero-headline,
 .wave-text {
-  font-family: 'Pixelify Sans', sans-serif !important;
+  font-family: 'VT323', monospace !important;
   font-size: 56px !important;
   font-weight: 700 !important;
   color: #000000 !important;
@@ -226,8 +226,8 @@
 
 /* Bio Paragraph */
 .hero-bio-paragraph {
-  font-family: 'Pixelify Sans', sans-serif !important;
-  font-size: 17px;
+  font-family: 'VT323', monospace !important;
+  font-size: 21px;
   color: #374151;
   line-height: 1.6;
   max-width: 820px;

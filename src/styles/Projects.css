@@ -242,7 +242,7 @@
 }
 
 .omori-proj-desc {
-  font-family: 'Pixelify Sans', sans-serif !important;
+  font-family: 'VT323', monospace !important;
   font-size: 15px;
   color: #374151;
   line-height: 1.6;
@@ -535,7 +535,7 @@
 }
 
 .modal-full-details-text {
-  font-family: 'Pixelify Sans', sans-serif !important;
+  font-family: 'VT323', monospace !important;
   font-size: 16px;
   color: #374151;
   line-height: 1.6;

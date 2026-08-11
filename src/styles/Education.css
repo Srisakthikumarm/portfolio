@@ -221,8 +221,8 @@
 }
 
 .edu-institution {
-  font-family: 'Pixelify Sans', sans-serif !important;
-  font-size: 15px;
+  font-family: 'VT323', monospace !important;
+  font-size: 18px;
   font-weight: 700;
   color: #374151;
   margin-bottom: 14px;
@@ -265,12 +265,13 @@
 }
 
 .edu-highlights li {
-  font-family: 'Pixelify Sans', sans-serif !important;
-  font-size: 14px;
+  font-family: 'VT323', monospace !important;
+  font-size: 18px;
   color: #374151;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
+  line-height: 1.5;
 }
 
 .edu-highlights li::before {

@@ -16,7 +16,7 @@
   --text-dim: #6B7280;
 
   --font-heading: 'Pixelify Sans', 'Pixelify Sans', monospace;
-  --font-body: 'Pixelify Sans', 'Pixelify Sans', sans-serif;
+  --font-body: 'VT323', 'VT323', monospace;
   --font-mono: 'Pixelify Sans', 'Pixelify Sans', monospace;
 }
 
@@ -28,8 +28,13 @@
   cursor: url('/assets/cursor.svg') 12 1, auto;
 }
 
-html, body, button, input, select, textarea, p, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label {
+html, button, input, select, textarea, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label {
   font-family: 'Pixelify Sans', 'Pixelify Sans', sans-serif !important;
+}
+
+p {
+  font-family: 'VT323', 'VT323', monospace !important;
+  font-size: 19px !important;
 }
 
 html {
@@ -41,7 +46,7 @@ html {
 body {
   background-color: #FFFFFF;
   color: #000000;
-  font-family: 'Pixelify Sans', 'Pixelify Sans', sans-serif !important;
+  font-family: 'VT323', 'VT323', monospace !important;
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
