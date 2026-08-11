@@ -302,9 +302,6 @@ const ConstructionOverlay = () => (
 
     <div className="sleek-dev-bottom-bar">
       <div className="sleek-dev-info">
-        <span className="retro-icon-frame amber" style={{ width: 16, height: 16, marginRight: 6 }}>
-          <RetroPixelToolsIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-        </span>
         <span>FLOW LOGISTICS SOLUTION LLP</span>
       </div>
       <div className="sleek-dev-progress">

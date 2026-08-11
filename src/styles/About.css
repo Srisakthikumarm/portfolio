@@ -243,14 +243,29 @@
   min-width: 12px !important;
   min-height: 12px !important;
   margin-right: 5px !important;
+  border: 1px solid #FFFFFF !important;
+  box-shadow: 1px 1px 0px #FFFFFF !important;
   border-radius: 2.5px !important;
-  border: 1px solid #000000 !important;
-  box-shadow: 1px 1px 0px #000000 !important;
   flex-shrink: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 0 !important;
+}
+
+.pixel-dissolve-container:hover .hover-instruction-hint .retro-icon-frame,
+.bento-avatar-card:hover .hover-instruction-hint .retro-icon-frame {
+  border-color: #000000 !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.hover-instruction-hint .retro-icon-frame:hover,
+.pixel-dissolve-container:hover .hover-instruction-hint .retro-icon-frame:hover,
+.bento-avatar-card:hover .hover-instruction-hint .retro-icon-frame:hover {
+  transform: translate(1px, 1px) !important;
+  box-shadow: 0px 0px 0px transparent !important;
 }
 
 .hover-instruction-hint .retro-icon-frame svg {
@@ -330,6 +345,17 @@
 
 .avatar-cat-badge:hover .badge-text-real {
   color: #FFFFFF !important;
+}
+
+.avatar-cat-badge:hover .retro-icon-frame {
+  border-color: #FFFFFF !important;
+  box-shadow: 1.5px 1.5px 0px #FFFFFF !important;
+}
+
+.avatar-cat-badge .retro-icon-frame:hover,
+.avatar-cat-badge:hover .retro-icon-frame:hover {
+  transform: translate(1.5px, 1.5px) !important;
+  box-shadow: 0px 0px 0px transparent !important;
 }
 
 /* Standard Sized Inner Orange Icon Box with Black Border & Black Shadow */

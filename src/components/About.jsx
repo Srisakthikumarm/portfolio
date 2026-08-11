@@ -106,9 +106,6 @@ const PixelDissolveAvatar = ({ pixelSrc, realSrc, alt }) => {
       </div>
 
       <div className="hover-instruction-hint">
-        <span className="retro-icon-frame amber" style={{ width: 13, height: 13, marginRight: 4, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
-          <RetroPixelBoltIcon style={{ fontSize: 7.5, color: "#FFFFFF" }} />
-        </span>
         <span>TAP/HOVER FOR REALITY</span>
       </div>
 
