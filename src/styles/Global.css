@@ -306,9 +306,9 @@ a, button, [role="button"] {
 .edu-grade:hover,
 .edu-badge:hover,
 .hero-badge-pill:hover {
-  transform: translate(1.5px, 1.5px) !important;
-  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.15) !important;
-  background-color: #f3f4f6 !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  background-color: #FFFFFF !important;
 }
 
 .stage-tag .retro-icon-frame:hover,
