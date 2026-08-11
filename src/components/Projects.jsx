@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Projects.css";
 import FadeInSection from "./FadeInSection";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
@@ -317,6 +317,11 @@ const ConstructionOverlay = () => (
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    setSelectedProject(null);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {

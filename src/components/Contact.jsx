@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/Contact.css";
 import FadeInSection from "./FadeInSection";
 import AttachFileRoundedIcon from "@mui/icons-material/AttachFileRounded";
@@ -23,9 +24,14 @@ const Contact = () => {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [fileType, setFileType] = useState("");
   const [showPreviewModal, setShowPreviewModal] = useState(false);
+  const location = useLocation();
   const [popupState, setPopupState] = useState({ show: false, message: "", type: "success" });
 
   const iframeRef = useRef(null);
+
+  useEffect(() => {
+    setShowPreviewModal(false);
+  }, [location.pathname, location.hash]);
 
   // Cleanup object URLs to avoid memory leaks
   useEffect(() => {

@@ -827,4 +827,8 @@
     max-height: unset !important;
     object-fit: contain !important;
   }
+
+  .sleek-dev-pill {
+    display: none !important;
+  }
 }

@@ -101,6 +101,15 @@
   box-shadow: 0px 0px 0px transparent !important;
 }
 
+.file-upload-btn span:last-child {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  vertical-align: middle;
+}
+
 .clear-file-btn {
   display: inline-flex;
   align-items: center;
@@ -404,7 +413,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 99999999;
 }
 
 .retro-popup-box {
@@ -438,4 +447,20 @@
 @keyframes popIn {
   0% { transform: scale(0.8); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+@media only screen and (max-width: 768px) {
+  .file-upload-btn span:last-child {
+    max-width: 130px;
+  }
+  .preview-modal-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .submit-btn.cancel-btn,
+  .submit-btn.change-btn,
+  .submit-btn.modal-remove-btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
 }
