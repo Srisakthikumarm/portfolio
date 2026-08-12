@@ -405,15 +405,13 @@
 /* Custom Popup Notification */
 .retro-popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99999999;
+  padding: 100px 24px 24px;
+  z-index: 999999;
 }
 
 .retro-popup-box {
@@ -450,6 +448,16 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .retro-popup-overlay {
+    padding: 100px 12px 12px !important;
+  }
+  .retro-preview-modal,
+  .retro-popup-box {
+    padding: 32px 16px 16px !important;
+    max-height: calc(100vh - 120px) !important;
+    box-shadow: 4px 4px 0px #000000 !important;
+    overflow-y: auto !important;
+  }
   .file-upload-wrapper {
     gap: 4px;
     margin: 0 4px;
@@ -459,12 +467,19 @@
   }
   .preview-modal-controls {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 12px;
   }
-  .submit-btn.cancel-btn,
-  .submit-btn.change-btn,
-  .submit-btn.modal-remove-btn {
+  .submit-btn.cancel-btn {
     flex: 1 1 100%;
     justify-content: center;
+  }
+  .submit-btn.change-btn,
+  .submit-btn.modal-remove-btn {
+    flex: 1 1 calc(50% - 6px);
+    justify-content: center;
+    padding: 8px 8px;
+    font-size: 11px;
+    gap: 6px;
   }
 }

@@ -5,6 +5,7 @@ import FadeInSection from "./FadeInSection";
 import AttachFileRoundedIcon from "@mui/icons-material/AttachFileRounded";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import { playFunnyClickSound } from "../utils/soundEffects";
@@ -326,6 +327,13 @@ const Contact = () => {
               onClick={() => setPopupState({ ...popupState, show: false })}
               style={{ marginTop: "24px", padding: "8px 24px" }}
             >
+              <span className={`retro-icon-frame ${popupState.type === "success" ? "green" : "coral"}`}>
+                {popupState.type === "success" ? (
+                  <CheckRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                ) : (
+                  <CloseRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                )}
+              </span>
               <span className="submit-btn-text">OK</span>
             </button>
           </div>

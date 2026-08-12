@@ -67,6 +67,9 @@
     box-shadow: 0px 0px 0px #000000;
     transform: translate(2px, 2px);
   }
+  .game-toggle-btn:hover .game-toggle-dot {
+    background: #FFFFFF;
+  }
 }
 
 .game-toggle-btn:active {
