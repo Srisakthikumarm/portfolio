@@ -805,7 +805,8 @@ export default function FullSiteRetroGame({ active, musicState }) {
 
         ctx.fillStyle = "#000000";
         ctx.font = "900 11px monospace";
-        ctx.fillText(en.type, en.x - 2, screenY - 6);
+        ctx.textAlign = "center";
+        ctx.fillText(en.type, en.x + en.w / 2, screenY - 6);
         ctx.restore();
 
         // Laser Hits on Enemy (Plays Enemy Explosion Sound!)
