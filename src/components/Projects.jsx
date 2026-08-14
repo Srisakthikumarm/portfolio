@@ -108,6 +108,18 @@ const featuredProjects = [
     demo: "https://www.behance.net/gallery/253677007/Aether-Analytics-Ad-Poster-Design-Design-Assignment",
   },
   {
+    id: "video-editor-portfolio",
+    title: "VIDEO EDITOR PORTFOLIO",
+    year: "2026",
+    desc: "Personal brand and landing page design for a video editor built for growth and performance. Designed in Figma and fully developed in Framer.",
+    fullDetails: "Designed and developed a personal brand and landing page titled 'Video Editor Portfolio'. Designed the high-impact interface and user experience in Figma, and built the fully responsive, animated website in Framer to showcase video editing work with high-performance visuals.",
+    tech: ["UI/UX DESIGN", "FIGMA", "FRAMER", "PORTFOLIO DESIGN", "BEHANCE SHOWCASE"],
+    image: "/assets/video_editor_portfolio.png",
+    link: "https://www.behance.net/gallery/254287793/Vedio-Editor-Porfolio",
+    behanceLink: "https://www.behance.net/gallery/254287793/Vedio-Editor-Porfolio",
+    demo: "https://sakthivideoeditor.framer.website/",
+  },
+  {
     id: "flow",
     title: "FLOW B2B LOGISTICS PLATFORM",
     year: "IN DEVELOPMENT",
@@ -459,7 +471,7 @@ const Projects = () => {
                             className="omori-btn-white"
                           >
                             <span className="retro-icon-frame emerald">
-                              <LaunchRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
+                              <OpenInNewRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
                             </span>
                             <span>LIVE DEMO</span>
                           </a>

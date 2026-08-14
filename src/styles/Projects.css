@@ -315,6 +315,7 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap !important;
 }
 
 .omori-btn-white {
@@ -334,6 +335,7 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap !important;
 }
 
 .omori-btn-black .retro-icon-frame,
