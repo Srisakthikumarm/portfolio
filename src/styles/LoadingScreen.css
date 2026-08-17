@@ -122,7 +122,24 @@
 
 @media only screen and (max-width: 500px) {
   .cylinder-rotating-line {
-    font-size: 14px;
+    font-size: 11px;
+    white-space: normal;
+  }
+  .loading-brand-text {
+    font-size: 16px;
+  }
+  .loading-subtitle {
+    font-size: 13px;
+  }
+  .loading-percentage {
+    font-size: 36px;
+  }
+  .percent-symbol {
+    font-size: 20px;
+  }
+  .loading-logo-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
