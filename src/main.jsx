@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { HashRouter } from "react-router-dom";
 import { playFunnyClickSound } from "./utils/soundEffects";
+import { Analytics } from "@vercel/analytics/react";
 
 // Global click listener to attach the click sound to all buttons across the app
 document.addEventListener('click', (e) => {
@@ -20,6 +21,11 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <App />
+      {/* 
+        Vercel Analytics: 
+        To manually disable analytics, simply comment out or remove the <Analytics /> line below.
+      */}
+      <Analytics />
     </HashRouter>
   </React.StrictMode>
 );
