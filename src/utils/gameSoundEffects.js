@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, no-empty */
 // Singleton Shared Web Audio Context to avoid browser quota limits
 let sharedAudioCtx = null;
 

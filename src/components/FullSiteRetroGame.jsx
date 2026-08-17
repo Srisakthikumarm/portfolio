@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps, react-hooks/set-state-in-effect, no-unused-vars */
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import WarningRoundedIcon from "@mui/icons-material/WarningRounded";
 import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";

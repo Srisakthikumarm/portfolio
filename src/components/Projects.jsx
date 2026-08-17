@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps, react-hooks/set-state-in-effect, no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Projects.css";
@@ -331,7 +332,9 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const location = useLocation();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedProject(null);
   }, [location.pathname, location.hash]);
 

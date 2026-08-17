@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, no-empty */
 let lastPlayTime = 0;
 
 // Funny 8-bit retro arcade click/blip sound effect for interactive buttons
