@@ -10,7 +10,7 @@
   align-items: center;
   gap: 8px;
   font-family: 'Pixelify Sans', monospace;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 900;
   color: #000000;
   background: #FFFFFF;
@@ -147,7 +147,7 @@
 
 .music-popover-title {
   font-family: 'Pixelify Sans', monospace;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 900;
   color: #000000;
   letter-spacing: 0.5px;
@@ -155,7 +155,7 @@
 
 .music-popover-status {
   font-family: 'Pixelify Sans', monospace;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   color: #666666;
 }
@@ -217,7 +217,7 @@
 
 .volume-label {
   font-family: 'Pixelify Sans', monospace;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 900;
   color: #000000;
 }

@@ -22,3 +22,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'PixelOperatorRegular';
+  src: url('/fonts/PixelOperatorRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#root *,
+html,
+body,
+button,
+input,
+textarea {
+  font-family: 'PixelOperatorRegular', monospace !important;
+  letter-spacing: 0.8px !important;
+  line-height: 1.6 !important;
+}
+
+p, li, .body-text, .omori-proj-desc, .bio-text-paragraph, .detail-value {
+  font-size: 18px !important;
+}
+
+/* Reduce eye-strain: Use slightly off-white (#e0e0e0) instead of pure white on black backgrounds */
+.nav-link.omori-nav-btn:hover,
+#basic-navbar-nav .omori-nav-btn.omori-active-section,
+.omori-view-all-btn:hover,
+.retro-icon-frame.black,
+.stage-tag .retro-icon-frame.black,
+.explore-link:hover {
+  color: #E0E0E0 !important;
+}
+
+/* Accessibility Override: Boost tiny pixel fonts on tags and badges globally */
+#root .studio-title-badge, #root .mode-btn, #root .project-tab-btn, #root .stage-tag, #root .layers-label, #root .layer-chip, #root .color-chip-label, #root .live-cursor-tag, #root .swatch-box small, #root .contrast-badge, #root .state-label, #root .mock-btn, #root .interest-tag, #root .omori-tag, #root .wip-badge, #root .wip-alert-title, #root .progress-label, #root .progress-pct, #root .omori-tech-pill, #root .archive-card-category, #root .bento-chip, #root .popover-text-with-icon, #root .detail-subtext {
+  font-size: 16px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  #root .studio-title-badge, #root .mode-btn, #root .project-tab-btn, #root .stage-tag, #root .layers-label, #root .layer-chip, #root .color-chip-label, #root .live-cursor-tag, #root .swatch-box small, #root .contrast-badge, #root .state-label, #root .mock-btn, #root .interest-tag, #root .omori-tag, #root .wip-badge, #root .wip-alert-title, #root .progress-label, #root .progress-pct, #root .omori-tech-pill, #root .archive-card-category, #root .bento-chip, #root .popover-text-with-icon, #root .detail-subtext {
+    font-size: 14px !important;
+  }
+}
+
+

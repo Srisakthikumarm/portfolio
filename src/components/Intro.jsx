@@ -165,12 +165,6 @@ const Intro = () => {
               </span>
               <span>B2B LOGISTICS SAAS</span>
             </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame blue">
-                <CodeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>REACT / FRONTEND</span>
-            </div>
           </div>
         </div>
       </FadeInSection>

@@ -26,7 +26,7 @@
 
 .omori-footer-tagline {
   font-family: 'Courier New', monospace, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #000000;
   text-align: center;
   line-height: 1.6;
@@ -61,7 +61,7 @@
 /* Heading Centered directly above its 2 sub-columns */
 .omori-col-title {
   font-family: 'Courier New', monospace, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   color: #000000;
   text-transform: uppercase;
@@ -86,7 +86,7 @@
 .omori-footer-section a,
 .omori-footer-col a {
   font-family: var(--font-heading, sans-serif);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
   color: #000000;
   text-decoration: none;
@@ -121,7 +121,7 @@
 
 .omori-copyright-bar {
   font-family: 'Courier New', monospace, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: #6B7280;
   text-align: center;
   border-top: 1.5px solid #E5E7EB;
@@ -174,7 +174,7 @@
 
   .omori-footer-section a,
   .omori-footer-col a {
-    font-size: 11px !important;
+    font-size: 12px !important;
     padding: 3px 4px !important;
     gap: 6px !important;
     max-width: 100% !important;
@@ -184,12 +184,12 @@
   }
 
   .omori-col-title {
-    font-size: 14px !important;
+    font-size: 16px !important;
     margin-bottom: 8px !important;
   }
 
   .omori-footer-tagline {
-    font-size: 16px !important;
+    font-size: 18px !important;
     padding-bottom: 18px !important;
   }
 }

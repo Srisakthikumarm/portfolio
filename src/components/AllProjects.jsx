@@ -538,7 +538,7 @@ const AllProjects = () => {
         <div className="all-projects-bottom-nav">
           <Link to="/" className="omori-back-btn">
             <span className="retro-icon-frame blue">
-              <ArrowBackRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+              <ArrowBackRoundedIcon style={{ fontSize: 15, color: "#FFFFFF" }} />
             </span>
             <span>BACK TO HOME</span>
           </Link>

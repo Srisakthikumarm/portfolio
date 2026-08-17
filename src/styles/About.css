@@ -95,7 +95,7 @@
 
 .bento-role-badge {
   font-family: 'Pixelify Sans', monospace;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 900;
   color: #000000;
   background: #F3F4F6;
@@ -413,7 +413,7 @@
   align-items: center;
   gap: 8px;
   font-family: 'Pixelify Sans', monospace;
-  font-size: 15px;
+  font-size: 22px;
   font-weight: 900;
   color: #000000;
   letter-spacing: 1px;
@@ -424,7 +424,7 @@
 }
 
 .bio-text-paragraph {
-  font-family: 'VT323', monospace !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   font-size: 19px;
   color: #374151;
   line-height: 1.6;
@@ -540,7 +540,7 @@
 }
 
 .detail-value {
-  font-family: 'VT323', monospace !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   font-size: 18px;
   color: #000000;
 }
@@ -587,16 +587,17 @@
 }
 
 .setup-title {
-  font-family: 'Pixelify Sans', monospace;
-  font-size: 13px;
-  font-weight: 800;
+  font-family: 'DotGothic16', monospace;
+  font-size: 18px;
+  font-weight: 900;
   color: #000000;
 }
 
 .setup-sub {
-  font-family: 'VT323', monospace !important;
-  font-size: 16px;
-  color: #4B5563;
+  font-family: 'DotGothic16', monospace;
+  font-size: 14px;
+  color: #6B7280;
+  margin-top: 4px;
 }
 
 /* Strengths Progress Bars Card */
@@ -619,7 +620,7 @@
   align-items: center;
   justify-content: space-between;
   font-family: 'Pixelify Sans', monospace;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 900;
   color: #000000;
 }

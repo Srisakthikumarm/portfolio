@@ -15,27 +15,35 @@
   --text-muted: #374151;
   --text-dim: #6B7280;
 
-  --font-heading: 'Pixelify Sans', 'Pixelify Sans', monospace;
-  --font-body: 'VT323', 'VT323', monospace;
-  --font-mono: 'Pixelify Sans', 'Pixelify Sans', monospace;
+  --font-heading: 'PixelOperatorRegular', monospace;
+  --font-body: 'PixelOperatorRegular', monospace;
+  --font-mono: 'PixelOperatorRegular', monospace;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Pixelify Sans', 'Pixelify Sans', sans-serif !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   cursor: url('/assets/cursor.svg') 12 1, auto;
 }
 
 html, button, input, select, textarea, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label {
-  font-family: 'Pixelify Sans', 'Pixelify Sans', sans-serif !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
 }
 
 p {
-  font-family: 'VT323', 'VT323', monospace !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   font-size: 19px !important;
+  font-weight: 400;
 }
+
+h1 { font-size: 48px !important; font-weight: 900; }
+h2 { font-size: 36px !important; font-weight: 900; }
+h3 { font-size: 28px !important; font-weight: 900; }
+h4 { font-size: 24px !important; font-weight: 900; }
+h5 { font-size: 20px !important; font-weight: 900; }
+h6 { font-size: 18px !important; font-weight: 900; }
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -46,7 +54,7 @@ html {
 body {
   background-color: #FFFFFF;
   color: #000000;
-  font-family: 'VT323', 'VT323', monospace !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -183,17 +191,17 @@ a, button, [role="button"] {
 }
 
 .section-number {
-  font-family: 'Press Start 2P', monospace !important;
-  font-size: 28px !important;
-  font-weight: 400 !important;
+  font-family: 'Pixelify Sans', monospace !important;
+  font-size: 48px !important;
+  font-weight: 900 !important;
   color: #000000 !important;
   line-height: 1 !important;
 }
 
 .section-title {
-  font-family: 'Press Start 2P', monospace !important;
-  font-size: 28px !important;
-  font-weight: 400 !important;
+  font-family: 'Pixelify Sans', monospace !important;
+  font-size: 48px !important;
+  font-weight: 900 !important;
   letter-spacing: 1px !important;
   color: #000000 !important;
   display: inline-flex !important;
@@ -257,7 +265,7 @@ a, button, [role="button"] {
 
   .section-title,
   .section-number {
-    font-size: 12.5px !important;
+    font-size: 28px !important;
     gap: 6px !important;
     white-space: nowrap !important;
     line-height: 1.2 !important;
@@ -271,7 +279,7 @@ a, button, [role="button"] {
 @media only screen and (max-width: 480px) {
   .section-title,
   .section-number {
-    font-size: 10.5px !important;
+    font-size: 24px !important;
     letter-spacing: 0.3px !important;
   }
 }

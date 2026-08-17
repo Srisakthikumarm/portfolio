@@ -286,19 +286,19 @@ const HeroVisual = () => {
               <div className="typo-list">
                 <div className="typo-item">
                   <span className="typo-name">HEADER SYSTEM</span>
-                  <span className="typo-sample pixel" style={{ fontSize: 13 }}>
+                  <span className="typo-sample pixel" style={{ fontSize: 16 }}>
                     {currentProject.fontHeader}
                   </span>
                 </div>
                 <div className="typo-item">
                   <span className="typo-name">BODY SYSTEM</span>
-                  <span className="typo-sample mono" style={{ fontSize: 12 }}>
+                  <span className="typo-sample mono" style={{ fontSize: 16 }}>
                     {currentProject.fontBody}
                   </span>
                 </div>
                 <div className="typo-item">
                   <span className="typo-name">DESIGN TAG</span>
-                  <span className="typo-sample body" style={{ fontSize: 12 }}>
+                  <span className="typo-sample body" style={{ fontSize: 14 }}>
                     {currentProject.tag}
                   </span>
                 </div>

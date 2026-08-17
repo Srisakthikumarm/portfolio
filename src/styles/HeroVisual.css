@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
@@ -92,7 +92,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
@@ -141,7 +141,7 @@
 }
 
 .project-tab-btn {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
@@ -204,8 +204,8 @@
 }
 
 .stage-tag {
-  font-family: 'Pixelify Sans', monospace;
-  font-size: 12px;
+  font-family: 'DotGothic16', monospace;
+  font-size: 14px;
   font-weight: 900;
   color: #000000;
   background: #F3F4F6;
@@ -226,8 +226,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Pixelify Sans', monospace;
-  font-size: 12px;
+  font-family: 'DotGothic16', monospace;
+  font-size: 14px;
   font-weight: 900;
   color: #FFFFFF;
   background: #000000;
@@ -268,7 +268,7 @@
 }
 
 .stage-title {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 20px;
   font-weight: 900;
   color: #000000;
@@ -313,14 +313,14 @@
 }
 
 .layers-label {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 11px;
   font-weight: 900;
   color: #6B7280;
 }
 
 .layer-chip {
-  font-family: 'Pixelify Sans', sans-serif !important;
+  font-family: 'DotGothic16', sans-serif !important;
   font-size: 12px;
   font-weight: 700;
   color: #000000;
@@ -359,7 +359,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 11px;
   font-weight: 900;
   padding: 3px 8px;
@@ -393,7 +393,7 @@
 }
 
 .live-cursor-tag {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 12px;
   font-weight: 900;
   color: #FFFFFF;
@@ -427,8 +427,8 @@
 }
 
 .lab-card-title {
-  font-family: 'Pixelify Sans', monospace;
-  font-size: 13px;
+  font-family: 'DotGothic16', monospace;
+  font-size: 20px;
   font-weight: 900;
   color: #000000;
   border-bottom: 2px solid #000000;
@@ -451,7 +451,7 @@
   align-items: center;
   text-align: center;
   gap: 4px;
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 12px;
   font-weight: 900;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -473,7 +473,7 @@
 }
 
 .contrast-badge {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 11px;
   font-weight: 900;
   color: #000000;
@@ -496,14 +496,14 @@
 }
 
 .state-label {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 11px;
   font-weight: 900;
   color: #6B7280;
 }
 
 .mock-btn {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 12px;
   font-weight: 900;
   padding: 4px 10px;
@@ -528,27 +528,27 @@
 }
 
 .typo-name {
-  font-family: 'Pixelify Sans', monospace;
-  font-size: 10px;
+  font-family: 'DotGothic16', monospace;
+  font-size: 12px;
   font-weight: 900;
   color: #6B7280;
 }
 
 .typo-sample.pixel {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 13px;
   color: #000000;
 }
 
 .typo-sample.mono {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: 'DotGothic16', monospace;
   font-size: 13px;
   font-weight: 900;
   color: #000000;
 }
 
 .typo-sample.body {
-  font-family: 'VT323', monospace !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   font-size: 13px;
   color: #374151;
 }
@@ -586,7 +586,7 @@
     justify-content: center !important;
     text-align: center !important;
     padding: 10px 14px !important;
-    font-size: 12px !important;
+    font-size: 15px !important;
     box-sizing: border-box !important;
     white-space: nowrap !important;
   }
@@ -614,7 +614,7 @@
     height: auto !important;
     min-height: 38px !important;
     padding: 8px 12px !important;
-    font-size: 11.5px !important;
+    font-size: 14px !important;
     line-height: 1.35 !important;
     box-sizing: border-box !important;
     white-space: normal !important;

@@ -58,10 +58,9 @@
 
   .omori-proj-year {
     flex-shrink: 0 !important;
-    font-size: 11px !important;
-    padding: 2px 6px !important;
+    font-size: 14px !important;
+    padding: 3px 8px !important;
     margin-left: 4px !important;
-    max-height: 22px !important;
   }
 
   .omori-action-btn-row {
@@ -75,7 +74,7 @@
     width: 100% !important;
     justify-content: center !important;
     padding: 10px 14px !important;
-    font-size: 13px !important;
+    font-size: 16px !important;
   }
 
   .omori-sub-action-btns {
@@ -102,7 +101,7 @@
     padding: 40px 16px !important;
   }
   .omori-proj-desc {
-    font-size: 13px !important;
+    font-size: 16px !important;
     line-height: 1.5 !important;
   }
   .omori-proj-tags {
@@ -187,12 +186,12 @@
 
 .omori-proj-year {
   font-family: 'Pixelify Sans', monospace;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 900;
   color: #000000;
   background: #FFFFFF;
-  border: 1.5px solid #000000;
-  padding: 2px 8px;
+  border: 2px solid #000000;
+  padding: 4px 10px;
   white-space: nowrap;
   display: inline-block;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -208,7 +207,7 @@
   background: #FFFBEB !important;
   color: #D97706 !important;
   border-color: #D97706 !important;
-  font-size: 9.5px !important;
+  font-size: 14px !important;
   font-weight: 900 !important;
   letter-spacing: 0.5px !important;
   box-shadow: 2px 2px 0px #D97706 !important;
@@ -242,7 +241,7 @@
 }
 
 .omori-proj-desc {
-  font-family: 'VT323', monospace !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   font-size: 15px;
   color: #374151;
   line-height: 1.6;
@@ -259,7 +258,7 @@
 
 .omori-tech-pill {
   font-family: 'Pixelify Sans', monospace;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   color: #000000;
   background: #F9FAFB;
@@ -304,7 +303,7 @@
   justify-content: center;
   gap: 8px;
   font-family: 'Pixelify Sans', monospace;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 900;
   color: #FFFFFF;
   background: #000000;
@@ -316,6 +315,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap !important;
+  line-height: 1 !important;
 }
 
 .omori-btn-white {
@@ -324,7 +324,7 @@
   justify-content: center;
   gap: 8px;
   font-family: 'Pixelify Sans', monospace;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 900;
   color: #000000;
   background: #FFFFFF;
@@ -336,6 +336,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap !important;
+  line-height: 1 !important;
 }
 
 .omori-btn-black .retro-icon-frame,
@@ -583,7 +584,7 @@
 }
 
 .modal-full-details-text {
-  font-family: 'VT323', monospace !important;
+  font-family: 'PixelOperatorRegular', monospace !important;
   font-size: 16px;
   color: #374151;
   line-height: 1.6;
@@ -807,7 +808,7 @@
     justify-content: center !important;
     text-align: center !important;
     padding: 10px 14px !important;
-    font-size: 12px !important;
+    font-size: 14px !important;
     box-sizing: border-box !important;
     margin: 0 !important;
     white-space: nowrap !important;
