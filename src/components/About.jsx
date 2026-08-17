@@ -114,7 +114,7 @@ const PixelDissolveAvatar = ({ pixelSrc, realSrc, alt }) => {
         {isHovered ? (
           <span className="badge-text-real">
             <span className="retro-icon-frame amber">
-              <RetroPixelBoltIcon style={{ fontSize: 10.5, color: "#FFFFFF" }} />
+              <RetroPixelBoltIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
             </span>
             REALITY MODE
           </span>

@@ -41,8 +41,10 @@ textarea {
   line-height: 1.6 !important;
 }
 
-p, li, .body-text, .omori-proj-desc, .bio-text-paragraph, .detail-value {
+/* Unified body and paragraph sizing across both mobile and desktop screens */
+#root p, #root li, #root .body-text, #root .omori-proj-desc, #root .bio-text-paragraph, #root .detail-value, #root .modal-full-details-text, #root .job-description li, #root .archive-card-desc, #root .robot-game-info-desc, #root .profile-detail-item {
   font-size: 18px !important;
+  line-height: 1.6 !important;
 }
 
 /* Reduce eye-strain: Use slightly off-white (#e0e0e0) instead of pure white on black backgrounds */

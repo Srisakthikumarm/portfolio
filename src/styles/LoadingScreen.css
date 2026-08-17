@@ -45,22 +45,22 @@
 }
 
 .loading-logo-icon {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
 .loading-brand-text {
   font-family: 'Press Start 2P', monospace;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
   letter-spacing: 0.5px;
   color: #000000;
 }
 
 .loading-subtitle {
   font-family: 'Courier New', monospace, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   color: #000000;
   margin-bottom: 24px;
@@ -110,7 +110,7 @@
 
 .cylinder-rotating-line {
   font-family: 'Pixelify Sans', monospace;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: 0.5px;
@@ -122,7 +122,7 @@
 
 @media only screen and (max-width: 500px) {
   .cylinder-rotating-line {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
