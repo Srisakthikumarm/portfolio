@@ -25,7 +25,18 @@
   margin: 0;
   padding: 0;
   font-family: 'PixelOperatorRegular', monospace !important;
-  cursor: url('/assets/cursor.svg') 12 1, auto;
+  cursor: url('/assets/cursor.svg') 12 1, auto !important;
+}
+
+/* Ensure custom pointer is used instead of system pointer */
+a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"], .omori-btn-white, .omori-btn-black, .omori-nav-btn,
+a *, button *, [role="button"] *, .omori-btn-white *, .omori-btn-black *, .omori-nav-btn * {
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
+}
+
+/* Let elements that explicitly want the default cursor fall back to our custom regular cursor instead of system arrow */
+.omori-skill-badge, .cursor-default-override {
+  cursor: url('/assets/cursor.svg') 12 1, default !important;
 }
 
 html, button, input, select, textarea, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label {

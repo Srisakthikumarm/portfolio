@@ -90,7 +90,7 @@ function App() {
 
   // Konami Code Listener
   useEffect(() => {
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    const konamiCode = ['g', 'a', 'm', 'e', 'r'];
     let konamiIndex = 0;
     const handleKeyDown = (e) => {
       if (e.key === konamiCode[konamiIndex] || e.key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
@@ -226,7 +226,7 @@ function App() {
             )}
           </div>
           <SidebarNav />
-          <FullSiteRetroGame active={gameActive} musicState={musicState} />
+          <FullSiteRetroGame active={gameActive} musicState={musicState} onClose={handleToggleGame} />
           <div id="content">
             <Routes>
               <Route

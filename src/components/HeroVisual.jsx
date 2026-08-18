@@ -71,9 +71,8 @@ const heroProjects = [
 const HeroVisual = () => {
   const [studioMode, setStudioMode] = useState("canvas"); // "canvas" or "lab"
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
-  const containerRef = useRef(null);
-
   const currentProject = heroProjects[activeProjectIdx];
+  const containerRef = useRef(null);
 
   const handleMouseMove = (e) => {
     if (!containerRef.current) return;
@@ -172,7 +171,7 @@ const HeroVisual = () => {
               </div>
             </div>
 
-            {/* Dynamic Figma Live Cursor Follower */}
+            {/* Dynamic Figma Live Cursor Follower (Tag Only) */}
             <div
               className="figma-live-cursor"
               style={{
@@ -183,9 +182,6 @@ const HeroVisual = () => {
                 pointerEvents: "none",
               }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#000000" stroke="#FFFFFF" strokeWidth="2" />
-              </svg>
               <span className="live-cursor-tag">
                 Sri Sakthi (UI/UX Designer)
               </span>

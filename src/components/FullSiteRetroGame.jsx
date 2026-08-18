@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps, react-hooks/set-state-in-effect, no-unused-vars */
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import WarningRoundedIcon from "@mui/icons-material/WarningRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 import BoltRoundedIcon from "@mui/icons-material/BoltRounded";
@@ -56,7 +57,7 @@ const BOOSTER_TYPES = [
   { type: "FREEZE", icon: "⏳", name: "TIME FREEZE", color: "#8B5CF6" },
 ];
 
-export default function FullSiteRetroGame({ active, musicState }) {
+export default function FullSiteRetroGame({ active, musicState, onClose }) {
   const canvasRef = useRef(null);
   const animRef = useRef(null);
   const battleAudioRef = useRef(null);
@@ -1098,6 +1099,20 @@ export default function FullSiteRetroGame({ active, musicState }) {
         <div className="hud-item">
           <span>SCORE: <strong style={{ color: "#10B981" }}>{score}</strong></span>
         </div>
+      </div>
+
+      {/* Separate Exit Button */}
+      <div className="fullsite-retro-exit-wrap">
+        <button 
+          onClick={onClose}
+          className="omori-btn-white"
+          title="Exit Game"
+        >
+          <span className="retro-icon-frame red">
+            <CloseRoundedIcon style={{ fontSize: 16 }} />
+          </span>
+          <span>EXIT</span>
+        </button>
       </div>
 
       {/* Floating Action Toast Banner */}

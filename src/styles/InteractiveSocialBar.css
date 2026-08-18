@@ -47,7 +47,7 @@
 }
 
 .more-icon-frame {
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
 }
 
 .more-rotator-wrap {

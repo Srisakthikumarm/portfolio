@@ -78,7 +78,8 @@ a:hover {
 }
 
 ::selection {
-  background: var(--lightest-navy);
+  background: #000000;
+  color: #FFFFFF;
 }
 
 @media (prefers-reduced-motion: no-preference) {

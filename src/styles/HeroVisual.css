@@ -100,7 +100,7 @@
   border: 2px solid #000000;
   box-shadow: 4px 4px 0px #000000;
   padding: 7px 16px;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   letter-spacing: 0.5px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-transform: uppercase;
@@ -149,7 +149,7 @@
   border: 2px solid #000000;
   box-shadow: 3px 3px 0px #000000;
   padding: 6px 14px;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   white-space: nowrap;
   transition: all 0.2s ease;
 }
@@ -329,7 +329,7 @@
   padding: 2px 8px;
   display: inline-block;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
 }
 
 .layer-chip:hover {
@@ -365,7 +365,7 @@
   padding: 3px 8px;
   box-shadow: 2px 2px 0px #000000;
   transition: all 0.2s ease;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
 }
 
 .inline-color-chip:hover {
@@ -455,7 +455,7 @@
   font-size: 12px;
   font-weight: 900;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
 }
 
 .swatch-box:hover {

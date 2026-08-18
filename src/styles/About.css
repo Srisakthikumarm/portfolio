@@ -166,7 +166,7 @@
   min-height: 100%;
   flex: 1;
   overflow: hidden;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   background: #0F172A;
   display: flex;
   flex-direction: column;
@@ -450,7 +450,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
 }
 
 /* Retro Hover Popover Tooltip Box (Image 1 Style) */

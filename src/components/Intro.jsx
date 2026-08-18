@@ -155,12 +155,12 @@ const Intro = () => {
         </div>
 
       {/* Konami Code Pro Tip (anchored to bottom of first screen) */}
-      <div className="hero-pro-tip">
+      <div className="hero-pro-tip" title="Type GAMER on your keyboard to unlock the secret game mode!">
         <span className="retro-icon-frame blue" style={{ width: 26, height: 26, marginRight: 10, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
           <GamepadRoundedIcon style={{ fontSize: 16, color: "#FFFFFF" }} />
         </span>
         <span style={{ display: "flex", alignItems: "center" }}>
-          Pro tip: &uarr;&uarr;&darr;&darr;&larr;&rarr;&larr;&rarr;BA 
+          Hint: Try typing 'GAMER'
           <span className="retro-icon-frame amber" style={{ width: 18, height: 18, marginLeft: 6 }}>
             <BoltRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
           </span>

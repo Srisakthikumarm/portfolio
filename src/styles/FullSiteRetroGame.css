@@ -46,7 +46,7 @@
   text-transform: uppercase;
   padding: 7px 16px;
   line-height: 1;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   box-shadow: 1px 1px 0px #000000, 3px 3px 0px #000000;
   transition: all 0.2s ease;
 }
@@ -376,7 +376,7 @@
 .fullsite-retro-hud {
   position: fixed;
   top: 76px;
-  right: 20px;
+  right: 140px;
   z-index: 9990;
   display: flex;
   align-items: center;
@@ -391,6 +391,17 @@
   font-size: 16px;
   font-weight: 900;
   color: #000000;
+}
+
+.fullsite-retro-exit-wrap {
+  position: fixed;
+  top: 76px;
+  right: 20px;
+  z-index: 9990;
+}
+
+.fullsite-retro-exit-wrap .omori-btn-white {
+  padding: 8px 12px !important;
 }
 
 @media only screen and (max-width: 991px) {
@@ -423,7 +434,7 @@
 
 @media only screen and (max-width: 768px) {
   .fullsite-retro-hud {
-    top: 108px;
+    top: 114px;
     left: 14px;
     right: 14px;
     font-size: 14px;
@@ -436,6 +447,10 @@
     border-radius: 0px;
     background: #FFFFFF;
     box-shadow: 4px 4px 0px #000000;
+  }
+  .fullsite-retro-exit-wrap {
+    top: 72px;
+    right: 14px;
   }
   .hud-item {
     display: flex;
@@ -689,7 +704,7 @@
   font-weight: 900;
   padding: 8px 18px;
   border-radius: 0px;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   box-shadow: 3px 3px 0px #000000;
   user-select: none;
   transition: all 0.15s ease;
@@ -786,7 +801,7 @@
   font-size: 16px;
   font-weight: 900;
   padding: 10px 24px;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   box-shadow: 3px 3px 0px #000000;
   transition: all 0.2s ease;
 }
@@ -848,7 +863,7 @@
   box-shadow: 3px 3px 0px #000000 !important;
   opacity: 0.95;
   transition: all 0.2s ease;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   outline: none;
   box-sizing: border-box !important;
   touch-action: none !important;

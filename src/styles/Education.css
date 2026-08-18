@@ -54,7 +54,7 @@
   display: inline-flex;
   align-items: center;
   color: #000000;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
 }
 
 .omori-cat-icon .retro-icon-frame {
@@ -170,7 +170,7 @@
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.15s ease;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
 }
 
 .edu-icon:hover {

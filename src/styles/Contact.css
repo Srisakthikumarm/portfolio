@@ -78,7 +78,7 @@
   border: 2px solid #000000;
   box-shadow: 3px 3px 0px #000000;
   background: #FFFFFF;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   font-size: 16px;
   transition: all 0.2s ease;
   border-radius: 0;
@@ -121,7 +121,7 @@
   border: 2px solid #000000;
   box-shadow: 3px 3px 0px #000000;
   border-radius: 0;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   padding: 0;
   transition: all 0.2s ease;
 }
@@ -145,7 +145,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   font-size: 14px;
   font-weight: 900;
 }
@@ -188,7 +188,7 @@
   background: #FFFFFF;
   border: 3px solid #000000;
   box-shadow: 5px 5px 0px #000000;
-  cursor: pointer;
+  cursor: url('/assets/cursor-pointer.svg') 12 1, auto !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   font-family: 'Pixelify Sans', monospace !important;
   font-size: 18px;
