@@ -205,7 +205,8 @@ const About = () => {
                     </span>
                     <div className="retro-hover-popover rose-popover">
                       <span className="popover-text-with-icon">
-                        HOBBIES: PIXEL ART, GAMING & UI CRAFTING
+                        <span className="desktop-only-text">HOBBIES: PIXEL ART, GAMING & UI CRAFTING</span>
+                        <span className="mobile-only-text">PIXEL ART & GAMING</span>
                         <span className="retro-icon-frame purple mini inline-last">
                           <SportsEsportsRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
                         </span>
@@ -219,7 +220,8 @@ const About = () => {
                     </span>
                     <div className="retro-hover-popover amber-popover">
                       <span className="popover-text-with-icon">
-                        FUEL: COFFEE, MUSIC & CREATIVE IDEAS
+                        <span className="desktop-only-text">FUEL: COFFEE, MUSIC & CREATIVE IDEAS</span>
+                        <span className="mobile-only-text">FUEL: COFFEE & MUSIC</span>
                         <span className="retro-icon-frame rose mini inline-last">
                           <HeadphonesRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
                         </span>
@@ -233,7 +235,8 @@ const About = () => {
                     </span>
                     <div className="retro-hover-popover blue-popover">
                       <span className="popover-text-with-icon">
-                        CORE FOCUS: PIXEL-PERFECT DESIGN & CLEAN CODE
+                        <span className="desktop-only-text">CORE FOCUS: PIXEL-PERFECT DESIGN & CLEAN CODE</span>
+                        <span className="mobile-only-text">FOCUS: PIXEL-PERFECT & CODE</span>
                         <span className="retro-icon-frame coral mini inline-last">
                           <AutoAwesomeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
                         </span>

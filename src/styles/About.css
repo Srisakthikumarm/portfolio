@@ -485,6 +485,22 @@
   border-color: #000000 transparent transparent transparent;
 }
 
+/* Shift 2nd popup left */
+.retro-icon-tooltip-wrap:nth-child(2) .retro-hover-popover {
+  left: -30px;
+}
+.retro-icon-tooltip-wrap:nth-child(2) .retro-hover-popover::after {
+  left: 46px; /* 16px + 30px */
+}
+
+/* Shift 3rd popup left to prevent right-side overflow on desktop */
+.retro-icon-tooltip-wrap:nth-child(3) .retro-hover-popover {
+  left: -80px;
+}
+.retro-icon-tooltip-wrap:nth-child(3) .retro-hover-popover::after {
+  left: 96px; /* 16px + 80px */
+}
+
 /* Hover State */
 .retro-icon-tooltip-wrap:hover .retro-hover-popover {
   opacity: 1;
@@ -662,8 +678,20 @@
 .fade-in-section.is-visible .strength-item:nth-child(4) .strength-fill { animation-delay: 1.4s; }
 .fade-in-section.is-visible .strength-item:nth-child(5) .strength-fill { animation-delay: 1.6s; }
 
+.mobile-only-text {
+  display: none !important;
+}
+
 /* Mobile Responsiveness for Bento Profile Container */
 @media only screen and (max-width: 1024px) {
+  .desktop-only-text {
+    display: none !important;
+  }
+  
+  .mobile-only-text {
+    display: inline !important;
+  }
+
   #about {
     padding: 40px 16px !important;
   }
@@ -671,6 +699,27 @@
   .bento-top-row {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
+  }
+
+  .card-bottom-icon-bar {
+    position: relative !important;
+  }
+
+  .retro-icon-tooltip-wrap {
+    position: static !important;
+  }
+
+  .retro-hover-popover {
+    white-space: nowrap !important;
+    width: max-content !important;
+    max-width: none !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) translateY(6px) !important;
+  }
+
+  .retro-hover-popover::after {
+    display: none !important;
   }
 
   .bento-bottom-row {

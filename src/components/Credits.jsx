@@ -67,13 +67,13 @@ const Credits = () => {
                   <span className="retro-icon-frame blue">
                     <BehanceIcon />
                   </span>
-                  <span>BEHANCE PORTFOLIO</span>
+                  <span>BEHANCE<span className="desktop-only-text"> PORTFOLIO</span></span>
                 </a>
                 <a href="https://dribbble.com/srisakthikumar" target="_blank" rel="noreferrer">
                   <span className="retro-icon-frame dribbble">
                     <DribbbleIcon />
                   </span>
-                  <span>DRIBBBLE SHOTS</span>
+                  <span>DRIBBBLE<span className="desktop-only-text"> SHOTS</span></span>
                 </a>
               </div>
               <div className="grid-sub-col">
@@ -81,19 +81,19 @@ const Credits = () => {
                   <span className="retro-icon-frame medium">
                     <MediumIcon />
                   </span>
-                  <span>MEDIUM CASE STUDIES</span>
+                  <span>MEDIUM<span className="desktop-only-text"> CASE STUDIES</span></span>
                 </a>
                 <a href="https://www.linkedin.com/in/srisakthikumar" target="_blank" rel="noreferrer">
                   <span className="retro-icon-frame linkedin">
                     <LinkedInIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
                   </span>
-                  <span>LINKEDIN PROFILE</span>
+                  <span>LINKEDIN<span className="desktop-only-text"> PROFILE</span></span>
                 </a>
                 <a href="https://srisakthikumar.framer.website" target="_blank" rel="noreferrer">
                   <span className="retro-icon-frame green">
                     <LanguageRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
                   </span>
-                  <span>LIVE FRAMER PORTFOLIO</span>
+                  <span><span className="desktop-only-text">LIVE </span>FRAMER<span className="desktop-only-text"> PORTFOLIO</span></span>
                 </a>
               </div>
             </div>
