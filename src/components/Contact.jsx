@@ -187,12 +187,14 @@ const Contact = () => {
 
   return (
     <div id="contact">
-      <FadeInSection>
+      <FadeInSection delay="0s">
         <div className="section-header">
           <span className="section-number">06</span>
           <span className="section-title">LET'S TALK</span>
         </div>
+      </FadeInSection>
         
+      <FadeInSection delay="0.15s">
         <div className="contact-wrapper">
           <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: "none" }} onLoad={handleIframeLoad}></iframe>
           <form 

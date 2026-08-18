@@ -124,14 +124,16 @@ const educationData = [
 const Education = () => {
   return (
     <div id="education">
-      <FadeInSection>
-        {/* Section 04 Header: Number Left, Title Right */}
+      {/* Section 04 Header: Number Left, Title Right */}
+      <FadeInSection delay="0s">
         <div className="section-header">
           <span className="section-number">04</span>
           <span className="section-title">SKILLS & TECH-STACK</span>
         </div>
+      </FadeInSection>
 
-        {/* 2x2 Grid of White Category Cards with Colorful Badges */}
+      {/* 2x2 Grid of White Category Cards with Colorful Badges */}
+      <FadeInSection delay="0.15s">
         <div className="omori-skills-grid">
           {skillCategories.map((cat, idx) => (
             <div key={idx} className="omori-skill-card">
@@ -160,14 +162,24 @@ const Education = () => {
             </div>
           ))}
         </div>
+      </FadeInSection>
 
-        {/* Section 05 Header: Title Left, Number Right */}
+      {/* Decorative Divider */}
+      <FadeInSection delay="0.3s">
+        <div className="omori-section-divider">
+          <div className="omori-pixel-dots"></div>
+        </div>
+      </FadeInSection>
+
+      {/* Section 05 Header: Title Left, Number Right */}
+      <FadeInSection delay="0s">
         <div className="section-header" style={{ marginTop: "80px" }}>
           <span className="section-title">EDUCATION & CREDENTIALS</span>
           <span className="section-number">05</span>
         </div>
+      </FadeInSection>
 
-        <div className="education-grid">
+      <div className="education-grid">
           {educationData.map((item, index) => (
             <FadeInSection key={index} delay={`${(index + 1) * 150}ms`}>
               <div className="education-card">
@@ -189,8 +201,7 @@ const Education = () => {
               </div>
             </FadeInSection>
           ))}
-        </div>
-      </FadeInSection>
+      </div>
     </div>
   );
 };

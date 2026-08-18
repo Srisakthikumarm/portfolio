@@ -574,12 +574,16 @@
 
 .setup-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   background: #FFFFFF;
   border: 1.5px solid #000000;
   box-shadow: 2px 2px 0px #000000;
   padding: 8px 12px;
+}
+
+.setup-item .retro-icon-frame {
+  margin-top: 2px;
 }
 
 .setup-icon {
@@ -635,11 +639,28 @@
   overflow: hidden;
 }
 
+@keyframes fillBar {
+  0% { width: 0%; }
+  100% { width: var(--target-percent); }
+}
+
 .strength-fill {
   height: 100%;
-  background: #000000;
-  transition: width 1s ease;
+  width: 0%;
+  background: #000000; /* Fallback */
+  border-right: 2px solid #000000;
 }
+
+.fade-in-section.is-visible .strength-fill {
+  animation: fillBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger the animation of each progress bar */
+.fade-in-section.is-visible .strength-item:nth-child(1) .strength-fill { animation-delay: 0.8s; }
+.fade-in-section.is-visible .strength-item:nth-child(2) .strength-fill { animation-delay: 1.0s; }
+.fade-in-section.is-visible .strength-item:nth-child(3) .strength-fill { animation-delay: 1.2s; }
+.fade-in-section.is-visible .strength-item:nth-child(4) .strength-fill { animation-delay: 1.4s; }
+.fade-in-section.is-visible .strength-item:nth-child(5) .strength-fill { animation-delay: 1.6s; }
 
 /* Mobile Responsiveness for Bento Profile Container */
 @media only screen and (max-width: 1024px) {

@@ -18,11 +18,11 @@ import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 
 const strengthsData = [
-  { name: "User Research & Strategy", percent: 95 },
-  { name: "High-Figma Prototyping", percent: 92 },
-  { name: "WCAG 2.1 AA Accessibility", percent: 88 },
-  { name: "Component Systems & Code", percent: 90 },
-  { name: "Problem Solving & Collab", percent: 95 },
+  { name: "User Research & Strategy", percent: 95, color: "#EC4899" }, // rose
+  { name: "High-Figma Prototyping", percent: 92, color: "#06B6D4" }, // cyan
+  { name: "WCAG 2.1 AA Accessibility", percent: 88, color: "#10B981" }, // emerald
+  { name: "Component Systems & Code", percent: 90, color: "#F59E0B" }, // amber
+  { name: "Problem Solving & Collab", percent: 95, color: "#8B5CF6" }, // purple
 ];
 
 export const RetroPixelBoltIcon = ({ style }) => (
@@ -129,238 +129,251 @@ const PixelDissolveAvatar = ({ pixelSrc, realSrc, alt }) => {
 const About = () => {
   return (
     <div id="about">
-      <FadeInSection>
-        {/* Pixelated Section Header (Title Left, Number Right) */}
+      {/* Pixelated Section Header (Title Left, Number Right) */}
+      <FadeInSection delay="0s">
         <div className="section-header">
           <span className="section-title">PROFILE OVERVIEW</span>
           <span className="section-number">01</span>
         </div>
+      </FadeInSection>
 
         <div className="bento-profile-container">
           {/* Top Bento Row: Avatar Card (Left) + Spacious Bio Card (Right) */}
           <div className="bento-top-row">
             {/* Bento Box 1: Left Avatar Portrait Card */}
-            <div className="bento-card bento-avatar-card">
-              <div className="avatar-img-frame">
-                <PixelDissolveAvatar
-                  pixelSrc="/assets/sri_pixel_profile.jpg"
-                  realSrc="/assets/sri_real_profile.jpg"
-                  alt="Sri Sakthi Kumar M"
-                />
+            <FadeInSection delay="0.15s">
+              <div className="bento-card bento-avatar-card">
+                <div className="avatar-img-frame">
+                  <PixelDissolveAvatar
+                    pixelSrc="/assets/sri_pixel_profile.jpg"
+                    realSrc="/assets/sri_real_profile.jpg"
+                    alt="Sri Sakthi Kumar M"
+                  />
+                </div>
               </div>
-            </div>
+            </FadeInSection>
 
             {/* Bento Box 2: Right Spacious Bio Card */}
-            <div className="bento-card bento-bio-card">
-              <div className="bento-card-header">
-                <div className="card-top-title">
-                  <span className="retro-icon-frame purple">
-                    <DescriptionRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <span>ABOUT ME</span>
-                </div>
-                <span className="bento-role-badge">UI/UX DESIGNER • PRODUCT DEVELOPER</span>
-              </div>
-
-              <p className="bio-text-paragraph">
-                Hi, I&apos;m <strong>Sri Sakthi Kumar M</strong> — a <strong>UI/UX Designer, Product Designer, and UI Developer</strong> passionate about crafting smooth, interactive, and visually engaging web & mobile experiences. I enjoy blending user research and high-fidelity Figma prototyping to create scalable design systems and accessible interfaces.
-              </p>
-
-              {/* Highlight Chips Row */}
-              <div className="bento-chips-row">
-                <span className="bento-chip">
-                  <span className="retro-icon-frame rose mini">
-                    <FavoriteRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-                  </span>
-                  20+ FIGMA SCREENS
-                </span>
-                <span className="bento-chip">
-                  <span className="retro-icon-frame emerald mini">
-                    <AutoAwesomeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-                  </span>
-                  +35% ENGAGEMENT LIFT
-                </span>
-                <span className="bento-chip">
-                  <span className="retro-icon-frame blue mini">
-                    <CodeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-                  </span>
-                  100% WCAG 2.1 AA
-                </span>
-                <span className="bento-chip">
-                  <span className="retro-icon-frame amber mini">
-                    <BoltRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-                  </span>
-                  B2B LOGISTICS SAAS
-                </span>
-              </div>
-
-              <div className="card-bottom-icon-bar">
-                <div className="retro-icon-tooltip-wrap">
-                  <span className="retro-icon-frame rose">
-                    <FavoriteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <div className="retro-hover-popover rose-popover">
-                    <span className="popover-text-with-icon">
-                      HOBBIES: PIXEL ART, GAMING & UI CRAFTING
-                      <span className="retro-icon-frame purple mini inline-last">
-                        <SportsEsportsRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-                      </span>
+            <FadeInSection delay="0.3s">
+              <div className="bento-card bento-bio-card">
+                <div className="bento-card-header">
+                  <div className="card-top-title">
+                    <span className="retro-icon-frame purple">
+                      <DescriptionRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
                     </span>
+                    <span>ABOUT ME</span>
+                  </div>
+                  <span className="bento-role-badge">UI/UX DESIGNER • PRODUCT DEVELOPER</span>
+                </div>
+
+                <p className="bio-text-paragraph">
+                  Hi, I&apos;m <strong>Sri Sakthi Kumar M</strong> — a <strong>UI/UX Designer, Product Designer, and UI Developer</strong> passionate about crafting smooth, interactive, and visually engaging web & mobile experiences. I enjoy blending user research and high-fidelity Figma prototyping to create scalable design systems and accessible interfaces.
+                </p>
+
+                {/* Highlight Chips Row */}
+                <div className="bento-chips-row">
+                  <span className="bento-chip">
+                    <span className="retro-icon-frame rose mini">
+                      <FavoriteRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                    </span>
+                    20+ FIGMA SCREENS
+                  </span>
+                  <span className="bento-chip">
+                    <span className="retro-icon-frame emerald mini">
+                      <AutoAwesomeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                    </span>
+                    +35% ENGAGEMENT LIFT
+                  </span>
+                  <span className="bento-chip">
+                    <span className="retro-icon-frame blue mini">
+                      <CodeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                    </span>
+                    100% WCAG 2.1 AA
+                  </span>
+                  <span className="bento-chip">
+                    <span className="retro-icon-frame amber mini">
+                      <BoltRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                    </span>
+                    B2B LOGISTICS SAAS
+                  </span>
+                </div>
+
+                <div className="card-bottom-icon-bar">
+                  <div className="retro-icon-tooltip-wrap">
+                    <span className="retro-icon-frame rose">
+                      <FavoriteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <div className="retro-hover-popover rose-popover">
+                      <span className="popover-text-with-icon">
+                        HOBBIES: PIXEL ART, GAMING & UI CRAFTING
+                        <span className="retro-icon-frame purple mini inline-last">
+                          <SportsEsportsRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="retro-icon-tooltip-wrap">
+                    <span className="retro-icon-frame amber">
+                      <LocalCafeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <div className="retro-hover-popover amber-popover">
+                      <span className="popover-text-with-icon">
+                        FUEL: COFFEE, MUSIC & CREATIVE IDEAS
+                        <span className="retro-icon-frame rose mini inline-last">
+                          <HeadphonesRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="retro-icon-tooltip-wrap">
+                    <span className="retro-icon-frame blue">
+                      <CodeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <div className="retro-hover-popover blue-popover">
+                      <span className="popover-text-with-icon">
+                        CORE FOCUS: PIXEL-PERFECT DESIGN & CLEAN CODE
+                        <span className="retro-icon-frame coral mini inline-last">
+                          <AutoAwesomeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
+                        </span>
+                      </span>
+                    </div>
                   </div>
                 </div>
-
-                <div className="retro-icon-tooltip-wrap">
-                  <span className="retro-icon-frame amber">
-                    <LocalCafeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <div className="retro-hover-popover amber-popover">
-                    <span className="popover-text-with-icon">
-                      FUEL: COFFEE, MUSIC & CREATIVE IDEAS
-                      <span className="retro-icon-frame rose mini inline-last">
-                        <HeadphonesRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-                      </span>
-                    </span>
-                  </div>
-                </div>
-
-                <div className="retro-icon-tooltip-wrap">
-                  <span className="retro-icon-frame blue">
-                    <CodeRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <div className="retro-hover-popover blue-popover">
-                    <span className="popover-text-with-icon">
-                      CORE FOCUS: PIXEL-PERFECT DESIGN & CLEAN CODE
-                      <span className="retro-icon-frame coral mini inline-last">
-                        <AutoAwesomeRoundedIcon style={{ fontSize: 9, color: "#FFFFFF" }} />
-                      </span>
-                    </span>
-                  </div>
-                </div>
               </div>
-            </div>
+            </FadeInSection>
           </div>
 
           {/* Bottom Bento Row: 3 Equal-Width Columns */}
           <div className="bento-bottom-row">
             {/* Bento Box 3: Profile Details Card */}
-            <div className="bento-card bento-details-card">
-              <div className="card-top-title">
-                <span className="retro-icon-frame purple">
-                  <BoltRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                </span>
-                <span>PROFILE DETAILS</span>
-              </div>
-
-              <div className="profile-detail-item">
-                <span className="detail-label">NAME</span>
-                <span className="detail-value bold">Sri Sakthi Kumar M</span>
-              </div>
-
-              <div className="profile-detail-item">
-                <span className="detail-label">ROLE</span>
-                <span className="detail-value">UI/UX Designer & Product Developer ❖</span>
-              </div>
-
-              <div className="profile-detail-item">
-                <span className="detail-label">EDUCATION</span>
-                <span className="detail-value">B.Sc. Computer Science & UI/UX Certified</span>
-              </div>
-
-              <div className="profile-detail-divider" />
-
-              <div className="profile-detail-item location">
-                <span className="detail-label">
-                  <span className="retro-icon-frame coral" style={{ width: 18, height: 18, fontSize: 8 }}>
-                    <LocationOnRoundedIcon style={{ fontSize: 10, color: "#FFFFFF" }} />
+            <FadeInSection delay="0.45s">
+              <div className="bento-card bento-details-card">
+                <div className="card-top-title">
+                  <span className="retro-icon-frame purple">
+                    <BoltRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
                   </span>
-                  LOCATION
-                </span>
-                <span className="detail-value bold">Bengaluru, Karnataka (Relocating)</span>
-                <span className="detail-subtext">Available for Remote & Onsite Roles</span>
+                  <span>PROFILE DETAILS</span>
+                </div>
+
+                <div className="profile-detail-item">
+                  <span className="detail-label">NAME</span>
+                  <span className="detail-value bold">Sri Sakthi Kumar M</span>
+                </div>
+
+                <div className="profile-detail-item">
+                  <span className="detail-label">ROLE</span>
+                  <span className="detail-value">UI/UX Designer & Product Developer ❖</span>
+                </div>
+
+                <div className="profile-detail-item">
+                  <span className="detail-label">EDUCATION</span>
+                  <span className="detail-value">B.Sc. Computer Science & UI/UX Certified</span>
+                </div>
+
+                <div className="profile-detail-divider" />
+
+                <div className="profile-detail-item location">
+                  <span className="detail-label">
+                    <span className="retro-icon-frame coral" style={{ width: 18, height: 18, fontSize: 8 }}>
+                      <LocationOnRoundedIcon style={{ fontSize: 10, color: "#FFFFFF" }} />
+                    </span>
+                    LOCATION
+                  </span>
+                  <span className="detail-value bold">Bengaluru, Karnataka (Relocating)</span>
+                  <span className="detail-subtext">Available for Remote & Onsite Roles</span>
+                </div>
               </div>
-            </div>
+            </FadeInSection>
 
             {/* Bento Box 4: Core Strengths Card */}
-            <div className="bento-card bento-strengths-card">
-              <div className="card-top-title">
-                <span className="retro-icon-frame emerald">
-                  <FitnessCenterRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                </span>
-                <span>CORE STRENGTHS</span>
-              </div>
+            <FadeInSection delay="0.525s">
+              <div className="bento-card bento-strengths-card">
+                <div className="card-top-title">
+                  <span className="retro-icon-frame emerald">
+                    <FitnessCenterRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                  </span>
+                  <span>CORE STRENGTHS</span>
+                </div>
 
-              <div className="strengths-list">
-                {strengthsData.map((item, idx) => (
-                  <div key={idx} className="strength-item">
-                    <div className="strength-header">
-                      <span className="strength-name">{item.name}</span>
-                      <span className="strength-percent">{item.percent}%</span>
+                <div className="strengths-list">
+                  {strengthsData.map((item, idx) => (
+                    <div key={idx} className="strength-item">
+                      <div className="strength-header">
+                        <span className="strength-name">{item.name}</span>
+                        <span className="strength-percent">{item.percent}%</span>
+                      </div>
+                      <div className="strength-track">
+                        <div
+                          className="strength-fill"
+                          style={{ 
+                            '--target-percent': `${item.percent}%`,
+                            backgroundColor: item.color 
+                          }}
+                        />
+                      </div>
                     </div>
-                    <div className="strength-track">
-                      <div
-                        className="strength-fill"
-                        style={{ width: `${item.percent}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </FadeInSection>
 
             {/* Bento Box 5: Tech Setup Card */}
-            <div className="bento-card bento-setup-card">
-              <div className="card-top-title">
-                <span className="retro-icon-frame coral">
-                  <HomeRepairServiceRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                </span>
-                <span>TECH SETUP</span>
+            <FadeInSection delay="0.6s">
+              <div className="bento-card bento-setup-card">
+                <div className="card-top-title">
+                  <span className="retro-icon-frame coral">
+                    <HomeRepairServiceRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                  </span>
+                  <span>TECH SETUP</span>
+                </div>
+
+                <div className="setup-list">
+                  <div className="setup-item">
+                    <span className="retro-icon-frame blue">
+                      <LaptopMacRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <div>
+                      <div className="setup-title">ASUS Workstation</div>
+                      <div className="setup-sub">Intel i7, 16GB, GPU</div>
+                    </div>
+                  </div>
+
+                  <div className="setup-item">
+                    <span className="retro-icon-frame purple">
+                      <KeyboardRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <div>
+                      <div className="setup-title">Figma & Mech Deck</div>
+                      <div className="setup-sub">Fast hotkey workflow</div>
+                    </div>
+                  </div>
+
+                  <div className="setup-item">
+                    <span className="retro-icon-frame emerald">
+                      <MouseRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <div>
+                      <div className="setup-title">Precision Mouse</div>
+                      <div className="setup-sub">Pixel-perfect vectors</div>
+                    </div>
+                  </div>
+
+                  <div className="setup-item">
+                    <span className="retro-icon-frame amber">
+                      <HeadphonesRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                    </span>
+                    <div>
+                      <div className="setup-title">High-DPI Display</div>
+                      <div className="setup-sub">Color-calibrated UI</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <div className="setup-list">
-                <div className="setup-item">
-                  <span className="retro-icon-frame blue">
-                    <LaptopMacRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <div>
-                    <div className="setup-title">ASUS Workstation</div>
-                    <div className="setup-sub">Intel i7, 16GB RAM, Dedicated GPU</div>
-                  </div>
-                </div>
-
-                <div className="setup-item">
-                  <span className="retro-icon-frame purple">
-                    <KeyboardRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <div>
-                    <div className="setup-title">Figma & Mechanical Deck</div>
-                    <div className="setup-sub">High-speed hotkey workflow</div>
-                  </div>
-                </div>
-
-                <div className="setup-item">
-                  <span className="retro-icon-frame emerald">
-                    <MouseRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <div>
-                    <div className="setup-title">Precision Wireless Mouse</div>
-                    <div className="setup-sub">Pixel-perfect vector alignment</div>
-                  </div>
-                </div>
-
-                <div className="setup-item">
-                  <span className="retro-icon-frame amber">
-                    <HeadphonesRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                  </span>
-                  <div>
-                    <div className="setup-title">High-DPI Display & Audio</div>
-                    <div className="setup-sub">Color-calibrated UI previewing</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </FadeInSection>
           </div>
         </div>
-      </FadeInSection>
     </div>
   );
 };

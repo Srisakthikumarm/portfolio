@@ -283,13 +283,7 @@ a, button, [role="button"] {
     letter-spacing: 0.3px !important;
   }
 }
-/* Scroll Reveal Entrance Animation (Always visible by default to prevent blank screen) */
-.fade-in-section {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* Removed broken fade-in-section override */
 
 /* ALL CHIPS & TAGS POPUP LIFT-UP HOVER SYSTEM (MATCHING IMAGE 1) */
 .stage-tag,

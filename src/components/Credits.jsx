@@ -26,85 +26,87 @@ const MediumIcon = () => (
 
 const Credits = () => {
   return (
-    <FadeInSection>
-      <div id="credits">
-        <div className="omori-footer-box">
+    <div id="credits">
+      <div className="omori-footer-box">
+        <FadeInSection delay="0s" direction="up">
           <div className="omori-footer-tagline">
             "Driven by curiosity, I build practical tools and user experiences that solve real problems."
           </div>
+        </FadeInSection>
 
-          <div className="omori-footer-columns">
-            {/* NAVIGATE Section (Heading centered over its 2 sub-columns) */}
-            <div className="omori-footer-section navigate-section">
-              <div className="omori-col-title">Navigate</div>
-              <div className="omori-sub-grid grid-3-2">
-                <div className="grid-sub-col">
-                  <Link to="/#intro">HOME</Link>
-                  <Link to="/#about">ABOUT</Link>
-                  <Link to="/#experience">EXPERIENCE</Link>
-                </div>
-                <div className="grid-sub-col">
-                  <Link to="/#projects">PROJECTS</Link>
-                  <Link to="/#education">SKILLS & EDUCATION</Link>
-                  <Link to="/#contact">CONTACT</Link>
-                </div>
+        <div className="omori-footer-columns">
+          {/* NAVIGATE Section (Heading centered over its 2 sub-columns) */}
+          <FadeInSection delay="0.1s" direction="left" className="omori-footer-section navigate-section">
+            <div className="omori-col-title">Navigate</div>
+            <div className="omori-sub-grid grid-3-2">
+              <div className="grid-sub-col">
+                <Link to="/#intro">HOME</Link>
+                <Link to="/#about">ABOUT</Link>
+                <Link to="/#experience">EXPERIENCE</Link>
+              </div>
+              <div className="grid-sub-col">
+                <Link to="/#projects">PROJECTS</Link>
+                <Link to="/#education">SKILLS & EDUCATION</Link>
+                <Link to="/#contact">CONTACT</Link>
               </div>
             </div>
+          </FadeInSection>
 
-            {/* CONNECT & PROFILES Section (Heading centered over its 2 sub-columns) */}
-            <div className="omori-footer-section profiles-section">
-              <div className="omori-col-title">Connect & Profiles</div>
-              <div className="omori-sub-grid grid-3-3">
-                <div className="grid-sub-col">
-                  <a href="mailto:srisakthikumar03@gmail.com">
-                    <span className="retro-icon-frame gmail">
-                      <EmailRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                    </span>
-                    <span>EMAIL</span>
-                  </a>
-                  <a href="https://www.behance.net/21cs157srisak" target="_blank" rel="noreferrer">
-                    <span className="retro-icon-frame blue">
-                      <BehanceIcon />
-                    </span>
-                    <span>BEHANCE PORTFOLIO</span>
-                  </a>
-                  <a href="https://dribbble.com/srisakthikumar" target="_blank" rel="noreferrer">
-                    <span className="retro-icon-frame dribbble">
-                      <DribbbleIcon />
-                    </span>
-                    <span>DRIBBBLE SHOTS</span>
-                  </a>
-                </div>
-                <div className="grid-sub-col">
-                  <a href="https://medium.com/@srisakthikumar03" target="_blank" rel="noreferrer">
-                    <span className="retro-icon-frame medium">
-                      <MediumIcon />
-                    </span>
-                    <span>MEDIUM CASE STUDIES</span>
-                  </a>
-                  <a href="https://www.linkedin.com/in/srisakthikumar" target="_blank" rel="noreferrer">
-                    <span className="retro-icon-frame linkedin">
-                      <LinkedInIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                    </span>
-                    <span>LINKEDIN PROFILE</span>
-                  </a>
-                  <a href="https://srisakthikumar.framer.website" target="_blank" rel="noreferrer">
-                    <span className="retro-icon-frame green">
-                      <LanguageRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-                    </span>
-                    <span>LIVE FRAMER PORTFOLIO</span>
-                  </a>
-                </div>
+          {/* CONNECT & PROFILES Section (Heading centered over its 2 sub-columns) */}
+          <FadeInSection delay="0.1s" direction="right" className="omori-footer-section profiles-section">
+            <div className="omori-col-title">Connect & Profiles</div>
+            <div className="omori-sub-grid grid-3-3">
+              <div className="grid-sub-col">
+                <a href="mailto:srisakthikumar03@gmail.com">
+                  <span className="retro-icon-frame gmail">
+                    <EmailRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                  </span>
+                  <span>EMAIL</span>
+                </a>
+                <a href="https://www.behance.net/21cs157srisak" target="_blank" rel="noreferrer">
+                  <span className="retro-icon-frame blue">
+                    <BehanceIcon />
+                  </span>
+                  <span>BEHANCE PORTFOLIO</span>
+                </a>
+                <a href="https://dribbble.com/srisakthikumar" target="_blank" rel="noreferrer">
+                  <span className="retro-icon-frame dribbble">
+                    <DribbbleIcon />
+                  </span>
+                  <span>DRIBBBLE SHOTS</span>
+                </a>
+              </div>
+              <div className="grid-sub-col">
+                <a href="https://medium.com/@srisakthikumar03" target="_blank" rel="noreferrer">
+                  <span className="retro-icon-frame medium">
+                    <MediumIcon />
+                  </span>
+                  <span>MEDIUM CASE STUDIES</span>
+                </a>
+                <a href="https://www.linkedin.com/in/srisakthikumar" target="_blank" rel="noreferrer">
+                  <span className="retro-icon-frame linkedin">
+                    <LinkedInIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                  </span>
+                  <span>LINKEDIN PROFILE</span>
+                </a>
+                <a href="https://srisakthikumar.framer.website" target="_blank" rel="noreferrer">
+                  <span className="retro-icon-frame green">
+                    <LanguageRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+                  </span>
+                  <span>LIVE FRAMER PORTFOLIO</span>
+                </a>
               </div>
             </div>
-          </div>
+          </FadeInSection>
+        </div>
 
+        <FadeInSection delay="0.2s" direction="up">
           <div className="omori-copyright-bar">
             © 2026 Sri Sakthi Kumar M. All rights reserved.
           </div>
-        </div>
+        </FadeInSection>
       </div>
-    </FadeInSection>
+    </div>
   );
 };
 

@@ -25,8 +25,8 @@ export default function FadeInSection(props) {
   }, []);
   return (
     <div
-      className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-      style={{ transitionDelay: `${props.delay}` }}
+      className={`fade-in-section direction-${props.direction || 'up'} ${isVisible ? "is-visible" : ""} ${props.className || ''}`}
+      style={props.delay ? { transitionDelay: `${props.delay}` } : {}}
       ref={domRef}
     >
       {props.children}

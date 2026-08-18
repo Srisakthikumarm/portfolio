@@ -10,6 +10,7 @@ import PaletteRoundedIcon from "@mui/icons-material/PaletteRounded";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import AccessibleRoundedIcon from "@mui/icons-material/AccessibleRounded";
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
+import GamepadRoundedIcon from "@mui/icons-material/GamepadRounded";
 import FadeInSection from "./FadeInSection";
 import HeroVisual from "./HeroVisual";
 const BehanceIcon = () => (
@@ -33,143 +34,184 @@ const MediumIcon = () => (
 const Intro = () => {
   return (
     <div id="intro">
-      <FadeInSection>
+      <div className="hero-fullscreen-content">
         <div className="hero-studio-hub">
           {/* Header System Banner */}
-          <div className="hero-system-banner">
-            <span className="banner-dot" />
-            <span>SYSTEM READY • SRI SAKTHI KUMAR M • AVAILABLE FOR HIRE</span>
-          </div>
+          <FadeInSection delay="0s">
+            <div className="hero-system-banner">
+              <span className="banner-dot" />
+              <span>SYSTEM READY • SRI SAKTHI KUMAR M • AVAILABLE FOR HIRE</span>
+            </div>
+          </FadeInSection>
 
           {/* Main Title & Subtitle */}
-          <div className="wave-container">
-            <h1 className="hero-main-heading wave-text">
-              <span>S</span>
-              <span>R</span>
-              <span>I</span>
-              <span className="space">&nbsp;</span>
-              <span>S</span>
-              <span>A</span>
-              <span>K</span>
-              <span>T</span>
-              <span>H</span>
-              <span>I</span>
-              <span className="space">&nbsp;</span>
-              <span>K</span>
-              <span>U</span>
-              <span>M</span>
-              <span>A</span>
-              <span>R</span>
-              <span className="space">&nbsp;</span>
-              <span>M</span>
-            </h1>
-          </div>
+          <FadeInSection delay="0.15s">
+            <div className="wave-container">
+              <h1 className="hero-main-heading wave-text">
+                <span>S</span>
+                <span>R</span>
+                <span>I</span>
+                <span className="space">&nbsp;</span>
+                <span>S</span>
+                <span>A</span>
+                <span>K</span>
+                <span>T</span>
+                <span>H</span>
+                <span>I</span>
+                <span className="space">&nbsp;</span>
+                <span>K</span>
+                <span>U</span>
+                <span>M</span>
+                <span>A</span>
+                <span>R</span>
+                <span className="space">&nbsp;</span>
+                <span>M</span>
+              </h1>
+            </div>
+          </FadeInSection>
 
-          <div className="hero-animated-sub">
-            <TypeAnimation
-              sequence={[
-                "UI/UX Designer",
-                1800,
-                "Product Designer",
-                1800,
-                "UI Developer",
-                1800,
-                "Design Systems Lead",
-                1800,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </div>
+          <FadeInSection delay="0.3s">
+            <div className="hero-animated-sub">
+              <TypeAnimation
+                sequence={[
+                  "UI/UX Designer",
+                  1800,
+                  "Product Designer",
+                  1800,
+                  "UI Developer",
+                  1800,
+                  "Design Systems Lead",
+                  1800,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </div>
+          </FadeInSection>
 
-          <p className="hero-bio-paragraph">
-            Crafting scalable design systems, high-fidelity Figma prototypes, and responsive web applications. Specialized in complex SaaS workflows, B2B logistics, and accessible user experiences.
-          </p>
+          <FadeInSection delay="0.45s">
+            <p className="hero-bio-paragraph">
+              Crafting scalable design systems, high-fidelity Figma prototypes, and responsive web applications. Specialized in complex SaaS workflows, B2B logistics, and accessible user experiences.
+            </p>
+          </FadeInSection>
 
           {/* Action Buttons Row - Top 3 Primary Contacts */}
           <div className="hero-actions-row">
-            <a
-              href="mailto:srisakthikumar03@gmail.com"
-              className="omori-btn-black"
-            >
-              <span className="retro-icon-frame gmail">
-                <EmailRoundedIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
-              </span>
-              <span>SAY HI! / CONTACT</span>
-            </a>
+            <FadeInSection direction="left" delay="0s">
+              <a
+                href="mailto:srisakthikumar03@gmail.com"
+                className="omori-btn-black"
+              >
+                <span className="retro-icon-frame gmail">
+                  <EmailRoundedIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
+                </span>
+                <span>SAY HI! / CONTACT</span>
+              </a>
+            </FadeInSection>
 
-            <a
-              href="https://www.behance.net/21cs157srisak"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="omori-btn-white"
-            >
-              <span className="retro-icon-frame blue">
-                <BehanceIcon />
-              </span>
-              <span>BEHANCE PORTFOLIO</span>
-            </a>
+            <FadeInSection direction="left" delay="0.15s">
+              <a
+                href="https://www.behance.net/21cs157srisak"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="omori-btn-white"
+              >
+                <span className="retro-icon-frame blue">
+                  <BehanceIcon />
+                </span>
+                <span>BEHANCE PORTFOLIO</span>
+              </a>
+            </FadeInSection>
 
-            <a
-              href="https://www.linkedin.com/in/srisakthikumar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="omori-btn-white"
-            >
-              <span className="retro-icon-frame linkedin">
-                <LinkedInIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
-              </span>
-              <span>LINKEDIN PROFILE</span>
-            </a>
+            <FadeInSection direction="right" delay="0.15s">
+              <a
+                href="https://www.linkedin.com/in/srisakthikumar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="omori-btn-white"
+              >
+                <span className="retro-icon-frame linkedin">
+                  <LinkedInIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
+                </span>
+                <span>LINKEDIN PROFILE</span>
+              </a>
+            </FadeInSection>
 
-            <a
-              href="/Sri_Sakthi_Kumar_Resume.pdf"
-              download="Sri_Sakthi_Kumar_M_Resume.pdf"
-              onClick={() => window.open("/Sri_Sakthi_Kumar_Resume.pdf?view=1", "_blank")}
-              className="omori-btn-white"
-            >
-              <span className="retro-icon-frame red">
-                <DownloadRoundedIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
-              </span>
-              <span>MY RESUME</span>
-            </a>
-          </div>
-
-          {/* Hero Centerpiece: Design Studio OS Window */}
-          <HeroVisual />
-
-          {/* 5 Interactive Metric & Skill Badges */}
-          <div className="hero-badges-row">
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame coral">
-                <PaletteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>20+ FIGMA SCREENS</span>
-            </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame emerald">
-                <TrendingUpRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>+35% ENGAGEMENT LIFT</span>
-            </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame cyan">
-                <AccessibleRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>100% WCAG 2.1 AA</span>
-            </div>
-            <div className="hero-badge-pill">
-              <span className="retro-icon-frame purple">
-                <BoltRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-              </span>
-              <span>B2B LOGISTICS SAAS</span>
-            </div>
+            <FadeInSection direction="right" delay="0s">
+              <a
+                href="/Sri_Sakthi_Kumar_Resume.pdf"
+                download="Sri_Sakthi_Kumar_M_Resume.pdf"
+                onClick={() => window.open("/Sri_Sakthi_Kumar_Resume.pdf?view=1", "_blank")}
+                className="omori-btn-white"
+              >
+                <span className="retro-icon-frame red">
+                  <DownloadRoundedIcon style={{ fontSize: 14, color: "#FFFFFF" }} />
+                </span>
+                <span>MY RESUME</span>
+              </a>
+            </FadeInSection>
           </div>
         </div>
-      </FadeInSection>
+
+      {/* Konami Code Pro Tip (anchored to bottom of first screen) */}
+      <div className="hero-pro-tip">
+        <span className="retro-icon-frame blue" style={{ width: 26, height: 26, marginRight: 10, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+          <GamepadRoundedIcon style={{ fontSize: 16, color: "#FFFFFF" }} />
+        </span>
+        <span style={{ display: "flex", alignItems: "center" }}>
+          Pro tip: &uarr;&uarr;&darr;&darr;&larr;&rarr;&larr;&rarr;BA 
+          <span className="retro-icon-frame amber" style={{ width: 18, height: 18, marginLeft: 6 }}>
+            <BoltRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
+          </span>
+        </span>
+      </div>
     </div>
-  );
+
+    {/* Scroll-down Content: Design Studio OS Window & Badges */}
+    <div className="hero-visual-section">
+      <FadeInSection delay="0s">
+        <HeroVisual />
+      </FadeInSection>
+
+      {/* 5 Interactive Metric & Skill Badges */}
+      <div className="hero-badges-row">
+        <FadeInSection delay="0.15s">
+          <div className="hero-badge-pill">
+            <span className="retro-icon-frame coral">
+              <PaletteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>20+ FIGMA SCREENS</span>
+          </div>
+        </FadeInSection>
+        <FadeInSection delay="0.3s">
+          <div className="hero-badge-pill">
+            <span className="retro-icon-frame emerald">
+              <TrendingUpRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>+35% ENGAGEMENT LIFT</span>
+          </div>
+        </FadeInSection>
+        <FadeInSection delay="0.45s">
+          <div className="hero-badge-pill">
+            <span className="retro-icon-frame cyan">
+              <AccessibleRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>100% WCAG 2.1 AA</span>
+          </div>
+        </FadeInSection>
+        <FadeInSection delay="0.6s">
+          <div className="hero-badge-pill">
+            <span className="retro-icon-frame purple">
+              <BoltRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+            <span>B2B LOGISTICS SAAS</span>
+          </div>
+        </FadeInSection>
+      </div>
+    </div>
+  </div>
+);
 };
 
 export default Intro;

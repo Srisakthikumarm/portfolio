@@ -359,10 +359,12 @@ const Projects = () => {
   return (
     <div id="projects">
       {/* Pixelated Section Header (Title Left, Number Right) */}
-      <div className="section-header">
-        <span className="section-title">FEATURED PROJECTS</span>
-        <span className="section-number">03</span>
-      </div>
+      <FadeInSection delay="0s">
+        <div className="section-header">
+          <span className="section-title">FEATURED PROJECTS</span>
+          <span className="section-number">03</span>
+        </div>
+      </FadeInSection>
 
       {/* 2-Column Side-by-Side Projects Grid - Displays ONLY the Latest 4 Projects */}
       <div className="omori-projects-grid">
@@ -490,14 +492,16 @@ const Projects = () => {
       </div>
 
       {/* Centered Bottom View All Projects Button */}
-      <div className="omori-bottom-btn-row">
-        <Link to="/projects" className="omori-view-all-btn">
-          <span>VIEW ALL PROJECTS</span>
-          <span className="retro-icon-frame blue">
-            <ArrowForwardRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
-          </span>
-        </Link>
-      </div>
+      <FadeInSection delay="100ms">
+        <div className="omori-bottom-btn-row">
+          <Link to="/projects" className="omori-view-all-btn">
+            <span>VIEW ALL PROJECTS</span>
+            <span className="retro-icon-frame blue">
+              <ArrowForwardRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} />
+            </span>
+          </Link>
+        </div>
+      </FadeInSection>
 
       {/* Interactive Case Study Detail Modal Overlay (Matching Screenshot) */}
       {selectedProject && (

@@ -88,6 +88,29 @@ function App() {
     };
   }, []);
 
+  // Konami Code Listener
+  useEffect(() => {
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+    const handleKeyDown = (e) => {
+      if (e.key === konamiCode[konamiIndex] || e.key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          playFunnyClickSound();
+          if (window.location.pathname !== "/") {
+            navigate("/");
+          }
+          setGameActive(true);
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [navigate]);
+
   const handleLoadingComplete = () => {
     setIsLoading(false);
     setTimeout(() => {
@@ -116,7 +139,8 @@ function App() {
       {!isLoading && (
         <>
           <div className="game-toggle-fixed">
-            <div className="game-toggle-row">
+            {gameActive && (
+              <div className="game-toggle-row">
               <button
                 className={`game-toggle-btn${gameActive ? " game-toggle-btn--on" : ""}`}
                 onClick={handleToggleGame}
@@ -198,7 +222,8 @@ function App() {
                   </div>
                 )}
               </div>
-            </div>
+              </div>
+            )}
           </div>
           <SidebarNav />
           <FullSiteRetroGame active={gameActive} musicState={musicState} />
