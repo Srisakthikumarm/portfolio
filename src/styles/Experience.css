@@ -159,7 +159,7 @@
 
 @media only screen and (max-width: 768px) {
   #experience {
-    padding: 40px 16px 30px !important;
+    padding: 40px 16px !important;
   }
 
   .experience-card-wrap {

@@ -182,13 +182,19 @@
 
 @media (max-width: 768px) {
   #intro {
-    padding: 60px 16px 60px !important;
+    padding: 60px 16px 0px !important;
   }
 
-  .hero-fullscreen-content,
-  .hero-visual-section {
+  .hero-fullscreen-content {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero-visual-section {
+    padding: 24px 0 40px !important;
+    margin-top: 40px !important;
   }
 
   .hero-studio-hub {
@@ -225,7 +231,7 @@
   .hero-pro-tip {
     position: relative !important;
     bottom: auto !important;
-    margin-top: 48px !important;
+    margin-top: 40px !important;
   }
 }
 

@@ -567,6 +567,7 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
+    margin: 16px auto !important;
   }
   
   .stage-screen-box {
