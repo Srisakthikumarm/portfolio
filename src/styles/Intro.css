@@ -25,6 +25,10 @@
   max-width: 100%;
 }
 
+.hero-visual-fade {
+  width: 100%;
+}
+
 .hero-studio-hub {
   display: flex;
   flex-direction: column;

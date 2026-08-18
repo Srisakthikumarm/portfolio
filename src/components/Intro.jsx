@@ -98,7 +98,7 @@ const Intro = () => {
 
           {/* Action Buttons Row - Top 3 Primary Contacts */}
           <div className="hero-actions-row">
-            <FadeInSection direction="left" delay="0s">
+            <FadeInSection direction="left" delay="0s" className="fade-inline">
               <a
                 href="mailto:srisakthikumar03@gmail.com"
                 className="omori-btn-black"
@@ -110,7 +110,7 @@ const Intro = () => {
               </a>
             </FadeInSection>
 
-            <FadeInSection direction="left" delay="0.15s">
+            <FadeInSection direction="left" delay="0.15s" className="fade-inline">
               <a
                 href="https://www.behance.net/21cs157srisak"
                 target="_blank"
@@ -124,7 +124,7 @@ const Intro = () => {
               </a>
             </FadeInSection>
 
-            <FadeInSection direction="right" delay="0.15s">
+            <FadeInSection direction="right" delay="0.15s" className="fade-inline">
               <a
                 href="https://www.linkedin.com/in/srisakthikumar"
                 target="_blank"
@@ -138,7 +138,7 @@ const Intro = () => {
               </a>
             </FadeInSection>
 
-            <FadeInSection direction="right" delay="0s">
+            <FadeInSection direction="right" delay="0s" className="fade-inline">
               <a
                 href="/Sri_Sakthi_Kumar_Resume.pdf"
                 download="Sri_Sakthi_Kumar_M_Resume.pdf"
@@ -170,7 +170,7 @@ const Intro = () => {
 
     {/* Scroll-down Content: Design Studio OS Window & Badges */}
     <div className="hero-visual-section">
-      <FadeInSection delay="0s">
+      <FadeInSection delay="0s" className="hero-visual-fade">
         <HeroVisual />
       </FadeInSection>
 
