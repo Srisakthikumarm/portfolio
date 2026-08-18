@@ -267,7 +267,7 @@ a, button, [role="button"] {
     margin-bottom: 20px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding: 14px 0 12px 0 !important;
+    padding: 16px 16px 14px 16px !important;
     border-top: 3px solid #000000 !important;
     border-bottom: none !important;
     background: transparent !important;

@@ -160,7 +160,7 @@ const Intro = () => {
           <GamepadRoundedIcon style={{ fontSize: 16, color: "#FFFFFF" }} />
         </span>
         <span style={{ display: "flex", alignItems: "center" }}>
-          Hint: Try typing 'GAMER'
+          <span style={{ transform: "translateY(2px)" }}>Hint: Try typing 'GAMER'</span>
           <span className="retro-icon-frame amber" style={{ width: 18, height: 18, marginLeft: 6 }}>
             <BoltRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
           </span>

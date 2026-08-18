@@ -96,7 +96,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   #projects {
     padding: 40px 16px !important;
   }

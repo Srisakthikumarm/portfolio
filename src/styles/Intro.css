@@ -21,6 +21,8 @@
   padding: 40px 6vw 80px;
   border-top: 2px dashed #e2e8f0;
   margin-top: 20px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero-studio-hub {
@@ -176,7 +178,13 @@
 
 @media (max-width: 768px) {
   #intro {
-    padding: 60px 14px 60px !important;
+    padding: 60px 16px 60px !important;
+  }
+
+  .hero-fullscreen-content,
+  .hero-visual-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .hero-studio-hub {
@@ -208,6 +216,12 @@
   .hero-badge-pill {
     font-size: 14px !important;
     padding: 6px 10px !important;
+  }
+
+  .hero-pro-tip {
+    position: relative !important;
+    bottom: auto !important;
+    margin-top: 48px !important;
   }
 }
 

@@ -157,7 +157,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #experience {
     padding: 40px 16px 30px !important;
   }

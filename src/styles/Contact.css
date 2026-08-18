@@ -448,6 +448,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  #contact {
+    padding: 40px 16px !important;
+  }
   .retro-popup-overlay {
     padding: 100px 12px 12px !important;
   }
