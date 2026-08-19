@@ -51,16 +51,16 @@
 }
 
 .loading-brand-text {
-  font-family: 'Press Start 2P', monospace;
-  font-weight: 700;
-  font-size: 22px;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-weight: 900;
+  font-size: 24px;
   letter-spacing: 0.5px;
   color: #000000;
 }
 
 .loading-subtitle {
-  font-family: 'Courier New', monospace, sans-serif;
-  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 16px;
   font-weight: 900;
   color: #000000;
   margin-bottom: 24px;
@@ -69,18 +69,19 @@
 }
 
 .loading-percentage {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 36px;
-  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 42px;
+  font-weight: 900;
   color: #000000;
   margin-bottom: 12px;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 .percent-symbol {
   font-size: 24px;
   margin-left: 4px;
   color: #000000;
+  font-family: 'Courier New', Courier, monospace !important;
 }
 
 .loading-text-instruction {
@@ -109,13 +110,13 @@
 }
 
 .cylinder-rotating-line {
-  font-family: 'Pixelify Sans', monospace;
-  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 14px;
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: 0.5px;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
   max-width: 100%;
   animation: cylinderRotateIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transform-style: preserve-3d;
@@ -134,7 +135,7 @@
   }
   .cylinder-rotating-line {
     font-size: 11px;
-    white-space: nowrap !important; /* Keep it single line on mobile too! */
+    white-space: normal !important;
   }
   .loading-brand-text {
     font-size: 16px;
