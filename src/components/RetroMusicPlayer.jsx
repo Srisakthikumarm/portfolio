@@ -393,7 +393,7 @@ const RetroMusicPlayer = ({
             )}
           </span>
         </span>
-        <span className="music-track-title">{gameActive ? "RETRO BATTLE" : currentTrack.name}</span>
+        <span className="music-track-title">{currentTrack.name}</span>
         {isPlaying && !isMuted ? (
           <span className="music-live-indicator" title="Playing" />
         ) : (
@@ -405,7 +405,7 @@ const RetroMusicPlayer = ({
       {showControls && (
         <div className="omori-music-controls-popover">
           <div className="music-popover-header">
-            <span className="music-popover-title">{gameActive ? "ACTION RETRO BATTLE" : "RETRO SOUNDTRACK"}</span>
+            <span className="music-popover-title">RETRO SOUNDTRACK</span>
             <span className="music-popover-status">
               {isMuted ? "MUTED" : isPlaying ? "NOW PLAYING" : "PAUSED"}
             </span>
