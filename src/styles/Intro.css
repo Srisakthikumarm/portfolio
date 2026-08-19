@@ -214,7 +214,7 @@
   }
 
   .hero-pro-tip {
-    cursor: pointer !important;
+    cursor: default !important;
   }
 
   .hero-fullscreen-content {

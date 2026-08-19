@@ -155,31 +155,37 @@ const Intro = () => {
         </div>
 
       {/* Konami Code Pro Tip (anchored to bottom of first screen) */}
-      <div 
+      <button 
         className="hero-pro-tip" 
-        role="button"
         title="Type START on your keyboard to unlock the secret game mode!"
-        onTouchEnd={(e) => {
-          e.preventDefault(); // Prevent ghost click
-          if (onStartGame) {
+        style={{
+          background: "none",
+          border: "none",
+          padding: 0,
+          margin: 0,
+          outline: "none",
+          cursor: "pointer"
+        }}
+        onClick={() => {
+          // Disable starting the game on mobile breakpoints
+          if (window.innerWidth > 991 && onStartGame) {
             onStartGame();
           }
-        }}
-        onClick={(e) => {
-          // If they are on desktop and managed to click it, do nothing, because we only want touch/mobile to work
-          e.preventDefault();
         }}
       >
         <span className="retro-icon-frame blue" style={{ width: 26, height: 26, marginRight: 10, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
           <GamepadRoundedIcon style={{ fontSize: 16, color: "#FFFFFF" }} />
         </span>
         <span style={{ display: "flex", alignItems: "center" }}>
-          <span style={{ transform: "translateY(2px)" }}><span className="intro-desktop-only">Hint: Try typing 'START'</span><span className="intro-mobile-only">Hint: Try tapping here</span></span>
+          <span style={{ transform: "translateY(2px)" }}>
+            <span className="intro-desktop-only">Hint: &gt; initiate_session : type 'START'</span>
+            <span className="intro-mobile-only">Hint: PC access required</span>
+          </span>
           <span className="retro-icon-frame amber" style={{ width: 18, height: 18, marginLeft: 6 }}>
             <BoltRoundedIcon style={{ fontSize: 12, color: "#FFFFFF" }} />
           </span>
         </span>
-      </div>
+      </button>
     </div>
 
     {/* Scroll-down Content: Design Studio OS Window & Badges */}
