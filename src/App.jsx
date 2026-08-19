@@ -15,6 +15,7 @@ import LoadingScreen from "./components/LoadingScreen";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 import BoltRoundedIcon from "@mui/icons-material/BoltRounded";
 import WhatshotRoundedIcon from "@mui/icons-material/WhatshotRounded";
+import VideogameAssetRoundedIcon from "@mui/icons-material/VideogameAssetRounded";
 export const HourglassIcon = ({ style }) => (
   <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" style={{ ...style }}>
     <path d="M 4 3 H 20" />
@@ -90,7 +91,7 @@ function App() {
 
   // Konami Code Listener
   useEffect(() => {
-    const konamiCode = ['g', 'a', 'm', 'e', 'r'];
+    const konamiCode = ['s', 't', 'a', 'r', 't'];
     let konamiIndex = 0;
     const handleKeyDown = (e) => {
       if (e.key === konamiCode[konamiIndex] || e.key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
@@ -108,8 +109,30 @@ function App() {
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [navigate]);
+
+  const handleStartGameEvent = () => {
+    playFunnyClickSound();
+    if (window.location.pathname !== "/") {
+      navigate("/");
+    }
+    setGameActive(true);
+  };
+
+  useEffect(() => {
+    if (gameActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [gameActive]);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -142,12 +165,15 @@ function App() {
             {gameActive && (
               <div className="game-toggle-row">
               <button
-                className={`game-toggle-btn${gameActive ? " game-toggle-btn--on" : ""}`}
+                className="omori-btn-white"
+                style={{ marginLeft: 10 }}
                 onClick={handleToggleGame}
-                title={gameActive ? "Disable game mode" : "Enable game mode"}
+                title="Disable Game Mode"
               >
-                <span className="game-toggle-dot" />
-                GAME MODE
+                <span className="retro-icon-frame blue">
+                  <VideogameAssetRoundedIcon style={{ fontSize: 16, color: "#FFFFFF" }} />
+                </span>
+                <span>CYBER DEFENSE</span>
               </button>
               <div
                 className="game-info-btn-wrap"
@@ -233,7 +259,7 @@ function App() {
                 path="/"
                 element={
                   <>
-                    <Intro />
+                    <Intro onStartGame={handleStartGameEvent} />
                     <About />
                     <Experience />
                     <Projects />

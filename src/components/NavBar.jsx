@@ -52,6 +52,29 @@ const NavBar = ({ isLoading, gameActive, onMusicStateChange }) => {
     };
   }, [expanded]);
 
+  // Global Keyboard Shortcuts for Music (M for Mute, P for Pause/Play)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      if (e.key.toLowerCase() === 'm') {
+        playFunnyClickSound();
+        setIsMuted((prev) => !prev);
+      }
+      if (e.key.toLowerCase() === 'p') {
+        playFunnyClickSound();
+        setIsPlaying((prev) => {
+          const nextState = !prev;
+          if (nextState) {
+            setIsMuted(false); // Unmute if we are starting play
+          }
+          return nextState;
+        });
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []); // Safe to use updater functions without dependencies here
+
   useEffect(() => {
     if (pathname !== "/") {
       setActiveSection("");

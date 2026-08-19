@@ -98,6 +98,7 @@
   color: #64748b;
   letter-spacing: 0.5px;
   animation: pulseTip 2s infinite alternate;
+  z-index: 10;
 }
 
 @keyframes pulseTip {
@@ -178,6 +179,39 @@
 @keyframes blinkCursor {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+.intro-mobile-only {
+  display: none;
+}
+
+.intro-desktop-only {
+  display: inline;
+}
+
+@media only screen and (max-width: 991px) {
+  .intro-mobile-only {
+    display: inline;
+  }
+  .intro-desktop-only {
+    display: none;
+  }
+  
+  .hero-visual-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .hero-pro-tip {
+    cursor: pointer !important;
+  }
+
+  .hero-fullscreen-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
 }
 
 @media (max-width: 768px) {

@@ -11,11 +11,11 @@ export default function LoadingScreen({ onComplete }) {
   const [isFading, setIsFading] = useState(false);
 
   const bootInstructions = [
-    { pct: 0, text: "SYSTEM BOOT SEQUENCE: SRI_SAKTHI_OS.EXE", colorClass: "blue", icon: <ComputerRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
-    { pct: 20, text: "RETRO BGM AUDIO: Press [M] or Top Bar to MUTE", colorClass: "green", icon: <MusicNoteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
-    { pct: 45, text: "CYBER ARCADE: Arrow Keys Move • SPACE Fire", colorClass: "coral", icon: <VideogameAssetRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
-    { pct: 70, text: "DESIGN TOKENS: Calibrating WCAG 2.1 AA...", colorClass: "purple", icon: <ColorLensRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
-    { pct: 95, text: "SYSTEM READY 100% — LAUNCHING PORTFOLIO...", colorClass: "green", icon: <CheckCircleRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 0, text: <><span className="ls-desktop-only">SYSTEM BOOT SEQUENCE: SRI_SAKTHI_OS.EXE</span><span className="ls-mobile-only">BOOT: SRI_SAKTHI_OS.EXE</span></>, colorClass: "blue", icon: <ComputerRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 20, text: <><span className="ls-desktop-only">RETRO BGM: Press [M] to Mute, [P] to Pause</span><span className="ls-mobile-only">BGM: Tap Top Bar to Play/Pause</span></>, colorClass: "green", icon: <MusicNoteRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 45, text: <><span className="ls-desktop-only">CYBER ARCADE: Arrow Keys Move • SPACE Fire</span><span className="ls-mobile-only">ARCADE: Keys Move • SPACE Fire</span></>, colorClass: "coral", icon: <VideogameAssetRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 70, text: <><span className="ls-desktop-only">DESIGN TOKENS: Calibrating WCAG 2.1 AA...</span><span className="ls-mobile-only">DESIGN: WCAG 2.1 AA...</span></>, colorClass: "purple", icon: <ColorLensRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
+    { pct: 95, text: <><span className="ls-desktop-only">SYSTEM READY 100% — LAUNCHING PORTFOLIO...</span><span className="ls-mobile-only">READY — LAUNCHING PORTFOLIO...</span></>, colorClass: "green", icon: <CheckCircleRoundedIcon style={{ fontSize: 13, color: "#FFFFFF" }} /> },
   ];
 
   // Calculate current active single instruction index based on progress
@@ -83,7 +83,9 @@ export default function LoadingScreen({ onComplete }) {
             <span className={`retro-icon-frame ${currentInstruction.colorClass}`} style={{ width: 18, height: 18, flexShrink: 0 }}>
               {currentInstruction.icon}
             </span>
-            <span style={{ whiteSpace: "nowrap" }}>{currentInstruction.text}</span>
+            <span>
+              {currentInstruction.text}
+            </span>
           </div>
         </div>
 
