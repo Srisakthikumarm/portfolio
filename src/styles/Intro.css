@@ -55,6 +55,17 @@
   white-space: nowrap;
 }
 
+@media only screen and (max-width: 768px) {
+  .hero-system-banner {
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
 .banner-dot {
   width: 9px;
   height: 9px;
@@ -239,7 +250,8 @@
   .hero-headline {
     font-size: 26px !important;
     line-height: 1.15 !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
+    word-break: break-word;
   }
 
   .hero-animated-sub {

@@ -11,7 +11,6 @@
 .fade-in-section {
   opacity: 0;
   will-change: transform, opacity;
-  backface-visibility: hidden;
   transition: 
     opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -24,20 +23,36 @@
 }
 
 .fade-in-section.direction-up {
-  transform: translateY(40px);
+  transform: translateY(30px);
 }
 
 .fade-in-section.direction-left {
-  transform: translateX(-40px);
+  transform: translateX(-30px);
 }
 
 .fade-in-section.direction-right {
-  transform: translateX(40px);
+  transform: translateX(30px);
 }
 
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+/* Disable transform animations on mobile to prevent scroll layout thrashing */
+@media only screen and (max-width: 768px) {
+  .fade-in-section {
+    transition: opacity 0.5s ease-out !important;
+    transform: none !important;
+  }
+  .fade-in-section.direction-up,
+  .fade-in-section.direction-left,
+  .fade-in-section.direction-right {
+    transform: none !important;
+  }
+  .fade-in-section.is-visible {
+    transform: none !important;
+  }
 }
 
 .fade-in-section.is-visible > *:nth-child(1) { transition-delay: 0s; }
@@ -60,7 +75,6 @@
   width: 100%;
   margin: 0;
   padding: 0px 24px;
-  overflow-x: hidden;
 }
 
 .App-logo {

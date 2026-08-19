@@ -9,6 +9,16 @@ html {
   box-sizing: inherit;
 }
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   width: 100%;

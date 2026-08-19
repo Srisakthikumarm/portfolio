@@ -40,7 +40,7 @@ const Intro = () => {
           <FadeInSection delay="0s">
             <div className="hero-system-banner">
               <span className="banner-dot" />
-              <span>SYSTEM READY • SRI SAKTHI KUMAR M • AVAILABLE FOR HIRE</span>
+              <span>SYSTEM READY • SRI SAKTHI KUMAR M</span>
             </div>
           </FadeInSection>
 

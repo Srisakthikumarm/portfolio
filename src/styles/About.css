@@ -727,6 +727,12 @@
     gap: 20px !important;
   }
 
+  .omori-overview-card, .bento-avatar-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .bento-avatar-card {
     height: 440px !important;
   }
@@ -736,6 +742,7 @@
     min-height: auto !important;
     padding: 20px 16px !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
@@ -754,8 +761,6 @@
   .bento-bio-card .bento-chips-row .bento-chip,
   .bento-chips-row .bento-chip,
   .bento-chip {
-    width: 100% !important;
-    max-width: 100% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;

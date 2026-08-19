@@ -166,6 +166,7 @@
     padding: 16px;
     border-radius: 0px !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
